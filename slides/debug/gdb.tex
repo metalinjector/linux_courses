@@ -1,3 +1,4 @@
+\subsection[intro]{Основы gdb}
 \begin{frame}
   \frametitle{Базовые команды gdb}
   \begin{columns}
@@ -30,6 +31,7 @@
   \end{columns}
 \end{frame}
 
+\subsection[breakpoints]{Точки останова}
 \begin{frame}
  \frametitle{Обращение с точками останова}
  \begin{columns}
@@ -95,11 +97,28 @@
 	   {\small Для некоторых дистрибутивов:\\ {\tt sysctl -w kernel.core\_pattern=/tmp/core-\%e-\%p}}
    \item Запустить segfault, дождаться segmentation fault
    \item Запустить \texttt{gdb ./segfault /tmp/core-....}
-   \item Изучить значения переменных в текущем стековом фрейме
+   \item Изучить значения переменных в текущем стековом фрейме \texttt{info locals}
    \item Изучить значения переменных в предыдущем стековом фрейме
-   \item Исправить код
   \end{enumerate}
 %+core dump
+\end{frame}
+
+\begin{frame}
+  \frametitle{Watchpoint}
+  \begin{itemize}
+    \item \texttt{watch} <переменная, выражение, *адрес>
+    \item \texttt{rwatch} 
+    \item \texttt{awatch}
+  \end{itemize}
+  \begin{center}
+    Продолжение предыдущего упражнения
+  \end{center}
+  \begin{itemize}
+    \item Запустить segfault под gdb
+    \item Остановиться в main и поставить watchpoint на buf
+    \item Найти место в котором портится buf
+    \item Исправить программу
+  \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -111,7 +130,7 @@
     \item \verb+ objcopy --only-keep-debug <exec file> <dbg file>+
     \item \verb+ strip -g <exec file>+
     \item \verb+ objcopy  --add-gnu-debuglink=<dbg file> <exec file> + 
-    \item \texttt{gdb: set debug-files-directory}
+    \item \texttt{gdb: set debug-file-directory}
   \end{itemize} 
 \pause
   \begin{center}
@@ -123,8 +142,98 @@
   \end{itemize}
 \end{frame}  
 
-%\begin{frame}
-% \frametitle{gdb server}
-%\end{frame}
+\section[gdb server]{gdb server}
+
+\begin{frame}
+  \frametitle{gdb server: preparation}
+  \begin{center}
+    {\large Подготовка ядра:компиляция с debug символами}
+  \end{center}
+  \begin{itemize}
+    \item Взять исходники ядра с kernel.org
+    \item Развернуть исходники \texttt{tar -Jxvf linux-....tar.xz}
+    \item В директории исходников \texttt{cp arch/x86/configs/x86\_64\_defconfig ./.config}
+    \item \texttt{make menuconfig}
+    \item Kernel hacking->Compile-time checks and compiler options->Compile kernel with debug info
+    \item \texttt{make}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{gdb server: запуск}
+\begin{itemize}
+    \item Запустить процесс ядра в kvm
+
+      \texttt{ kvm -m 256M -S -gdb tcp::2345 -kernel linux-3.19.1/arch/x86\_64/boot/bzImage }
+    \item Запустить gdb \texttt{gdb linux-3.19.1/vmlinux}
+    \begin{itemize}
+      \item target remote localhost:2345
+      \item c
+      \item Остановить с помощью ловкости рук и Ctrl-C
+      \item \texttt{set arch i386:x86-64:intel}
+      \item Начать пошагово выполнять код ядра
+    \end{itemize}
+\end{itemize}
+\end{frame}
+  
+\section[gdb disasm]{Работа с программами без исходников}
+\begin{frame}[fragile]
+  \frametitle{Основные команды для дизассемблирования}
+  \begin{itemize}
+    \item \verb+ info registers {pc, rax, ebp} +
+    \item \verb+ print $pc +,etc
+    \item \verb+ x/i $pc + -текущая инструкция
+    \item \verb+ x/10i $pc-30 + -- предыдущие инструкции
+    \item \verb+ disass + -- дизассемблирование текущей функции
+    \item \verb+ si, stepi + -- шаг на инструкцию
+    \item \verb+ ni, nexti + -- шаг на инструкцию с обходом
+    \item \verb+ break *<address> +
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Команда x}
+  Основные ключи
+  \begin{itemize}
+    \item \texttt{x/i <address>} объект по адресу как инструкция (\texttt{x/10i} 10 инструкций)
+    \item \texttt{x/s <address>} как строка
+    \item \texttt{x/d <address>} как десятичное число
+    \item \texttt{x/a <address>} как pointer
+    \item \texttt{x/x <address>} как 16-ричное число
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Патчинг программы}
+  \begin{verbatim}
+gdb -write -q <program name>
+  \end{verbatim}
+\pause
+\vspace{2ex}
+  \begin{verbatim}
+(gdb) set {unsigned char}<address>=<value>
+  \end{verbatim}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Упражнение}
+  \begin{itemize}
+    \item Запустить testtimer
+    \item Запустить testtimer в gdb, поставить breakpoint в функции time
+    \item Найти точку возврата из этой функции в main
+    \item Обойти проверку
+  \end{itemize}
+  \begin{tabular}{ll}
+    инструкция & opcode \\
+    jle        & 7e ... \\
+    jle        & 0f 8e .. \\
+    jg         & 7f ... \\
+    jg         & 0f 8f ...\\
+    setg       & 0f 9f ... \\
+    setle      & 0f 9e ... \\
+  \end{tabular}
+\end{frame}
+
+
 
 
