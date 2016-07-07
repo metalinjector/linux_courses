@@ -1,6 +1,6 @@
 \input{common}
-\title{Введение в GNU/Linux}
 
+\title{Введение в GNU/Linux}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -13,20 +13,26 @@
 \begin{document}
 
 \begin{frame}
-	\frametitle{Система управления пакетами}
+	\frametitle{}
 	\titlepage
 	\vspace{-0.5cm}
 	\begin{center}
 	%\frontpagelogo
 	\end{center}
 \end{frame}
-\begin{frame}
-	\tableofcontents
-%	[hideallsubsections]
-\end{frame}
 
 
-% TODO: merge with intro
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+%%%%%%%%%% Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Полезные команды}
+\subsection{Редакторы}
+\mode<all>{\input{../../slides/cmdline/editors-intro}}
+
+\section{Система управления пакетами}
+
+\mode<all>{\input{../../slides/packaging/intro}}
 \mode<all>{\input{../../slides/packaging/intro1}}
 
 \mode<all>{\input{../../slides/packaging/rpm}}

@@ -2,7 +2,7 @@
 
 
 \begin{frame}
-	\frametitle{Переменные} 
+	\frametitle{Переменные}
 	\large\center{Нетипизированные!!!}
 
 	Для прямого обращения необходимо использовать префикс \\
@@ -15,10 +15,11 @@
 	
 	\begin{alertblock}{Используют без префикса}
 		\begin{itemize}
-			\item В объявлении declare или присвоении
-			\item в командe read ip\_addr
-			\item unset -- удаление
-			\item В арифметических операциях {\tt (( ... ))}
+			\item в объявлении declare var
+			\item в присвоении declare var=10
+			\item чтение в командe read var
+			\item удаление unset var
+			\item в арифметических операциях {\tt (( a=b+c ))}
 		\end{itemize}
 	\end{alertblock}
 \end{frame}
@@ -63,14 +64,13 @@ echo $num $lastarg
 
 
 \begin{frame}
-	\frametitle{Область видимости переменных}
+	\frametitle{Типы переменных}
 	\begin{itemize}
 		\item Локальные\\
 		    Область видимости -- текущая программа, функция или субшелл
 		\item Окружения
 		\item Позиционные параметры
 	\end{itemize}
-
 \end{frame}
 
 

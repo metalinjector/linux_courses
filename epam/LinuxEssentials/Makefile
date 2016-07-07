@@ -2,9 +2,10 @@ TARGET = 01-intro.pdf
 TARGET += 02-command_line_intro.pdf
 TARGET += 03-bash_and_process.pdf
 TARGET += 04-commands.pdf
-TARGET += 05-users.pdf
-TARGET += 06-networking.pdf
-TARGET += 07-disk.pdf
+TARGET += 05-sed_rpm.pdf
+TARGET += 06-users.pdf
+TARGET += 07-networking.pdf
+TARGET += 08-disk.pdf
 TARGET += LinuxEssentialsHandbook.pdf
 
 LATEXML=latexml
@@ -16,15 +17,9 @@ LATEXML2OPENXML=java -jar latexml2openxml-0.0.1-SNAPSHOT-jar-with-dependencies.j
 
 .PHONY: all xml pptx tex clean
 
-%.dvi: %.tex
-	latex $<
-	latex $<
-	latex $<
-
-%.ps: %.dvi
-	dvips -j0 -Ppdf -o $@ $<
-
 %.pdf: %.tex
+	pdflatex -interaction=nonstopmode $<
+	pdflatex -interaction=nonstopmode $<
 	pdflatex -interaction=nonstopmode $<
 
 %.xml: %.tex

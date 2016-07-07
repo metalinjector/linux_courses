@@ -1,5 +1,5 @@
 \input{common}
-\title{Введение в GNU/Linux}
+\title{Пользователи и привилегии}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -7,7 +7,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-
+\newcommand{\defaultuser}{\$USER}
 
 \begin{document}
 
@@ -19,15 +19,11 @@
 	%\frontpagelogo
 	\end{center}
 \end{frame}
-\begin{frame}
-	\tableofcontents
-%	[hideallsubsections]
-\end{frame}
-
+\section{Многопользовательская модель UNIX}
 \mode<all>{\input{../../slides/multiuser/multiuser-model.tex}}
 
 \mode<all>{\input{../../slides/multiuser/fs-permissions.tex}}
-
+\section{Внутренний механизм управления пользователями}
 \mode<all>{\input{../../slides/multiuser/account_files.tex}}
 
 \mode<all>{\input{../../slides/multiuser/pam.tex}}
