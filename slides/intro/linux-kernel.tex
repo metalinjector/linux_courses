@@ -4,11 +4,12 @@
 		\item Управление процессами и потоками
 		\item Управление памятью
 		\item Управление файлами
-		\item IPC
+		\item IPC (Inter Process Communication)
 		\item Разграничение доступа
 		\item Сетевые возможности
 		\item Интерфейс доступа к возможностям ядра
 	\end{itemize}
+	%Выполнить команду dmesg и найти строки инициализации памяти, CPU, дисковой подсистемы, CPU.
 \end{frame}
 
 
@@ -24,8 +25,7 @@
 	\end{block}
 
 	\bigskip
-
-	Список загруженных модулей: {\tt /proc/modules}
+	%Список загруженных модулей: {\tt cat /proc/modules } либо {\tt lsmod}
 \end{frame}
 
 
@@ -59,31 +59,9 @@
 		\end{itemize}
 	\end{block}
 
-	Модулям можно передавать параметры используя синтаксис: {\tt module.param=value}
+	Параметры переданные ядру во время загрузки: {\tt /proc/cmdline} \\
 
-	Параметры переданные ядру во время загрузки: {\tt /proc/cmdline}
-\end{frame}
+        Программы могут использовать /cmdline, например установщик ОС Anaconda \\
 
-\begin{frame}{Магия SysRq}
-
-	{\tt CONFIG\_MAGIC\_SYSRQ=y}
-
-	{\tt /proc/sysrq-trigger}
-
-	\begin{block}{{\bf R}eboot {\bf E}ven {\bf I}f {\bf S}ystem {\bf U}tterly {\bf B}roken}
-		{\bf Ctrl+Alt+SysRq+?}
-
-		\begin{itemize}
-			\item h -- вывести список сочетаний на консоль
-			\item b -- перезагрузка
-			\item o -- выключение
-			\item e -- послать сигнал SIGTERM всем процессам кроме init
-			\item i -- послать сигнал SIGKILL всем процессам кроме init
-			\item s -- синхронизировать все ФС 
-			\item u -- переподключить все ФС в режиме RO
-		\end{itemize}
-		
-	\end{block}
-
-
+	Модулям можно передавать параметры используя синтаксис: {\tt module.param=value} \\
 \end{frame}

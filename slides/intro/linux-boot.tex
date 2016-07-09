@@ -2,29 +2,18 @@
 	\scriptsize
 	\begin{enumerate}
 		\item BIOS
-		\item MBR
+		\item Master Boot Record (MBR)
 			\pause
-		\item Загрузка загрузчика
+		\item Загрузка загрузчика 
 		\begin{itemize}
 		\footnotesize
 			\item Stage 1 -- Первичный загрузчик
 			\item Stage 1,5 -- Загрузка ядра загрузчика и драйвера ФС
-			\item Stage 2 -- Чтение конфигурации
-		\end{itemize}
-			\pause
-
-		\item Загрузка ядра в память
-		\item Загрузка initrd в память
-			\pause
-		\item Передача управления ядру
-		\begin{itemize}
-		\footnotesize
-			\item Распаковка
-			\item Инициализация
+			\item Stage 2 -- загрузчик читает конфигурацию, загружает ядра и образ initrd (initial-RAM disk) в память
+                        \item Передает управление ядру
 		\end{itemize}
 
-		\item Монтирование initrd
-		\item Запуск программы инициализации в initrd
+		\item Запуск программы инициализации в initrd, загрузка драйверов файловых систем (LVM, RAID, NFS)
 			\pause
 		\item Нахождение и монтирование корневого раздела
 			\pause
@@ -32,19 +21,9 @@
 		\begin{itemize}
 		\footnotesize
 			\item Монтирование оставшихся разделов ФС
-			\item Инициализация оборудования
-			\item Запуск демонов
+			\item Запуск демонов для заданного уровня загрузки (runlevel)
+			\item Выдает приглашение пользователю. 
 		\end{itemize}
 
 	\end{enumerate}
-\end{frame}
-
-
-\begin{frame}{Наиболее распространенные загрузчики}
-	\begin{itemize}
-		\item GRUB
-		\item LILO
-		\item syslinux (isolinux, pxelinux)
-		\item u-boot
-	\end{itemize}
 \end{frame}
