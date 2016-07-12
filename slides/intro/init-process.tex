@@ -1,13 +1,34 @@
-\begin{frame}{init}
-	Менеджер управления работой системой и сервисами.
-	
-	\bigskip
+\begin{frame}{init - система инициализации}
 
+
+\begin{block}{Runit. Какие задачи выполняет система инициализации?}
+init --help
+\end{block}
+
+\begin{block}{Runit. Найти процесс init в дереве процессов}
+{\tt pstree -Ap}
+либо, т.к. вывод может быть слишком длинным
+{\tt pstree -Ap | head}
+\end{block}
+
+\pause
+ Выполняет следующие задачи:
+\begin{itemize}
+    \item Инициализация системы
+    \item Перезагрузка, остановка системы
+    \item Загрузка в режиме восстановления 
+\end{itemize}
+
+        \pause
+\alert{init} - первый процесс который выполняется ядром.
+        Является родителем для всех процессов в системе.
+	\bigskip
+        Идентификатор процесса
 	\center{\large PID = 1}
 
 	\bigskip
 
-	\begin{block}{Наиболее известные}
+	\begin{block}{Наиболее известные системы инициализации}
 		\begin{itemize}
 			\item SysVInit
 			\item systemd
@@ -16,7 +37,8 @@
 	\end{block}
 \end{frame}
 
-\begin{frame}{SysVInit}
+
+\begin{frame}{SysVInit: runlevels}
 	\begin{block}{Управление}
 		\begin{itemize}
 			\item kernel boot parameters: <N> -- runlevel
@@ -62,7 +84,7 @@
 	\end{block}
 \end{frame}
 
-\begin{frame}{systemd}
+\begin{frame}{systemd: runlevels}
 	\begin{block}{Управление}
 		\begin{itemize}
 			\item kernel boot parameters\\
