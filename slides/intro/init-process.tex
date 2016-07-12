@@ -1,11 +1,11 @@
 \begin{frame}{init - система инициализации}
 
 
-\begin{block}{Runit. Какие задачи выполняет система инициализации?}
+\begin{block}{Упражнение. Какие задачи выполняет система инициализации?}
 init --help
 \end{block}
 
-\begin{block}{Runit. Найти процесс init в дереве процессов}
+\begin{block}{Упражнение. Найти процесс init в дереве процессов}
 {\tt pstree -Ap}
 либо, т.к. вывод может быть слишком длинным
 {\tt pstree -Ap | head}
@@ -18,25 +18,23 @@ init --help
     \item Перезагрузка, остановка системы
     \item Загрузка в режиме восстановления 
 \end{itemize}
+\end{frame}
 
-        \pause
-\alert{init} - первый процесс который выполняется ядром.
-        Является родителем для всех процессов в системе.
-	\bigskip
+\begin{frame}{Процесс init}
+\alert{init} - первый процесс который выполняется ядром. \\
+        Является родителем для всех процессов в системе. \\
         Идентификатор процесса
 	\center{\large PID = 1}
 
-	\bigskip
-
 	\begin{block}{Наиболее известные системы инициализации}
 		\begin{itemize}
-			\item SysVInit
-			\item systemd
-			\item upstart
+			\item systemd - использует DSL язык
+			\item upstart - альтернативная система CentOS5 
+			\item SysVInit - система на shell скриптах
 		\end{itemize}
 	\end{block}
+    
 \end{frame}
-
 
 \begin{frame}{SysVInit: runlevels}
 	\begin{block}{Управление}
@@ -104,9 +102,8 @@ init --help
 			\hline
 			0	& poweroff.target & Выключить систему \\
 			1,s,single & rescue.target  & Однопользовательский режим \\
-			2	& multi-user.target & Многопользовательский режим без графики. Без сетевых сервисов.\\
+			2, 4	& multi-user.target & Определяется на хосте. default 3\\
 			3	& multi-user.target & Многопользовательский режим без графики. Полноценная сеть. \\
-			4	& multi-user.target & Определяется на хосте\\
 			5	& graphical.target & Многопользовательский режим с графикой.\\
 			6	& reboot.target & Перезагрузка\\
 			emergency & emergency.target & Аварийная оболочка \\
