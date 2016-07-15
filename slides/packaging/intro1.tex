@@ -1,3 +1,29 @@
+\begin{frame}{RPM: структура пакета}
+	\begin{itemize}
+		\item Метаданные
+			\begin{itemize}
+				\item Имя
+				\item Версия/Релиз
+				\item Группа
+				\item Описание
+                                \item Зависимости
+				\item ...
+			\end{itemize}
+		\item Архив с файлами
+			\begin{itemize}
+				\item cpio
+			\end{itemize}
+		\item Скрипты
+			\begin{itemize}
+				\item Pre Install
+				\item Post Install
+				\item Pre Uninstall
+				\item Post Uninstall \bigskip
+				\item Triggers
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+
 \begin{frame}{Система управления пакетами: для чего это нужно}
 \begin{itemize}
  \item ''DLL Hell''
@@ -15,50 +41,23 @@
 \end{frame}
 
 \begin{frame}{Debian-based и RedHat-based системы управления пакетами}
+
 \begin{center}
  \textbf{Два уровня пакетных менеджеров}
 \end{center}
-\begin{columns}
-  \column{0.4\textwidth}
-  \begin{center}
-    \textbf{RedHat-based}
-  \end{center}
-  \begin{itemize}
-    \item yum
-    \item rpm
-  \end{itemize}
-  \column{0.4\textwidth}
-  \begin{center}
-    \textbf{Debian-based}
-  \end{center}
-  \begin{itemize}
-    \item aptitude, apt, synaptic
-    \item dpkg
-  \end{itemize}
-\end{columns}
+
+\begin{tabular}{| l | c | r |}
+      \hline
+          Level &  RedHat-based & Debian-based \\ 
+      \hline
+          Low & rpm & dpkg \\ 
+      \hline
+          High & yum, dnf & apt, aptitude \\
+      \hline
+    \end{tabular}
+
+    Низкоуровневые используются для установки, удаления, получения информации о пакете. \\
+    Высокоуровневые предоставляют дополнительные функции такие как поиск по репозиторию, копирование пакета из репозитория, разрешение зависимостей, обновление системы.
+
 \end{frame}
 
-\begin{frame}{RPM: структура пакета}
-	\begin{itemize}
-		\item Метаданные
-			\begin{itemize}
-				\item Имя
-				\item Версия/Релиз
-				\item Группа
-				\item Описание
-				\item ...
-			\end{itemize}
-		\item Архив с файлами
-			\begin{itemize}
-				\item cpio
-			\end{itemize}
-		\item Скрипты
-			\begin{itemize}
-				\item Pre Install
-				\item Post Install
-				\item Pre Uninstall
-				\item Post Uninstall \bigskip
-				\item Triggers
-			\end{itemize}
-	\end{itemize}
-\end{frame}
