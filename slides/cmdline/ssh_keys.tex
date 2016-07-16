@@ -1,0 +1,61 @@
+\begin{frame}
+  \frametitle{Методы авторизации SSH. Ключи}
+
+  \alert{Не хочешь вводить пароли?}
+  \pause
+
+  \alert{Не вводи!}
+  \pause
+
+  \begin{center}
+    Aвторизация в SSH.
+
+    Пара: открытый + секретный ключ.
+
+    Вместо пароля.
+  \end{center}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Ключи SSH. Создание}
+
+  \begin{center}
+
+    \begin{tabular}{ l r }
+      \hbox{Linux: ssh-keygen} & \hbox{Windows: PuTTY keygen} \\
+      \includegraphics[height=3cm]{ssh-keygen-screenshot} & \includegraphics[height=4cm]{putty-keygen-screenshot} \\
+      Ключи в папке .ssh/: & Ключи там, где сохранили \\
+      id\_rsa и id\_rsa.pub &
+    \end{tabular}
+
+  \end{center}
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Ключи SSH. Копирование}
+
+  \begin{itemize}
+    \item \alert{Что копировать?} Публичный ключ (id\_rsa.pub)  \pause
+    \item \alert{Куда складывать?} в \$HOME/.ssh/authorized\_keys \newline удалённой машины \pause
+    \item \alert{Как перенести?} \pause
+      \begin{itemize}
+        \item Linux: ssh-copy-id username@host \pause
+        \item Copy-paste в редактор \pause
+      \end{itemize}
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{SSH. Автоматизация входа}
+  \begin{center}
+    \begin{tabular}{ l r }
+      \Large{Linux: .ssh/config} & \Large{Windows: PuTTY session} \\
+      \lstinputlisting[basicstyle=\tiny]{../../sam-solutions/samples/ssh-config} & \fbox{\includegraphics[height=4.5cm]{putty-config-screenshot}} \\
+    \end{tabular}
+
+  \end{center}
+\end{frame}
