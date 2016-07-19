@@ -1,24 +1,39 @@
 \begin{frame}[fragile]{Поиск файлов}
-	\begin{block}{find}
+    \textbf{find} ищет файлы в заданной директории.
+	\begin{block}{Параметры поиска}
 		\begin{itemize}
+			\item {\tt -name} -- имя файлового объекта
 			\item {\tt -type} -- тип файлового объекта
-			\item {\tt -size} -- размер
-			\item {\tt -maxdepth} -- глубина рекурсии
-			\item {\tt -exec} -- выполнить команду
-			\item {\tt -printf} -- форматированный вывод
+			\item {\tt -size} -- размер [cwbkMG]
+			\item {\tt -perm} -- права доступа
+			\item {\tt -user} -- владелец
+			\item {\tt ...} -- другие опции man find 
 		\end{itemize}
 	\end{block}
-
-	\begin{block}{Примеры}
-		\begin{verbatim}
-find /etc -type f -size +100k  -exec ls -l {} \;
-		\end{verbatim}
-
-		\begin{verbatim}
-find -type d -user altlinux
-		\end{verbatim}
-	
+	\begin{block}{Действия над результом поиска}
+		\begin{itemize}
+			\item {\tt -print} -- вывод на stdout (по умолчанию)
+			\item {\tt -printf} -- форматированный вывод
+			\item {\tt -exec} -- выполнить команду
+			\item {\tt -ls} -- замена -exec ls -l \{\} ;
+			\item {\tt -delete} -- удалить файл
+		\end{itemize}
 	\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Поиск файлов}
+	\begin{block}{Примеры}
+            \begin{verbatim} find . -name '*.o' -print \end{verbatim}
+            \begin{verbatim} find -name '*.o' \end{verbatim}
+            \begin{verbatim} find -type d -user altlinux \end{verbatim}
+            \begin{verbatim} find /root \( -name '*.pyc' -o -name '*.py' \) \
+-type f -user root -size +300k -size -1024k \
+-exec ls -l \{\} \; \end{verbatim}
+	\end{block}
+ Дополнительно:
+ Позволяет преодолеть лимит на кол-во аргументов в командной строке. 
+ Например, когда в директории много файлов и тогда возникают ошибки
+ \textquotedblleft Arguments too long.\textquotedblright 
 \end{frame}
 
 \begin{frame}[fragile]{xargs}
@@ -37,6 +52,7 @@ xargs [options] command [command options]
 		\end{itemize}
 
 	\end{block}
+Имя файла может содержать разделители: пробелы, tab, символ новой строки. В этом случае xargs воспримет имя как набор раздельных аргументов. Использовать -print0 в команде find для замены на ASCII NUL в имени файла.
 \end{frame}
 
 \begin{frame}[fragile]{xargs}
@@ -57,13 +73,3 @@ find . -type f -name "*.mp3" -print0 | \
 	
 	\end{block}
 \end{frame}
-
-\begin{frame}[fragile]{Задание}
-	\begin{itemize}
-		\item Создать директорию {\tt /tmp/etc}
-		\item С помощью {\tt find} скопировать только файлы,
-		      из {\tt /etc} (не включая поддиректории) в {\tt /tmp/etc}
-		\item Сжать все файлы из {\tt /tmp/etc}, используя все доступные процессоры
-	\end{itemize}
-\end{frame}
-

@@ -1,0 +1,148 @@
+\begin{frame}{Текст в Unix}
+  В Unix (и Linux) в виде обычного текста или \alert{plain text} представлены:\pause
+  \begin{itemize}
+    \item \alert{конфигурационные файлы}, как локальные\footnote{в каталоге \$HOME} , так и общесистемные\footnote{в каталоге /etc} \pause
+    \item \alert{системные логи}\footnote{справедливо для \alert{syslog} и совместимых систем}
+    \item \alert{исходные тексты программ}, включая скрипты на Shell
+    \item \alert{основной формат ввода и (или) вывода данных} для множества программ и утилит
+  \end{itemize} 
+
+\end{frame}
+
+
+\begin{frame}{Просмотр обычных файлов}
+  \begin{itemize}
+    \item Просмотр текста:
+      \begin{itemize} 
+        \item \alert{cat} - вывести на stdout\footnote{Для двоичных файлов: чревато порчей настроек терминала} \pause
+        \item \alert{more} - вывести, разбив на страницы
+        \item \alert{less}\footnote{может отсутствововать в стандартной поставке} - \alert{more} на стероидах, с прокруткой, поиском
+      \end{itemize} \pause
+    \item Просмотр двоичных данных:
+      \begin{itemize} 
+        \item \alert{od} - дамп файла в не-текстовых форматах
+\lstinputlisting[frame=single,basicstyle=\tiny]{../../sam-solutions/samples/od}
+        \item \alert{strings} - извлечь текстовые строки из двоичных файлов
+      \end{itemize}
+  \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Редакторы}
+
+  \begin{itemize}
+    \item  Любой редактор, с которым вы можете справится. \pause Но его может не быть в вашей системе\ldots \pause
+    \item Редактор \alert{vi} присутствует как стандартный в любой Unix-подобной системе\footnote{В этом качестве он внесен в стандарт Single Unix Specification. Существует множество реализаций редакторов, совместимых c vi: vim, elvis, nvi, vi-mode в Emacs, Sublime Text 2, vi из busybox и т.д.} \pause
+    \item Не обязательно редактировать локально: В \alert{mc}, \alert{vim}, \alert{emacs} есть возможность удалённого редактирования файлов\footnote{С получением и сохранением данных по протоколу FTP и SSH}.
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{vi и vim}
+  Перед стартом:
+
+  \begin{enumerate}
+    \item  Редактор vi изначально создавался как универсальный и переносимый\footnote{Обязан работать на любых типах терминалов и виртуальных консолей}. Все действия можно осуществить на алфавитно-цифровой части клавиатуры, без мыши. \pause
+    \item \alert{Редактор командного стиля}\footnote{Командного стиля, а не меню-ориентированный}. Действия подачей прямых управляющих команд. \pause \newline
+      3 основных режима: \sout{портить текст и противно бибикать}
+      \begin{itemize}
+        \item[-] \alert{Командный режим} (Normal mode) - по умолчанию при запуске.
+        \item[-] \alert{Режим изменения текста} (Edit mode)
+        \item[-] \alert{Режим построчного редактирования} (Ex mode) - операции над файлом целиком\footnote{сохранение, открытие файлов, выход, вставка файла в текущий и т.д.}.
+      \end{itemize}
+  \end{enumerate} \pause
+  \alert{Упражнение}: проходим \alert{vimtutor}, встроенный в vim учебник\footnote{ export LANG='ru\_RU.UTF-8' - на русском языке }
+\end{frame}
+
+\begin{frame}{Текстовый фильтр}
+
+  Определение:\newline \alert{Текстовый фильтр} - программа, обрабатывающая и преобразующая текст. \newline
+
+  Примеры: \alert{sort}, \alert{uniq}, \alert{cut}, \alert{grep} \pause
+  \begin{itemize}
+    \item Фильтр, запущенный без параметров - читает стандартный ввод.
+    \item Параметры фильтра - интерпретируются как имена файлов
+    \item Ключи фильтра - управляют режимами работы
+  \end{itemize} \pause
+
+  Фильтр почти всегда используется совместно с перенаправлением ввода-вывода Shell (особенно '|', pipes). cmd1 | cmd2
+
+\end{frame}
+
+\begin{frame}{Простые текстовые фильтры}
+
+  Соглашения о параметрах: \alert{'-'} как имя файла обозначает стандартный ввод.
+
+  \begin{itemize}
+    \item \alert{cat} и \alert{tac} - вывести файл целиком \pause
+    \item \alert{head} и \alert{tail} - вывести начало и конец файла \pause
+    \item \alert{sort} и \alert{uniq} - сортировка и убрать повторы в отсортированном \pause
+    \item \alert{grep} - поиск по образцу \pause
+    \item \alert{paste} - объединить файлы построчно \pause
+    \item \alert{wc} - счётчик строк, слов и байт в тексте \pause
+    \item \alert{tee} - копирует стандартный ввод в файл и на экран
+
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Регулярные выражения}
+
+  \begin{block}{Как описать текст?}
+    Необходим инструмент и формат описания текста
+  \end{block} \pause
+
+  \begin{block}{Регулярные выражения}
+    \alert{Регулярные выражения (regular expression или regexp)} -  специальные строки символов, которые задаются для поиска совпадающих фрагментов. Иначе говоря это способ описания наборов букв.
+  \end{block} \pause
+
+  \begin{block}{Универсальный язык описания текста}
+    Все Unix-программы, осуществляющие поиск в тексте, используют регулярные выражения.
+  \end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]{Элементы регулярных выражений}
+    \begin{itemize}
+      \item \alert{литералы} - обычные символы (буквы и цифры) \pause
+      \item \alert{метасимволы} - спецсимволы (количество повторов, группировка фрагментов, позиция в тексте).
+    \end{itemize} \pause
+
+    Примеры регулярных выражений:\newline
+\begin{lstlisting}
+~$ file /bin/* | grep symbolic
+~$ grep -o 'user[0-9]*' /var/log/auth.log
+\end{lstlisting}
+\end{frame}
+
+%\subsection{Метасимволы}
+\begin{frame}{Класс на 1 символ}
+  \begin{itemize}
+    \item \alert{.} (точка)  - заменяет любой символ \newline
+      Пример: \regex{us.r.} = 'user0', 'us rX', 'us9r ' и т.д. \pause
+    \item \alert{[ ]} символьный класс - заменяет любой символ из перечисленных в скобках
+      \begin{enumerate}
+        \item \regex{user[0-9]} = 'user0', 'user5', но не равно 'user'
+        \item \regex{-[abc-]} = '--', '-a', '-b', '-c', но не равно '--a'
+        \item \regex{[\textasciicircum{}abc]1}\footnote{инвертировать символьный класс} = 'd1', '11', но не равно 'a1'
+      \end{enumerate} \pause
+    \item \alert{[:class:]} - дополнительные POSIX-классы для символов, \alert{внутри символьного класса}\footnote{Да, на редкость уродливый синтаксис} \newline
+        Примеры классов: \alert{[:alnum:]}, \alert{[:alpha:]} \alert{[:digit:]} \alert{[:space:]} \alert{[:lower:]}, \alert{[:upper:]}, \alert{[:print:]} \newline
+        Примеры regexp с POSIX классами: \regex{[ы[:digit:]]}
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{квантификаторы - регулируем повторы}
+
+  \alert{Квантификаторы} указывают, сколько раз может повторяться символ или выражение, после которого указаны.  Не являются шаблонами текста.
+
+  \begin{itemize}
+    \item \alert{?} - необязательный символ \newline
+      пример: \regex{a.?b} - совпадёт с 'ab', 'a9b', 'a b' \pause
+    \item \alert{*} - любое количество символов, включая нулевое \newline
+      примеры: \regex{.*}, \regex{[[:digit:]]*} \pause
+    \item \alert{+} - не менее одного символа \newline
+      примеры: \regex{[a-d]+}, \regex{(02:)+}
+  \end{itemize}
+\end{frame}

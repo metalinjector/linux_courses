@@ -1,0 +1,124 @@
+%% Vars
+
+
+\begin{frame}
+	\frametitle{Переменные} 
+	\large\center{Нетипизированные!!!}
+
+	Для прямого обращения необходимо использовать префикс \\
+	\center{\Large{\tt \$}}
+
+	Фигурные скобки используют для отделения от текста:\\
+	\center{\tt \$VARrest != \$\{VAR\}rest}
+
+	%\bigskip
+	
+	\begin{alertblock}{Используют без префикса}
+		\begin{itemize}
+			\item В объявлении declare или присвоении
+<<<<<<< HEAD
+			\item в командe read ip\_addr
+=======
+			\item в командe {\tt read}
+>>>>>>> upstream/master
+			\item unset -- удаление
+			\item В арифметических операциях {\tt (( ... ))}
+		\end{itemize}
+	\end{alertblock}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Задание. Присвоить переменной значение.}
+
+	\begin{lstlisting}
+#!/bin/bash
+
+VAR=string
+echo $VAR
+	\end{lstlisting}
+
+
+	\begin{block}{Изменить и посмотреть на результат.}
+		\begin{itemize}
+			\item Добавить пробел до знака ''{\tt =}''
+			\item Добавить пробел после знака ''{\tt =}''
+			\item Присвоить переменной VAR значение: I love \$\$\$!
+			\item Создать переменные с другим именем и значением var 1var \_var var1
+		\end{itemize}
+	\end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Косвенное обращение к переменной}
+
+	Косвенное (indirect) обращение к переменной: {\tt \$\{!VARIABLE\}}
+
+	\begin{block}{Пример}
+		\begin{lstlisting}
+#!/bin/bash 
+num=$# 
+lastarg=${!num} 
+echo $num $lastarg
+		\end{lstlisting}
+	\end{block}
+
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Типы переменных}
+	\begin{itemize}
+		\item Локальные\\
+		    Область видимости -- текущая программа, функция или субшелл
+		\item Окружения
+		\item Позиционные параметры
+	\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{Внешние переменные}
+
+	\center{Наследование внешней переменной}
+
+	\begin{itemize}
+		\item export
+		\item Переданное в командной строке \\
+			\begin{block}{Пример}
+				{\tt TEST=123 make}
+			\end{block}
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+	\frametitle{Специальные переменные}
+
+	Часто используемые в скриптах:
+
+	\begin{itemize}
+		\item Разделитель \$IFS
+		\item Директории -- домашняя \$HOME и текущая \$PWD
+		\item UID пользователя -- \$UID
+		\item ID процесса -- \$\$
+		\item Имя хоста -- \$HOSTNAME
+		\item Вид командной строки: \$PS1 -- \$PS4
+		\item Локализация
+			\begin{itemize}
+				\item Используемый язык \$LANG
+				\item Локализация \$LC\_ALL
+					\begin{block}{Пример}
+						\begin{lstlisting}
+ls -l 
+LC_ALL=C ls -l
+						\end{lstlisting}
+					\end{block}
+			\end{itemize}
+	\end{itemize}
+
+\end{frame}
+
+
+

@@ -1,4 +1,4 @@
-\newcounter{tmpc}
+%\newcounter{tmpc}
 
 \begin{frame}{Репозиторий}
 	\begin{block}{Репозиторий пакетов}
@@ -20,41 +20,9 @@
 		
 \end{frame}
 
-\begin{frame}{Apt: команды}
-	\begin{block}{Установка/обновление пакета}
-		{\tt apt-get install pkgname }
-
-                {\tt apt-get -f install}
-	\end{block}
-	\begin{block}{Обновление данных о пакетах}
-		{\tt apt-get update }
-	\end{block}
-	\begin{block}{Удаление пакета}
-		{\tt apt-get remove pkgname }
-	\end{block}
-	\begin{block}{Поиск}
-		{\tt apt-cache search pkgname }
-	\end{block}
-\end{frame}
-
-\begin{frame}{YUM: команды}
-	\begin{block}{Установка/обновление пакета}
-		{\tt yum install pkgname }
-	\end{block}
-	\begin{block}{Обновление всех пакетов}
-		{\tt yum update }
-	\end{block}
-	\begin{block}{Удаление пакета}
-		{\tt yum remove pkgname }
-	\end{block}
-	\begin{block}{Поиск}
-		{\tt yum list pkgname }\\
-		{\tt yum search pkgname }
-	\end{block}
-\end{frame}
 
 
-\begin{frame}[fragile]{Упражнение}
+%\begin{frame}[fragile]{Упражнение}
 %  \begin{enumerate}
 %      \item Создать на {\tt /dev/sda} раздел размером примерно 10Gb
 %      \item Создать на этом разделе ext3 ФС и смонтировать раздел в {\tt /mnt/chroot}
@@ -75,13 +43,13 @@
 %\end{enumerate}
 %\end{frame}
 %\begin{frame}{Продолжение упражнения}
-  \begin{enumerate}
-      %\setcounter{enumi}{\thetmpc}
-      \item Обновить информацию о пакетах {\tt update}
-      \item Удалить пакет vim
-      \item Установить заново пакет vim
-      \item Посмотреть списки файлов для пакетов {\tt rpm, vim}
-      \item Найти, к какому пакету относится команда {\tt ls, top}
-      \item Найти пакет предоставляющий сервис ssh и установить его
-    \end{enumerate}
-\end{frame}
+%  \begin{enumerate}
+%      %\setcounter{enumi}{\thetmpc}
+%      \item Обновить информацию о пакетах {\tt update}
+%      \item Удалить пакет vim
+%      \item Установить заново пакет vim
+%      \item Посмотреть списки файлов для пакетов {\tt rpm, vim}
+%      \item Найти, к какому пакету относится команда {\tt ls, top}
+%      \item Найти пакет предоставляющий сервис ssh и установить его
+%    \end{enumerate}
+%\end{frame}

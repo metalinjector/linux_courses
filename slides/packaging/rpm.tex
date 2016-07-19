@@ -39,3 +39,22 @@
 \end{frame}
 
 
+\begin{frame}{Команды пакетных менеджеров}
+        \begin{tabular}{ll}
+            \multicolumn{2}{c}{Установка пакета }   \tabularnewline
+            Debian & {\tt apt-get install pkgname } \\
+            CentOS & {\tt yum install pkgname } \\
+            \multicolumn{2}{c}{Обновление пакета }  \tabularnewline
+            Debian & {\tt apt-get install pkgname } \\
+            CentOS & {\tt yum update pkgname }  \\
+            \multicolumn{2}{c}{Удаление пакета }   \tabularnewline
+            Debian & {\tt apt-get remove pkgname } \\ 
+            CentOS & {\tt yum remove pkgname }  \\
+            \multicolumn{2}{c}{Поиск. По имени пакета}   \tabularnewline
+            Debian & {\tt apt-cache search pkgname } \\
+            CentOS & {\tt yum list pkgname }  \\
+            \multicolumn{2}{c}{Поиск. По имени файла}   \tabularnewline
+            Debian & {\tt apt-file search path } \\
+            CentOS & {\tt yum provides file} 
+        \end{tabular}
+\end{frame}
