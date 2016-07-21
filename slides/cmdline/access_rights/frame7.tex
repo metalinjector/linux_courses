@@ -1,0 +1,14 @@
+\begin{frame}[fragile]{Разбор прав доступа в выводе ls -l}
+
+  Вывод команды \alert{ls -l} содержит информацию о правах доступа:
+
+  \lstinputlisting[basicstyle=\small,breaklines=false]{samples/ls-l-details}
+
+  Позиции:
+  \begin{itemize}
+    \item 0 - тип  файла: - обычный;
+    \item 1-3 - (\alert{u}) права доступа для владельца-пользователя.
+    \item 4-6 - (\alert{g}) права доступа для владельца-группы.
+    \item 7-9 - (\alert{o}) права доступа для остальных.
+  \end{itemize}
+\end{frame}

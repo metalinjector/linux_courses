@@ -1,0 +1,17 @@
+\begin{frame}[fragile]{Управление владельцами}
+
+  Команды изменения владельцев
+  \begin{itemize} 
+    \item \alert{chown} : смена владельца-пользователя \newline
+      Пример: \verb+chown sys something.doc+
+    \item \alert{chgrp} : смена владельца-группы \newline
+      Пример: \verb+chgrp adm file.txt+
+  \end{itemize} \pause
+
+  Кто может сменить владельцев?
+  \begin{itemize}
+    \item владельца-пользователя  - текущий владелец
+    \item владельца-группу может владелец-пользователь для группы, к которой он сам принадлежит
+    \item  администратор (root, UID=0)\footnote{На пользователя c UID=0 не распространяются ограничения прав доступа} 
+  \end{itemize} 
+\end{frame}

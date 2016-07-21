@@ -24,15 +24,15 @@
 
 	\begin{itemize}
 		\item {\tt -i} -- показать информацию пакета\\
-			{\tt rpm -q -i glibc }
+			{\tt rpm \alert{-q} \alert{-i} glibc }
 		\item {\tt -l} -- показать список файлов пакета \\
-			{\tt rpm -q -l glibc }
+			{\tt rpm \alert{-q -l} glibc }
 		\item {\tt -{}-whatprovides} -- \\
-			{\tt rpm -q --whatprovides java}
+			{\tt rpm \alert{-q --whatprovides} java}
 		\item {\tt -{}-whatrequires} -- \\
-			{\tt rpm -q --whatrequires /bin/bash}
+			{\tt rpm \alert{-q --whatrequires} /bin/bash}
 		\item {\tt -{}-queryformat} -- формат вывода\\
-			{\tt rpm -q -{}-whatrequires /bin/bash -{}-queryformat ''\%\{name\} ''}
+			{\tt rpm \alert{-q -{}-whatrequires} /bin/bash \alert{-{}-queryformat ''\%\{name\} ''} }
 
 	\end{itemize}
 
@@ -42,19 +42,19 @@
 \begin{frame}{Команды пакетных менеджеров}
         \begin{tabular}{ll}
             \multicolumn{2}{c}{Установка пакета }   \tabularnewline
-            Debian & {\tt apt-get install pkgname } \\
-            CentOS & {\tt yum install pkgname } \\
+            Debian & {\tt apt-get \alert{install} pkgname } \\
+            CentOS & {\tt yum \alert{install} pkgname } \\
             \multicolumn{2}{c}{Обновление пакета }  \tabularnewline
-            Debian & {\tt apt-get install pkgname } \\
-            CentOS & {\tt yum update pkgname }  \\
+            Debian & {\tt apt-get \alert{install} pkgname } \\
+            CentOS & {\tt yum \alert{update} pkgname }  \\
             \multicolumn{2}{c}{Удаление пакета }   \tabularnewline
-            Debian & {\tt apt-get remove pkgname } \\ 
-            CentOS & {\tt yum remove pkgname }  \\
+            Debian & {\tt apt-get \alert{remove} pkgname } \\ 
+            CentOS & {\tt yum \alert{remove} pkgname }  \\
             \multicolumn{2}{c}{Поиск. По имени пакета}   \tabularnewline
-            Debian & {\tt apt-cache search pkgname } \\
-            CentOS & {\tt yum list pkgname }  \\
+            Debian & {\tt apt-cache \alert{search} pkgname } \\
+            CentOS & {\tt yum \alert{list} pkgname }  \\
             \multicolumn{2}{c}{Поиск. По имени файла}   \tabularnewline
-            Debian & {\tt apt-file search path } \\
-            CentOS & {\tt yum provides file} 
+            Debian & {\tt apt-file \alert{search} path } \\
+            CentOS & {\tt yum \alert{provides} file} 
         \end{tabular}
 \end{frame}

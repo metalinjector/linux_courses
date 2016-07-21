@@ -1,0 +1,26 @@
+\begin{frame}[fragile]{Работа с сигналами}
+  \small Информация о сигналах: \alert{man 7 signal}, \alert{kill -l}
+  \begin{block}{Популярные сигналы}
+    \tiny
+    \begin{tabular}{l|c|c|l}
+      Сигнал & Значение & Действие
+      .умолч.& Комментарий \\ \hline 
+      SIGHUP &    1     &  Term   &  Обрыв соед. терминала или смерть упр. процесса \\
+      SIGINT &    2     &  Term   & Прерывание с клавиатуры (Ctrl+C) \\
+      SIGKILL &   9     &  Term   & Убить процесс \\
+      SIGSEGV &   11    &  Core   & Segmentation fault \\
+      SIGPIPE &   13    &  Term   & Broken pipe: запись в канал без читателей\\
+      SIGTERM &   15    &  Term   & Прекратить процесс \\
+      SIGCONT &   18    &  Cont   & Продолжить выполнение \\
+      SIGSTOP &   19    &  Stop   & Остановить 
+    \end{tabular}
+  \end{block} \pause
+
+  \begin{block}{Утилиты управления}
+    \begin{itemize}
+      \item \alert{kill} - послать сигнал процессу (по PID)
+      \item \alert{killall} - послать сигнал процессам по имени
+    \end{itemize}
+  \end{block}
+
+\end{frame}

@@ -1,18 +1,19 @@
 \begin{frame}[fragile]{Фильтр текста: grep}
 Выводит строки соответствующие паттерну
 
-grep \alert{user} /var/log/messages
+\begin{itemize}
+    \item \tt{grep \alert{user} /var/log/messages }
+    \item \tt{grep \alert{-v} '\#' /bin/zcat } - изменить действие команды на противоположное. Убираем комментарии.
 
-grep \alert{-v} '#' /bin/zcat - изменить действие команды на противоположное. Убираем комментарии.
+    \item \tt{ grep \alert{-n} /path/to/file } - выводит номера строк. Открыть файл на строке 120. vim /path/to/file +120
 
-grep \alert{-n} /path/to/file - выводит номера строк. Открыть файл на строке 120. vim /path/to/file +120
+    \item \tt{ grep ' IP ' \alert{-R} /etc/ } - рекурсивный поиск по директории
 
-grep ' IP ' \alert{-R} /etc/ - рекурсивный поиск по директории
+    \item \tt{ grep \alert{-o} 'a.*0' }  - выводить только соответствие паттерну. В сочетании с регулярными выражениями - парсер.
 
-grep -o   - выводить только соответствие паттерну. В сочетании с регулярными выражениями - парсер.
+    \item \tt{ ps axf | grep \alert{-C 2} java } - вывести две строки перед и после.
 
-ps axf | grep \alert{-C 2} java - вывести две строки перед и после.
-
-grep \alert{-c} 'word' /path/to/file - подсчет вхождений слова
+    \item \tt{ grep \alert{-c} 'word' /path/to/file } - подсчет вхождений слова
+\end{itemize}
     
 \end{frame}

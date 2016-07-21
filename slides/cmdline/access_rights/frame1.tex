@@ -1,0 +1,19 @@
+\begin{frame}[fragile]{Владельцы файлов.Определения}
+
+  В UNIX (и Linux) любой файл имеет двух владельцев:
+  \begin{enumerate}
+    \item владельца-пользователя
+    \item владельца-группу.
+  \end{enumerate} 
+  \lstinputlisting{samples/ls-l} 
+  \pause
+
+  \begin{itemize}
+    \item \alert{Группой} - определенный список пользователей системы.
+    \item Пользователь может быть членом нескольких групп. 
+    \item Одна группа пользователя является первичной\footnote{primary (eng.)}, а остальные - дополнительными.
+  \end{itemize}
+  \small{Замечание: владелец-пользователь не обязан входить в группу-владельца.}
+  \lstinputlisting{samples/id}
+
+\end{frame}
