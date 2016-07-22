@@ -1,0 +1,19 @@
+\begin{frame}[fragile]{Задание. Виды оболочек.}
+Получить список установленных оболочек.
+\begin{lstlisting}[language=bash]
+cat /etc/shells
+ls -l <filename> # для каждого элемента /etc/shells
+readlink -e <filename> 
+\end{lstlisting}
+Запустить любую из установленных оболочек. 
+
+\begin{lstlisting}[language=bash]
+/usr/bin/ksh 
+/usr/bin/zsh 
+/usr/bin/fish
+\end{lstlisting}
+
+\alert{Bash} - (Bourne-again shell) оболочка по умолчанию в большинстве дистрибутивов Linux.
+
+выход из оболoчки  Ctrl-D, либо exit
+\end{frame}

@@ -1,0 +1,17 @@
+\begin{frame}[fragile]
+  \frametitle{Условия и ветвление. if и test(1)}
+
+  \alert{if то же самое, что и test(1)} \pause
+
+\begin{lstlisting}[basicstyle=\normalsize]
+	if [ -f .bash_history ]
+	then
+	  cat .bash_history
+	fi
+\end{lstlisting} 
+      полностью идентично по результату
+\begin{lstlisting}[basicstyle=\normalsize]
+	test -f .bash_history && cat .bash_history
+\end{lstlisting}
+      if сложнее - все пробелы значащие (часть синтаксиса).
+\end{frame}

@@ -1,0 +1,17 @@
+\begin{frame}[fragile]
+  \frametitle{Параметры скрипта}
+
+  Сохраняются shell в специальных переменных окружения:
+  \begin{itemize}
+    \item \alert{\$\#} - количество параметров (аргументов) скрипта
+    \item \alert{\$1, \$2, \ldots \$9}\footnote{По POSIX гарантирована поддержка 9 переменных} - параметры скрипта
+      \lstinputlisting[basicstyle=\normalsize,breaklines=false]{samples/script-arguments.sh}
+\pause
+    \item \alert{\$0} - имя самого скрипта
+    \item \alert{\$@ , \$*}\footnote{Обрабатываются по-разному, в зависимости от значения в IFS} - все параметры скрипта списком 
+  \end{itemize} \pause
+  Встроенная команда \alert{shift}: сдвигает параметры влево. 
+  Уменьшит \alert{\$\#} на 1, перемещая \alert{\$2} в \alert{\$1}, \alert{\$3} в \alert{\$2} и т.д.
+
+
+\end{frame}

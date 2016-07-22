@@ -1,0 +1,18 @@
+\begin{frame}[fragile]
+  \frametitle{Примеры из жизни}
+\begin{lstlisting}[basicstyle=\normalsize]
+    $CHROOT_TOOL /bin/sh /tmp/`basename $hook`
+\end{lstlisting} \pause
+
+\begin{lstlisting}[basicstyle=\normalsize]
+    ROOT_UUID=`tune2fs -l $ROOT_DEV |awk '/UUID/ {print $3}'`
+\end{lstlisting} \pause
+  
+\begin{lstlisting}[basicstyle=\small]
+    (echo unit B; echo print; echo quit) | \
+          parted $FLASH_IMG | \
+          awk '/^ [1-2]/ { printf "--offset=%s --sizelimit=%s /dev/loop%s\n", $2, $4, $1 }' | \
+          sed 's/B//g' | \
+          xargs -n 1 -I{} sh -c "losetup -v {} $FLASH_IMG"
+\end{lstlisting}
+\end{frame}

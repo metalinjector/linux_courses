@@ -1,30 +1,37 @@
-\begin{frame}[fragile]{Путь к файлу.}
-      \begin{itemize}
-        \item Имя файла
+
+\begin{frame}{Файловая система.}
+  \begin{itemize}
+    \item В UNIX (и Linux) файлы организованы в виде \emph{единой древовидной структуры} (дерева), называемой \alert{файловой системой}.
+    \item \alert{Каждый файл имеет имя}, определяющее его расположение в дереве FS.
+    \item Корнем дерева является \alert{корневой каталог} (root directory), имеющий имя \alert{"/"}.
+  \end{itemize} \pause
+
+  \begin{itemize}
+    \item \alert{полный путь} начинается с \alert{/}(корневого каталога), каталоги разделяются также \alert{/}. \newline
+      Пример: /home/user/.ssh/authorized\_key
+    \item \alert{относительный путь} - от текущего каталога \newline
+      Примеры: ../user10/.bashrc; ./script; ls script
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]{Имя файла.}
+        Допустимые символы в имени файла:
                 \begin{itemize}
-                    \item чувствительно к регистру
-                    \item / разделяет директории
-                    \item - \textbackslash <Space> специальные символы 
-                    \item . скрытый файл
+                    \item регистр имеет значение \alert{fileA} и \alert{Filea} - два разных имени
+                    \item \alert{/} разделяет директории
+                    \item \alert{-} \textbackslash <Space> специальные символы 
+                    \item \alert{.file} - скрытый файл
                 \end{itemize}
-        \item \alert{Полное имя файла} (absolute pathname) начинается с /
-        \item \alert{Относительное имя файла} (relative pathname) начинается с
-        любого другого символа. Поиск файла производится относительно
-        \alert{текущей директории} (current working directory).
-      \end{itemize}
 
-      \begin{block}{Примеры}
-        ./ - текущая директория
-
-        ../ - предыдущая директория
-
-        ../../usr/bin/ls
-
-        /usr/bin/ls
+      \begin{block}{Примеры. Cпециальные имена.}
+        \alert{./} - текущая директория
+        \alert{../} - предыдущая директория
       \end{block}
 \end{frame}
 
 \begin{frame}[fragile]{Навигация по файловой системе}
+ Для каждой запущенной программы (в том числе и shell) в системе определен \alert{текущий каталог}. 
       \begin{itemize}
 		  \item {\tt pwd} -- имя текущей директории (help pwd)
 		  \item {\tt ls} -- список файлов в директории. По умолчанию в текущей (man ls)
@@ -62,6 +69,72 @@ Tip. Команды file позволяет определить тип файл
       \end{block}
 \end{frame}
 
+\begin{frame}{Типы файлов в Unix}
+  Для пользователя:
+  \begin{itemize}
+    \item \alert{Обычные файлы (regular file)}: .bashrc, /bin/bash
+    \item \alert{Каталоги (directory)}: /home/user1, /usr, /, /usr/local  \pause
+    \item \alert{Символические ссылки (symbolic links)}: /bin/sh, /dev/stdout
+  \end{itemize} \pause
+  Для администратора:
+  \begin{itemize}
+    \item \alert{Файлы устройств (device special file)}:
+      \begin{itemize}
+        \item \alert{блочные}: /dev/sda5, /dev/loop0, /dev/sr0
+        \item \alert{символьные}: /dev/null, /dev/mem, /dev/tty
+      \end{itemize}
+  \end{itemize} \pause
+  Для программиста:
+  \begin{itemize}
+    \item \alert{FIFO (named pipe)}: /dev/xconsole
+    \item \alert{Socket}: /dev/log
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]{Создание (текстовых) файлов}
+  \pause
+  \begin{enumerate}
+    \item Любимым редактором: \alert{vi/vim}, \alert{nano}, \alert{mcedit} \pause
+    \item \alert{echo}
+\begin{lstlisting}
+echo какой-то текст >file
+\end{lstlisting}\pause
+    \item \alert{cat} с перенаправлением\footnote{До ``конца ввода'', т.е. нажатия Ctrl+D}
+\lstinputlisting[basicstyle=\small]{../../sam-solutions/samples/cat-input-file} \pause
+    \item \alert{touch} - создать пустой файл
+\begin{lstlisting}
+~$ touch file4
+~$
+\end{lstlisting}
+  \end{enumerate}
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Операции над каталогами (и файлами)}
+  \begin{itemize}
+    \item \alert{mkdir} - создать каталог
+\begin{lstlisting}
+~$ mkdir dir1 /tmp/somedir
+~$ mkdir -p dir/and/existant/parts/in/path
+\end{lstlisting} \pause
+    \item \alert{rmdir} - удалить (пустой) каталог
+\begin{lstlisting}
+~$ rmdir dir1 /tmp/somedir
+~$ rmdir -p deep/empty/dir/structure/
+\end{lstlisting} \pause
+    \item \alert{cp} - копирование файлов\footnotemark[8]
+    \item \alert{mv} - перемещение и переименование файлов
+    \item \alert{rm} - удаление файлов\footnotemark[17]
+\begin{lstlisting}
+~$ rm -rf dir1 /tmp/somedir
+~$ rm f*
+\end{lstlisting} \pause
+  \end{itemize}
+\footnotetext[8]{с ключом \alert{-r}) и каталогов}
+\end{frame}
+
 \begin{frame}[fragile]{Команды для работы с файлами}
 	\begin{itemize}
 		\begin{columns}
@@ -76,24 +149,8 @@ Tip. Команды file позволяет определить тип файл
 			\item cp
 			\item mv
 			\item rm
-			\item rmdir
 			\item file
 			\item install
-
-		\column{0.4\textwidth}
-			\begin{block}{Упражнение}
-				\begin{enumerate}
-					\item Создать иерархию директорий
-						\begin{lstlisting}
-dir1/dir1.1/dir1.1.1
-dir1/dir1.2/dir1.2.1
-dir1/dir1.2/dir1.2.2
-						\end{lstlisting}
-					\item Внутри каждой создать файл
-					\item Удалить все созданное
-				\end{enumerate}
-			\end{block}
-			
 		\end{columns}
 	\end{itemize}
 \end{frame}

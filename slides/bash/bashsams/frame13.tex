@@ -1,0 +1,21 @@
+\begin{frame}
+  \frametitle{Потоки ввода-вывода}
+  
+  Особенности архитектуры\footnote{См документацию языка программирования Си}:
+  \begin{block}<1->{У каждой запущенной программы 3 потока I/O:}
+    \begin{enumerate}
+      \setcounter{enumi}{-1}
+      \item ввода
+      \item вывода
+      \item ошибок
+    \end{enumerate}
+
+    Cвязаны с экраном и клавиатурой терминала. \pause \newline
+  \end{block}
+
+  \begin{block}<2->{Связаны с терминалом только по умолчанию}
+
+    \alert{shell позволяет переопределить весь ввод и вывод программы}
+  \end{block}
+
+\end{frame}

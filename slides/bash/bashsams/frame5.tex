@@ -1,0 +1,21 @@
+\begin{frame}[fragile]
+  \frametitle{Приёмы эффективной работы}
+  \framesubtitle{Автодополнение путей и команд - 1}
+
+  \alert{\Large{Волшебная кнопка - TAB}} \newline
+  \pause
+  \begin{itemize}
+    \item \Large{Имя команды} \pause \newline
+      \small{Пример: \verb+mys[TAB]_co[TAB]+} \pause \newline
+      \small{Результат: \verb+mysql_convert_table_format+} \newline
+      \alert{8 vs 26} \pause
+    \item \Large{Пути и имена файлов} \pause \newline
+      \small{Пример: \verb+ls /u[TAB]lo[TAB]sh[TAB]/ca[TAB]+} \pause \newline
+      \small{Результат: \verb+ls /usr/local/share/ca-certificates/+} \newline
+      \alert{16 vs 36} \pause
+    \item \Large{Параметры и ключи} \footnote{Только у BASH и ZSH (если настроены)} \pause \newline
+      \small{Пример: \verb+apti[TAB] --a[TAB]sh[TAB]core[TAB][ENTER]+} \pause \newline
+      \small{Результат: \verb+aptitude --assume-yes show coreutils+} \newline
+      \alert{18 vs 37} \pause
+  \end{itemize}
+\end{frame}

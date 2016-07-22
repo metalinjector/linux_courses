@@ -1,0 +1,14 @@
+\begin{frame}[fragile]
+  \frametitle{Запуск скриптов}
+  \begin{enumerate} 
+    \item \verb+sh scriptname+
+    \item \verb-chmod +x script- \newline \verb+./script+
+    \item из каталогов в переменной PATH 
+      \newline \verb+echo $PATH+
+      \newline \verb+~/bin+ (если есть)
+      \newline \verb+/usr/local/bin+
+    \item в текущей копии shell\footnote{ Остальные способы - запускают новый shell}
+      \newline \verb+. ./script+
+      \newline \verb+source script+\footnote{ Несовместимо с POSIX. Происходит из ksh. Добавляет текущий каталог к списку путей}
+  \end{enumerate}
+\end{frame}

@@ -1,0 +1,17 @@
+\begin{frame}[fragile]
+  \frametitle{Просмотр и изменение значений переменных}
+  \normalsize{ }
+  \begin{itemize}
+    \item \alert{set} - просмотр списка \pause
+    \item \alert{\$HOME} - взять значение переменной \pause
+\begin{lstlisting}
+	echo $USER $HOME
+	echo $PATH 
+	$SHELL
+\end{lstlisting} \pause 
+    \item \alert{unset} - сброс (обнуление) значения \pause
+    \item \alert{VAR1=\textquotedbl значение \textquotedbl} - установить новое значение \newline 
+      \emph{Примечание:} в значении можно использовать переменные (если значение присваивается через \textquotedbl \textquotedbl )
+  \end{itemize}
+
+\end{frame}

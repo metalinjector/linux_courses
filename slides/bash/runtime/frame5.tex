@@ -1,0 +1,29 @@
+\begin{frame}[fragile]
+	\frametitle{Экранирование}
+
+	\begin{columns}
+		\column{0.5\textwidth}
+		\begin{itemize}
+			\item Экранирование одного символа \textbackslash 
+			\item Частичное экранирование ''
+			\item Полное экранирование '
+		\end{itemize}
+		\pause
+		\column{0.5\textwidth}
+		Спецзначения для echo и sed
+		\begin{itemize}
+			\item \textbackslash{n} -- новая строка
+			\item \textbackslash{r} -- возврат каретки
+			\item \textbackslash{t} -- табуляция
+			\item \textbackslash{v} -- вертикальная табуляция \\
+				\small\begin{lstlisting}
+echo -e "test \v test \v test"
+				\end{lstlisting}
+			\item \textbackslash{b} -- перемещение на 1 символ назад
+			\item \textbackslash{a} -- звуковой сигнал
+			\item \textbackslash{0xxx} -- 8-миричное число
+			\item \textbackslash{xXX} -- 16-ричное число
+		\end{itemize}
+	\end{columns}
+
+\end{frame}

@@ -1,0 +1,19 @@
+\begin{frame}[fragile]{Подстановка - домашняя директория}
+
+\begin{lstlisting}
+echo ~
+echo ~/.ssh
+echo $HOME/.ssh
+echo ~test01/.ssh/
+\end{lstlisting}
+
+\pause
+\begin{itemize}
+    \item \textasciitilde{} - сокращение \$HOME 
+    \item \textasciitilde{}user/ - \$HOME для пользователя user
+    \item / - символ завершает действие \textasciitilde{} 
+\end{itemize}
+
+Широко применяется в скриптах, на страницах документации
+    
+\end{frame}

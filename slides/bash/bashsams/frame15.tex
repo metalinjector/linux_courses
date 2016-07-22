@@ -1,0 +1,20 @@
+\begin{frame}[fragile]
+  \frametitle{Расширенный синтаксис перенаправления}
+  
+  \begin{itemize}
+    \item \alert{Pipe} \footnote{Классика Unix} \textquotedbl``\verb+cmd1 | cmd2+ \textquotedbl \newline
+      Вывод cmd1 направляется на ввод cmd2. \newline
+      \verb+man bash|grep ksh+ \pause
+    \item \alert{Склеить потоки} \textquotedbl \verb+N>&M+ \textquotedbl \newline
+      В примере: просмотреть одновременно и вывод и ошибки \newline
+      \verb+find /tmp 2>&1 | less+ \pause
+    \item \alert{\textquotedbl Ввод здесь \textquotedbl}\footnote{In Real Life (IRL) используется только в скриптах} \textquotedbl \verb+<<END_MARKER+ \textquotedbl \newline
+      \begin{verbatim}
+      sort <<EOF
+      oieu
+      ak
+      zf
+      EOF
+      \end{verbatim}
+  \end{itemize}
+\end{frame}

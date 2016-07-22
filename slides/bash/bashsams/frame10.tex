@@ -1,0 +1,28 @@
+\begin{frame}[fragile]
+  \frametitle{Условное выполнение команд}
+
+  \Large{\alert{Код возврата (RETURN CODE)}}: \newline 
+  \normalsize{результат выполнения у любой команды Shell}
+  \newline
+
+  Shell return code:
+  \begin{itemize}
+    \item 0 - выполнено успешно
+    \item не 0 - ошибка
+  \end{itemize}
+  \pause
+
+  Операции над кодом возврата:
+  \begin{itemize}
+    \item \textquotedbl \verb+&&+ \textquotedbl - логическое И
+    \item \textquotedbl \verb+||+ \textquotedbl - логическое ИЛИ
+  \end{itemize}
+  \pause
+
+  Примеры:
+  \begin{itemize}
+    \item \verb+ cat /proc/1/environ || echo fail +
+    \item \verb+ find /usr/share/doc -name \textquotedbl *.txt \textquotedbl && echo ok+
+  \end{itemize}
+
+\end{frame}

@@ -1,0 +1,29 @@
+\begin{frame}[fragile]
+  \frametitle{Скрипты}
+ 
+  \begin{block}<1->{Shell Script, определение}  
+
+    Последовательность команд Shell.
+
+    Разделитель: перевод строки, \textquotedbl ; \textquotedbl
+  \end{block}
+
+  \begin{block}<2->{shebang}
+    \verb+#!something+ или чем мы запускаем скрипт. 
+    
+    По умолчанию : \verb+#!/bin/sh+
+  
+    Всегда первая строка скрипта.
+
+    Фактически: \verb+/bin/sh scriptname+
+  \end{block}
+
+  \begin{block}<3->{Парадоксальные примеры}
+    \verb+#!/bin/rm+
+
+    \verb+#!/bin/awk -f+
+
+    \verb+#!/bin/less+
+  \end{block}
+
+\end{frame}

@@ -1,20 +1,24 @@
-\begin{frame}{Файловая структура}
-	
-	%{\center "Дерево внутри дома?" (c) Шрек}
-		
-	\begin{columns}
-	\column{0.2\textwidth}
-		\includegraphics[height=0.8\textheight]{../../slides/fs/01-lhs.png}
-		
-	\column{0.7\textwidth}
-		\begin{itemize}
-			\item Директории
-			\item Обычные файлы
-			\item Симлинки
-			\item Хардлинки
-			\item Файлы устройств
-			\item FIFO
-			\item сокеты
-		\end{itemize}
-	\end{columns}
+\begin{frame}{Дерево файловой системы - простое}
+\includegraphics[height=8cm]{filesystem} 
 \end{frame}
+
+\begin{frame}{Детали реализации}
+  \begin{itemize}
+    \item \alert{VFS - virtual file system} - файлы и каталоги отображаются в единое дерево, независимо от их физического расположения.
+  \end{itemize}
+  \includegraphics[height=3.5cm]{vfs-and-devices}
+\end{frame}
+
+\begin{frame}{Монтирование}
+  \begin{itemize}
+    \item \alert{Монтирование} - процесс отображения содержимого устройства в указанную папку файловой системы.
+    \item Команды:
+      \begin{itemize}
+        \item монтировать - ( \alert{mount} ) 
+        \item размонтировать ( \alert{umount} )
+      \end{itemize}
+    \item \alert{mount} без параметров - вывести список уже подключенных файловых систем
+  \end{itemize}
+  
+\end{frame}
+

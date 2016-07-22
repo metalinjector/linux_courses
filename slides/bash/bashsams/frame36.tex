@@ -1,0 +1,22 @@
+\begin{frame}[fragile]
+  \frametitle{Арифметические вычисления}
+  \begin{itemize}
+    \item \alert{\$((выражение))} - простая арифметика POSIX shell 
+      \begin{verbatim}
+      num=8
+      echo $((num + 7))   # shows: 15
+
+      echo "3 + 4 = $((3+4))"  # shows: 3 + 4 = 7
+      
+      : $((w = 2 + 3)); echo $w  # shows: 5
+      : $((x = w - 1)); echo $x  # shows: 4
+      \end{verbatim} \pause
+    \item внешняя утилита \alert{bc} - более сложные вычисления\newline
+      Пример: синус от 1.4, вывод в hex, 4 знака после запятой
+      \begin{verbatim}
+      $ echo "obase=16; scale=4; s(1.4)"|bc -l 
+     .FC466EFA270812AC3
+      \end{verbatim}
+  \end{itemize}
+
+\end{frame}

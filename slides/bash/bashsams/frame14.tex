@@ -1,0 +1,17 @@
+\begin{frame}[fragile]
+  \frametitle{Базовый cинтаксис перенаправления}
+  \begin{itemize}    
+    \item \alert{Ввод} \textquotedbl < \textquotedbl \newline
+      \verb+ sort <.bash_history+ \pause
+    \item \alert{Вывод} \textquotedbl > \textquotedbl \footnote{Файл затрёт новым содержанием, если он существовал ранее} \newline
+      \verb+ find /usr/share/doc -name \textquotedbl *.txt \textquotedbl >txt-docs+    
+    \item \alert{Вывод} \textquotedbl 1> \textquotedbl \newline
+      \verb+ find /usr/share/doc -name \textquotedbl *.txt \textquotedbl 1>txt-docs+ \pause
+    \item \alert{Ошибки} \textquotedbl 2> \textquotedbl \newline
+      \verb+ find /tmp 2>find.errors+ \pause
+    \item \alert{Вывод (дописать в конец)} \textquotedbl \verb+1>>+ \textquotedbl \newline
+      \verb+ find /usr/share/doc -name \textquotedbl *.txt \textquotedbl >>txt-docs+
+    \item \alert{Ошибки (дописать в конец)} \textquotedbl \verb+2>>+ \textquotedbl \newline 
+      \verb+ find /tmp 2>>find.errors+ \pause
+  \end{itemize}
+\end{frame}

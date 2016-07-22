@@ -1,0 +1,23 @@
+\begin{frame}[fragile]
+  \frametitle{Подстановочные символы путей (Wildcards)}
+
+  \alert{Wildcards} - спецсимволы в параметрах команд, раскрываемые в путь и имя файла самим интерпретатором перед тем, как запустить команду на выполнение. \pause
+
+
+  \begin{itemize}
+    \item \alert{*} - любое количество любых символов
+\begin{lstlisting}[basicstyle=\normalsize]
+	echo /u*
+	ls /u*
+\end{lstlisting} \pause
+    \item \alert{[]} - символ из перечисления\footnote{об интервалах - в разделе о регулярных выражениях}
+\begin{lstlisting}[basicstyle=\normalsize]
+	echo .[bp]*
+\end{lstlisting} \pause
+    \item \alert{?} - любой одиночный символ
+\begin{lstlisting}[basicstyle=\normalsize]
+	echo ?i*
+\end{lstlisting} 
+  \end{itemize}
+
+\end{frame}

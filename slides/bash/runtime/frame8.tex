@@ -1,0 +1,24 @@
+\begin{frame}[fragile]
+
+  \Large{\alert{Код возврата (RETURN CODE)}}: \newline 
+  \normalsize{результат выполнения у любой команды Shell}
+  \newline
+
+  Shell return code:
+  \begin{itemize}
+    \item 0 - выполнено успешно
+    \item не 0 - ошибка
+    \item Код возврата доступен через переменную \$?
+  \end{itemize}
+
+	\pause
+	\begin{block}{Пример}
+		\begin{lstlisting}
+/bin/true; echo $?
+/bin/false; echo $?
+		\end{lstlisting}
+	\end{block}
+
+	Скрипт возвращает код последней команды, поэтому для корректного выхода необходимо использовать команду {\tt exit 0} - в случае успеха
+
+\end{frame}

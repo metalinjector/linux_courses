@@ -1,0 +1,20 @@
+\begin{frame}[fragile]
+  \frametitle{Волшебные виды кавычек}
+
+  \begin{itemize}
+    \item \alert{Одиночные} : 'всё как было'
+\begin{lstlisting}
+	echo 'Oops: $HOME $SHELL'
+\end{lstlisting} \pause
+    \item \alert{Двойные} :  \verb+"раскрывает значения переменных"+
+\begin{lstlisting}
+	echo "Ok: $HOME $SHELL"
+\end{lstlisting} \pause
+    \item \alert{Обратные} : `выполняем команду`
+\begin{lstlisting}
+	LISTING=`ls -a`
+	echo ''in $PWD: $LISTING"
+\end{lstlisting}
+  \end{itemize}
+  Одиночные и двойные экранируют пробелы\footnote{пробел - разделитель параметров}.
+\end{frame}
