@@ -1,0 +1,23 @@
+\begin{frame}[fragile]
+\frametitle{Что можно сравнивать в условии}
+
+\underline{Выполнить команды:}
+	\small\begin{lstlisting}
+help test ; help [ ; help [[ # показывает опции для встроенных команды из оболочки
+man test  # для внешней команды
+	\end{lstlisting}
+    \pause
+	\begin{itemize}
+	    \item \alert{!} -- отрицание
+	    \item \alert{-z} СТРОКА
+	    \item СТРОКА1 \alert{==} СТРОКА2 или СТРОКА1 \alert{=} СТРОКА2
+	    \item СТРОКА1 \alert{!=} СТРОКА2
+	    \item ЦЕЛОЕ1 \alert{-eq} ЦЕЛОЕ2
+	    \item ЦЕЛОЕ1 \alert{-ge} ЦЕЛОЕ2
+	    \item ЦЕЛОЕ1 \alert{-lt} ЦЕЛОЕ2
+	    \item \alert{-d} ФАЙЛ
+	    \item \alert{-e} ФАЙЛ
+	    \item \alert{-f} ФАЙЛ
+	\end{itemize}
+
+\end{frame}

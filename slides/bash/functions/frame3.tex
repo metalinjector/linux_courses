@@ -1,0 +1,23 @@
+\begin{frame}[fragile]
+	\frametitle{Пример: shellshock}
+	\begin{block}{Однострочный синтаксис}
+			\begin{lstlisting}
+function_name () { command... ;}
+\end{lstlisting}
+	\end{block}
+
+    В 2014 году вскрылась уязвимость, существовавшая с {\bf 1992} г.:
+
+	\begin{block}{Shellshock}
+			\begin{lstlisting}
+export badvar='(){:;}; echo "The Matrix has you"'
+bash -c "echo Just a simple shell call"
+\end{lstlisting}
+	\begin{itemize}
+	    \item Объявление переменной
+	    \item Создание процесса, наследующего опасную переменную
+	    \item При инициализации окружения {\tt bash} запускает на выполнение все, что следует за ``объявлением'' функции
+	\end{itemize}
+	\end{block}
+
+\end{frame}

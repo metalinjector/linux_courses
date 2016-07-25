@@ -1,0 +1,19 @@
+\begin{frame}[fragile]
+\frametitle{Перенаправление из цикла.}
+
+  \begin{block}{Парсер.}
+    \begin{lstlisting}[language=sh,frame=single]
+while IFS=":" read name pass uid guid comment home shell ; do
+    echo $name $uid $guid $home $shell 
+done < /etc/passwd
+    \end{lstlisting}
+  \end{block}
+
+  \begin{block}{Построчное чтение из файла.}
+    \begin{lstlisting}[language=sh,frame=single]
+while IFS= read -r line; do
+  printf '%s\n' "$line"
+done < "$file"
+    \end{lstlisting}
+  \end{block}
+\end{frame}

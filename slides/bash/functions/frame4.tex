@@ -1,0 +1,23 @@
+\begin{frame}[fragile]
+	\frametitle{Пример (начало)}
+	\small
+	\begin{lstlisting}
+#!/bin/bash
+
+function help {
+  echo "Использование: $0 <string>"
+  exit 1
+}
+
+f1(){
+  echo Вызвана функция $FUNCNAME с $# аргументами
+}
+
+f2(){
+  while read str; do
+    echo ${FUNCNAME}: прочитана строка: $str
+  done
+}
+\end{lstlisting}
+
+\end{frame}

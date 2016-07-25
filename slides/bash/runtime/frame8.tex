@@ -1,24 +1,24 @@
-\begin{frame}[fragile]
+\begin{frame}[fragile]{Код возврата}
 
   \Large{\alert{Код возврата (RETURN CODE)}}: \newline 
   \normalsize{результат выполнения у любой команды Shell}
   \newline
-
-  Shell return code:
-  \begin{itemize}
-    \item 0 - выполнено успешно
-    \item не 0 - ошибка
-    \item Код возврата доступен через переменную \$?
-  \end{itemize}
-
-	\pause
 	\begin{block}{Пример}
 		\begin{lstlisting}
-/bin/true; echo $?
-/bin/false; echo $?
+ls /etc/; echo $? # return code 0
+ls /abc/; echo $? # return code 1
 		\end{lstlisting}
 	\end{block}
 
-	Скрипт возвращает код последней команды, поэтому для корректного выхода необходимо использовать команду {\tt exit 0} - в случае успеха
+	\pause
+  Shell return code:
+  \begin{itemize}
+    \item \alert{0} - команда выполнена успешно
+    \item \alert{1..255} - команда выполнилась с ошибкой
+    \item Код возврата доступен через переменную \alert{\$?}
+    \item Позволяет организовывать условия в программе.
+  \end{itemize}
+
+	Скрипт возвращает код последней команды, поэтому для получения корректного кода возврата использовать команду {\tt exit 0} - в случае успеха
 
 \end{frame}

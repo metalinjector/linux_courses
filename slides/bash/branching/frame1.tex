@@ -1,0 +1,51 @@
+\begin{frame}[fragile]
+\frametitle{Синтаксис {\bf if}}
+
+	\begin{columns}
+		\column{0.5\textwidth}
+	
+	\begin{lstlisting}[language=bash]
+# все команды на отдельной строке
+if command1
+then
+    OTHER COMMANDS
+elif command2
+then
+    OTHER COMMANDS
+else
+    OTHER COMMANDS
+fi
+\end{lstlisting}
+		\column{0.5\textwidth}
+Варианты форматирования
+	\begin{lstlisting}[language=bash]
+# then отдельной строкой
+if command
+then OTHER COMMANDS 
+fi
+\end{lstlisting}
+
+	\begin{lstlisting}[language=bash]
+# then и if на одной строке
+if command; then 
+    OTHER COMMANDS
+fi
+\end{lstlisting}
+	\end{columns}
+
+В зависимости от результата выполнения (exit code) command1 выполняется блок команд после then.   
+
+Ключевое слово fi - обязательно
+
+%	\pause
+%	{\bf Практическое задание:} \\
+%	\begin{itemize}
+%
+%		\item с помощью конструкции {\bf if} проверить существует ли файловый объект передаваемый в качестве параметра скрипту ({\tt man test})
+%		\item если нет, то создать директорию с таким именем
+%		\item если cуществует и файл является shell-скриптом ({\tt man file}), то запустить его
+%		\item если существует и является директорией, то вывести на экран Top5 по размеру файлов из этой директории, 
+%		    отсортированных в порядке убывания ({\tt man ls, man head})
+%%	\end{itemize}
+%	\end{columns}
+\end{frame}

@@ -1,0 +1,12 @@
+\begin{frame}[fragile]
+\frametitle{ Циклы for. Примеры.}
+  \begin{block}{Пустые выражения. Результат по умолчанию 1. }
+    \begin{lstlisting}[language=sh,frame=single]
+for (( i=1; ; i++))
+do
+  echo $i 
+  [ "$i" -eq 10 ] && break 
+done
+    \end{lstlisting}
+  \end{block}
+\end{frame}

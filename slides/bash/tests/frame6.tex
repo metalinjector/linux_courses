@@ -1,0 +1,25 @@
+\begin{frame}[fragile]
+\frametitle{Типичные ошибки в условном выражении}
+
+	Написать скрипт сравнивающий переменную окружения с заранее заданным значением:
+	
+	\begin{block}{script.sh}
+	\small\begin{lstlisting}
+#!/bin/bash
+
+VAR=$1
+STRING=test
+[ $STRING == $VAR ] && echo "Строки одинаковы" || echo "Строки разные"
+exit
+	\end{lstlisting}
+    \end{block}
+    \normalsize
+	И запустить этот скрипт:
+	
+	\begin{enumerate}
+	\item {\tt bash script.sh \# без параметров}
+	\item {\tt bash script.sh "test string" \# параметр с пробелом}
+	\item {\tt bash script.sh test}
+        \end{enumerate}
+
+\end{frame}

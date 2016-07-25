@@ -1,0 +1,43 @@
+\begin{frame}[fragile]
+\frametitle{Условные операторы: case}
+
+	\small
+	\begin{columns}
+		\column{0.3\textwidth}
+
+		\begin{lstlisting}[language=bash]
+case "$variable" in 
+ pattern1) command1
+           command2
+          ;;
+ pattern2|pattern3)
+         command3
+         command4
+        ;;
+esac
+\end{lstlisting}
+		\pause
+
+		\column{0.7\textwidth}
+		{\normalsize Пример:}
+
+		\begin{lstlisting}[language=bash]
+#!/bin/bash
+
+cmd=$1; var=$2
+case "$cmd" in 
+  --print|--echo)
+    echo "Ура, печатаем!" ;;
+  abc*|xyz*)
+    echo "Странная команда $cmd" ;;
+  *)
+    echo "Я таких команд не знаю: $cmd" 1>&2
+    exit 1 ;;
+esac
+[ ! -z "$var" ] && echo "переменная \$var=$var"
+exit 0
+\end{lstlisting}
+
+
+	\end{columns}
+\end{frame}

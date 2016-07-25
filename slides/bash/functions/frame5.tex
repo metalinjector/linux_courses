@@ -1,0 +1,16 @@
+\begin{frame}[fragile]
+	\frametitle{Пример (окончание)}
+	\small
+	\begin{lstlisting}
+[ $# -eq 0 ] && help
+
+f1 "$@"
+
+{ for ((i=0;i<5;i++));do
+  echo $@
+done } | f2
+
+exit
+\end{lstlisting}
+
+\end{frame}

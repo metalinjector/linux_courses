@@ -1,0 +1,20 @@
+\begin{frame}[fragile]
+\frametitle{ Циклы for. Примеры.}
+  \begin{block}{Перечисление цифровой последовательности C-like }
+\begin{lstlisting}[language=sh,frame=single]
+for ((i=1;i<11;i++))
+do 
+  echo $i
+done  
+\end{lstlisting}
+  \end{block}
+
+  \begin{block}{Несколько переменных}
+    \begin{lstlisting}[language=sh,frame=single]
+for ((a=1, b=1; a <= LIMIT ; a++, b++))
+do
+  echo -n "$a-$b"
+done
+    \end{lstlisting}
+  \end{block}
+\end{frame}

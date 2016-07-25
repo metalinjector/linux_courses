@@ -1,0 +1,26 @@
+\begin{frame}[fragile,allowframebreaks]
+	\frametitle{Включение режима отладки}
+	Используется команда {\tt set} для активизации различных режимов работы {\tt bash}.
+
+	Включение режима производится с помощью ''-'',\\
+	а отключение -- ''+''.
+
+	\begin{block}{Примеры включения режима отладки.}
+		\begin{lstlisting}[language=sh]
+bash -x ./script.sh # опция командной строки
+
+#!/bin/bash -x # внутри скрипта опцией
+[.. script ..]
+
+#!/usr/bin/env bash
+set -x # внутри скрипта командой 
+
+#!/usr/bin/env bash
+[..irrelevant code..]
+set -x  # включаем отладку на часть кода
+[..relevant code..]  
+set +x # выключаем отладку
+[..irrelevant code..]
+		\end{lstlisting}
+	\end{block}
+\end{frame}

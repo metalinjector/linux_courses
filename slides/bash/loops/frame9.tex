@@ -1,0 +1,35 @@
+\begin{frame}[fragile]
+\frametitle{}
+
+\begin{block}{Пример. Перебираем аргументы.}
+\begin{lstlisting}[language=sh,frame=single]
+while [[ -n $1 ]]
+do
+    echo $1
+    shift
+done
+\end{lstlisting}
+\end{block}
+
+%\begin{block}{Пример. Несколько команд.}
+%\begin{lstlisting}[language=sh,frame=single]
+%while ((i++))
+% read y
+%do
+% echo $i $y
+% [[ "$y" = 'stop' ]] && break
+%done
+%\end{lstlisting}
+%\end{block}
+
+\begin{block}{Пример. Бесконечный цикл.}
+\begin{lstlisting}[language=sh,frame=single]
+while :
+do
+ x=$RANDOM
+ echo $x
+ [[ $x -gt 1100 ]] && break
+done
+\end{lstlisting}
+\end{block}
+\end{frame}

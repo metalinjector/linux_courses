@@ -1,0 +1,30 @@
+\begin{frame}[fragile]
+   \frametitle{Команды сравнения.}
+
+\underline{Выполнить команды:}
+	\small\begin{lstlisting}
+type -a test [ [[
+test -f /etc/ ; echo $? # существует ли файл?
+test -d /etc/ ; echo $? # существует ли директория?
+	\end{lstlisting}
+
+\pause
+\alert{Команда test} сравнивают аргументы в условии. Если условие выполенено успешно, команда возвращет exit code \alert{0} иначе \alert{1}.
+
+Синтаксис:
+\begin{verbatim}
+test expression 
+[expression] 
+[[ expression ]]
+\end{verbatim}
+expression - условное выражение. Синтаксис условного выражения может различаться от типа команды.
+Есть несколько типов команд:
+
+\begin{itemize}
+    \item встроенные в оболочку test, [
+    \item внешние /usr/bin/test, /usr/bin/[
+    \item ключевое слово [[
+\end{itemize}
+
+
+\end{frame}

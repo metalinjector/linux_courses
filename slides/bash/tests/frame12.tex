@@ -1,0 +1,18 @@
+\begin{frame}[fragile]
+	\frametitle{Двойные круглые скобки}
+
+	Можно использовать арифметические операции внутри конструкции\\
+	\center{\tt (( ... ))}
+
+	Возвращаемое значение 0 либо 1.
+
+	\begin{block}{Пример}
+		\begin{lstlisting}[language=bash]
+#!/bin/bash
+
+a=$1
+b=$2
+(( $a > $b )) && echo $a больше $b || echo $a не больше $b
+		\end{lstlisting}
+	\end{block}
+\end{frame}

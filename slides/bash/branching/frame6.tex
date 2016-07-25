@@ -1,0 +1,35 @@
+\begin{frame}[fragile]
+\frametitle{Условные операторы: select}
+
+	\small
+	\begin{columns}
+		\column{0.3\textwidth}
+
+		\begin{lstlisting}[language=sh,frame=single]
+select variable [in list]
+do
+  command...
+  break
+done 
+		\end{lstlisting}
+		\pause
+		\column{0.7\textwidth}
+		{\normalsize Пример:}
+
+		\begin{lstlisting}
+#!/bin/bash
+PS3="Какого вы пола? "
+select sex in "девочка" "мальчик" "еще не определилось"
+do
+  echo
+  [ "$sex" == "девочка" -o "$sex" == "мальчик" ] && break || echo "Определитесь пожалуйста!"
+done
+echo "Вы -- $sex"
+exit
+\end{lstlisting}
+
+		\pause
+		\center{Удалить в select все [in *] и посмотреть на результат работы.}
+
+	\end{columns}
+\end{frame}

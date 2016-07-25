@@ -1,0 +1,12 @@
+\begin{frame}[fragile]
+    \frametitle{ Сравнение по шаблону}
+    \begin{block}{ Pattern matching}
+	\small\begin{lstlisting}
+a="a b c"
+[[ $a = a* ]] ; echo $? # строка совпадает с паттерном
+[[ $a = d* ]] ; echo $? # символа d нет в строке
+[[ $a = "a*" ]] ; echo $? # кaвычки отменяют паттерн
+[[ $a =~ "a*" ]] ; echo $? # регулярные выражения
+	\end{lstlisting}
+    \end{block}
+\end{frame}

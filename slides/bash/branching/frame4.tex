@@ -1,0 +1,19 @@
+\begin{frame}[fragile]
+	\frametitle{case + getopts}
+	
+	Встроенная в bash обработка командной строки.
+
+\begin{lstlisting}[language=sh,frame=single]
+while getopts "af:h" Option
+do
+  case $Option in 
+    a) FLAGA=1 ;;
+    f) FILE=1
+       FILENAME=$OPTARG
+       ;;
+    h) echo "Usage: $0 [-ah] -f <filename>";;
+  esac  
+done
+shift $((OPTIND-1))
+\end{lstlisting}
+\end{frame}

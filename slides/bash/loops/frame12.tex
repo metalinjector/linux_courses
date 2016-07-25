@@ -1,0 +1,14 @@
+\begin{frame}[fragile]
+\frametitle{Внешние команды.}
+Массовые операции с файлами аналог циклов
+  \begin{block}{Команда find}
+    \begin{lstlisting}[language=sh,frame=single]
+find . -name '*.c' -exec stat  {} \;
+    \end{lstlisting}
+  \end{block}
+  \begin{block}{Команда xargs}
+    \begin{lstlisting}[language=sh,frame=single]
+echo /dev/std* | xargs -n1 readlink
+    \end{lstlisting}
+  \end{block}
+\end{frame}

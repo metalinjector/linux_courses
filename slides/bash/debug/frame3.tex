@@ -1,0 +1,17 @@
+\begin{frame}[fragile]
+	\frametitle{Отладочные переменные}
+
+  \begin{tabular}{ l  p{7cm} }
+    \alert{\$LINENO}  & номер текущей строки \\ 
+    \alert{\$FUNCNAME} & массив содержит имена всех функций из стека вызовов. 0 элемент\, имя текущей функции \\
+    \alert{\$BASH\_SOURCE} & массив\, содержит имена подключенных файлов source\\
+    \alert{\$SHLVL} & уровень вложенности интерпретатора \\
+    \alert{\$PIPESTATUS} & массив статусов завершения всех команд в pipe \\
+    \end{tabular}
+
+	\begin{block}{Альтернативный вид PS4.}
+		\begin{lstlisting}[language=sh]
+export PS4='+(${BASH_SOURCE}:${LINENO}): ${FUNCNAME[0]:+${FUNCNAME[0]}(): }'
+		\end{lstlisting}
+	\end{block}
+\end{frame}

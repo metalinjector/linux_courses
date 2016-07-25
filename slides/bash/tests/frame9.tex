@@ -1,0 +1,17 @@
+\begin{frame}[fragile]
+    \frametitle{ Особенности использования [[ }
+    \begin{block}{Кавычки обрабатываются по разному}
+	\small\begin{lstlisting}
+a="a b c" b="a b c"
+[ $a = $b ] && echo $? # ошибка bash: [: too many arguments
+[[ $a = $b ]] && echo $? # не нужно брать в кавычки ""
+	\end{lstlisting}
+    \end{block}
+
+    \begin{block}{ Операторы \&\& AND || OR }
+	\small\begin{lstlisting}
+[[ "abc" = 1 -a "b" = 2 ]] # syntax error in conditional expression
+[[ "abc" = 1 && "b" = 2 ]] # вместо -a использовать &&, -o ||
+	\end{lstlisting}
+    \end{block}
+\end{frame}

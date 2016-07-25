@@ -1,0 +1,35 @@
+\begin{frame}[fragile]
+\frametitle{Управляющие операторы}
+
+\underline{Выполнить команды:}
+\begin{lstlisting}[language=bash]
+ cd video && echo  Exit code $? Is OK. I am watching video.
+ mkdir video # запустить предыдущую команду еще раз
+\end{lstlisting}
+
+\pause
+
+Синтаксис:
+\begin{verbatim}
+command1 && command2
+\end{verbatim}
+Oболочка выполняет command2 если \alert{успешно} выполнилась command1. Логическая операция И (AND)
+\pause
+
+\underline{Выполнить команды:}
+\pause
+\begin{lstlisting}[language=bash]
+cd video || echo Exit code $?. Video is not available 
+rmdir video # Удалим и повторим еще раз первую команду.
+\end{lstlisting}
+
+\pause
+
+Синтаксис:
+\begin{verbatim}
+command1 || command2
+\end{verbatim}
+Oболочка выполняет command2 если выполнилась c \alert{ошибкой} command1. Логическая операция ИЛИ (OR)
+\end{frame}
+
+

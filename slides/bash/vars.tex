@@ -68,12 +68,10 @@ echo $num $lastarg
 	\begin{itemize}
 		\item Локальные\\
 		    Область видимости -- текущая программа, функция или субшелл
-		\item Окружения
-		\item Позиционные параметры
+		\item Переменные окружения (внешние)
+		\item Позиционные параметры (передаются как аргументы команды)
 	\end{itemize}
 \end{frame}
-
-
 
 \begin{frame}
 	\frametitle{Внешние переменные}
@@ -89,33 +87,22 @@ echo $num $lastarg
 	\end{itemize}
 \end{frame}
 
-
 \begin{frame}[fragile]
 	\frametitle{Специальные переменные}
-
 	Часто используемые в скриптах:
+\begin{tabbing}
+\hspace{1cm}\= \alert{\$HOSTNAME}\quad \= имя хоста\kill
+            \> \alert{\$IFS}\quad\> разделитель \\[5pt] 
+            \> \alert{\$HOME}\quad \> домашняя директория\\[5pt] 
+            \> \alert{\$PWD}\quad \> текущая директория\\[5pt]
+            \> \alert{\$UID}\quad \> идентификатор пользователя \\[5pt]
+            \> \alert{\$\$}\quad \> идентификатор процесса\\[5pt]
+            \> \alert{\$HOSTNAME}\quad \> имя хоста\\[5pt]
+            \> \alert{\$PS1}\quad \> вид командной строки\\[5pt]
+            \> \alert{\$PS4}\quad \> вид командной строки в режиме отладки
+\end{tabbing}
 
-	\begin{itemize}
-		\item Разделитель \$IFS
-		\item Директории -- домашняя \$HOME и текущая \$PWD
-		\item UID пользователя -- \$UID
-		\item ID процесса -- \$\$
-		\item Имя хоста -- \$HOSTNAME
-		\item Вид командной строки: \$PS1 -- \$PS4
-		\item Локализация
-			\begin{itemize}
-				\item Используемый язык \$LANG
-				\item Локализация \$LC\_ALL
-					\begin{block}{Пример}
-						\begin{lstlisting}
-ls -l 
-LC_ALL=C ls -l
-						\end{lstlisting}
-					\end{block}
-			\end{itemize}
-	\end{itemize}
-
+    
 \end{frame}
-
 
 
