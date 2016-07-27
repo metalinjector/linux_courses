@@ -2,13 +2,21 @@
 	\frametitle{Сообщения об ошибках}
 
 	\begin{block}{Пример.}
-		\begin{lstlisting}[language=sh]
+		\begin{lstlisting}[language=bash]
+check.sh: line 4: [-f: command not found 
+
+check.sh: line 4: [: missing ]' 
+
+./check.sh 
+regular file detected 
+
+./check.sh: line 5: [: my: binary operator expected 
+
+./check.sh: line 112: syntax error: unexpected end of file 
+
 bash: test: too many arguments
 
-script.sh: line 100: syntax error: unexpected end of file
-
-script.sh: line 50: unexpected EOF while looking for matching `"' 
-
+./check.sh: line 50: unexpected EOF while looking for matching `"'  
 
 		\end{lstlisting}
 	\end{block}

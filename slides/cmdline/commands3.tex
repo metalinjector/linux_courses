@@ -1,8 +1,8 @@
 \begin{frame}[fragile]{Поиск файлов}
-    \textbf{find} ищет файлы в заданной директории.
+    \textbf{find} ищет файлы в заданной директории и производит над ним заданную операцию.
 	\begin{block}{Параметры поиска}
 		\begin{itemize}
-			\item {\tt -name} -- имя файлового объекта
+			\item {\tt -name}, {\tt -iname} -- имя файлового объекта, включая метасимволы 
 			\item {\tt -type} -- тип файлового объекта
 			\item {\tt -size} -- размер [cwbkMG]
 			\item {\tt -perm} -- права доступа
@@ -57,10 +57,16 @@ xargs [options] command [command options]
 
 \begin{frame}[fragile]{xargs}
 	\begin{block}{Примеры}
+
+		\begin{verbatim}
+file /bin/*  | grep shell | cut -f 1 -d ':' | xargs wc -l # calculate number of strings in all shell scripts
+		\end{verbatim}
+
 		\begin{verbatim}
 find /etc -type f -size -100k | \
  xargs tar -czf /tmp/archive-100k.tar.gz
 		\end{verbatim}
+
 
 		\begin{verbatim}
 find /etc -type f | xargs -I {} echo "Найден {} файл"

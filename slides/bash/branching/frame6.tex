@@ -16,18 +16,7 @@ done
 		\column{0.7\textwidth}
 		{\normalsize Пример:}
 
-		\begin{lstlisting}
-#!/bin/bash
-PS3="Какого вы пола? "
-select sex in "девочка" "мальчик" "еще не определилось"
-do
-  echo
-  [ "$sex" == "девочка" -o "$sex" == "мальчик" ] && break || echo "Определитесь пожалуйста!"
-done
-echo "Вы -- $sex"
-exit
-\end{lstlisting}
-
+         \lstinputlisting[language=bash]{../../slides/bash/samples/select.sh}
 		\pause
 		\center{Удалить в select все [in *] и посмотреть на результат работы.}
 

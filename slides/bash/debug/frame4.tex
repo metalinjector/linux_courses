@@ -5,20 +5,6 @@
 		\item {\tt caller [N]} -- функция выводит на экран номер строки, имена функции и файла вызывающего скрипта
 	\end{itemize}
 
-	\begin{block}{backtrace}
-		\begin{lstlisting}[language=sh]
-#!/bin/bash
-backtrace() {
-  echo Backtrace:
-  for((i=$SHLVL;i>=0;i--)); do
-    caller $i
-  done
-}
-f1() {
-  echo Function $FUNCNAME at $LINENO && backtrace
-}
-f1
-		\end{lstlisting}
-	\end{block}
+         \lstinputlisting[language=bash]{../../slides/bash/samples/caller.sh}
 
 \end{frame}

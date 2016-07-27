@@ -1,25 +1,18 @@
 \begin{frame}[fragile]
 \frametitle{Типичные ошибки в условном выражении}
 
-	Написать скрипт сравнивающий переменную окружения с заранее заданным значением:
-	
-	\begin{block}{script.sh}
-	\small\begin{lstlisting}
-#!/bin/bash
-
-VAR=$1
-STRING=test
-[ $STRING == $VAR ] && echo "Строки одинаковы" || echo "Строки разные"
-exit
-	\end{lstlisting}
+	Написать скрипт прнимающий один аргумент и определяющий файл ли это. Если файл выводить на экран строку 'regular file detected' в случае успеха,
+Предварительно создать: файлы c именами file, my file
+	\begin{block}{check.sh - исправить}
+      \lstinputlisting[firstline=3, lastline=12,language=bash]{../../slides/bash/samples/check.sh}
     \end{block}
     \normalsize
 	И запустить этот скрипт:
 	
 	\begin{enumerate}
-	\item {\tt bash script.sh \# без параметров}
-	\item {\tt bash script.sh "test string" \# параметр с пробелом}
-	\item {\tt bash script.sh test}
+            \item {\tt ./check.sh file} 
+            \item {\tt ./check.sh "my file" \# параметр с пробелом}
+            \item {\tt ./check.sh \# без параметров}
         \end{enumerate}
 
 \end{frame}

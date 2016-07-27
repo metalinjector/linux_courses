@@ -3,13 +3,13 @@
 Можно делать цепочки команд:
 \begin{verbatim}
 command1 && command2 || command3 
-command1 && command2 && command3 
+command1 && command2 && command3 && ...
 \end{verbatim}
 
 Применение операторов \&\& и ||:
 \begin{itemize}
     \item Изменяют поведение кода в зависимости от успешности выполнения команд
-    \item Объединяют команд в цепочку cmd1 \&\& cmd2 \&\& cmd3 .. 
+    \item Объединяют команды
     \item Улучшают читаемость кода для простых проверок.  Одна строка vs три в if
     \item Но длинные цепочки сложно отлаживать
 \end{itemize}
