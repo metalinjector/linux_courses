@@ -1,7 +1,7 @@
 \begin{frame}{Перенаправления в файл}
 
 \begin{itemize}
-  \item Перенаправление stdout 
+  \item Перенаправление stdout FD=1
     \begin{itemize}
       \item С созданием нового файла
 
@@ -12,11 +12,11 @@
 		  {\tt command >\phantom{}>  file}
     \end{itemize}
     \pause
-  \item Перенаправления stdin
+  \item Перенаправления stdin FD=0
 
     {\tt command < file}
     \pause
-  \item Перенаправления stderr
+  \item Перенаправления stderr FD=2
 
     {\tt command1 2>\&1 | command2}
 
@@ -26,5 +26,3 @@
 \end{itemize}
 
 \end{frame}
-
-

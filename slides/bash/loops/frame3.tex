@@ -1,17 +1,17 @@
 \begin{frame}[fragile]
 \frametitle{ Циклы for. Примеры.}
   \begin{block}{Действие над файлами.}
-\begin{lstlisting}[language=sh,frame=single]
+\begin{lstlisting}[language=bash,frame=single]
 for file in *
- do md5sum $file
+  do md5sum $file
 done
 \end{lstlisting}
   \end{block}
 
 \begin{block}{Перечисление элементов.}
-\begin{lstlisting}[language=sh,frame=single]
+\begin{lstlisting}[language=bash,frame=single]
 for planet in Mars Earth Mercury Saturn
- do echo $planet 
+  do ssh $planet uname -a > $planet 
 done
 \end{lstlisting}
   \end{block}

@@ -1,15 +1,20 @@
 \begin{frame}[fragile]
-\frametitle{}
+\frametitle{Примеры использования while}
 
-\begin{block}{Пример. Перебираем аргументы.}
-\begin{lstlisting}[language=sh,frame=single]
+\begin{block}{Перебираем аргументы.}
+\begin{lstlisting}[language=bash,frame=single]
 while [[ -n $1 ]]
 do
     echo $1
-    shift
+    shift # rename the positional parameters $N+1,$N+2 ... to $1,$2 (N=1)
 done
 \end{lstlisting}
 \end{block}
+
+\begin{block}{Пример. Перебираем аргументы. Вариант реализации.}
+\lstinputlisting[language=bash,frame=single]{../../slides/bash/samples/while_args.sh}
+\end{block}
+\end{frame}
 
 %\begin{block}{Пример. Несколько команд.}
 %\begin{lstlisting}[language=sh,frame=single]
@@ -22,13 +27,15 @@ done
 %\end{lstlisting}
 %\end{block}
 
-\begin{block}{Пример. Бесконечный цикл.}
-\begin{lstlisting}[language=sh,frame=single]
+\begin{frame}[fragile]
+\frametitle{Пример. Бесконечный цикл.}
+\begin{block}{Выход из бесконечного цикла.}
+\begin{lstlisting}[language=bash,frame=single,name=random.sh]
 while :
 do
- x=$RANDOM
- echo $x
- [[ $x -gt 1100 ]] && break
+  x=$RANDOM
+  echo $x
+  [[ $x -gt 1100 ]] && break
 done
 \end{lstlisting}
 \end{block}

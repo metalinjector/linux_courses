@@ -1,15 +1,18 @@
-\begin{frame}
+\begin{frame}[fragile]
 	\frametitle{Спецсимвол фигурная скобка}
 
 	\begin{block}{Фигурные скобки и склеивание с помощью ``,``}
 		\begin{itemize}
 			\item Посмотреть на результат выполнения команды \\
+\begin{lstlisting}[language=bash]
+echo game/{testing,staging,prod}/{docs,src,util,conf}
+\end{lstlisting}
 				{\tt echo \{A,B,C\}:\{1,2,3\}}
 				\pause
-			\item Посмотреть на результат выполнения команды \\
-				{\tt ls -l \{,/usr\}/\{bin,sbin\}/*sh}
+			\item Посмотреть на результат выполнения команды 
 		\end{itemize}
 	\end{block}
+
 
 	\pause
 
@@ -30,5 +33,4 @@
     \item для создания вложенных директорий 
     \item генерации файлов по шаблону. Файл не обязательно существует на в файловой системе.
 \end{itemize}
-    
 \end{frame}

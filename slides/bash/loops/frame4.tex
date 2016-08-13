@@ -1,17 +1,17 @@
 \begin{frame}[fragile]
-\frametitle{ Циклы for. Примеры.}
-  \begin{block}{Перечисление цифровой последовательности.}
-\begin{lstlisting}[language=sh,frame=single]
-for num in 1 2 3 4 5 6 7 8 9 10
- do echo $num
+\frametitle{Циклы for. Цифровая последовательность.}
+  \begin{block}{Примеры генерации.}
+\begin{lstlisting}[language=bash,frame=single]
+for num in 1 2 3 4 5 6 7 8 9 10 # простое перечисление 
+ do ping 192.168.10.$num
 done
 
 for num in $(seq 1 10)  # генерация из внешней команды
- do echo $num
+ do ping 192.168.10.$num
 done
 
 for num in {1..10}  # генерация встроенными средствами
- do echo $num
+ do ping 192.168.10.$num
 done
 
 \end{lstlisting}

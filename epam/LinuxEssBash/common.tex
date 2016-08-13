@@ -1,11 +1,23 @@
-\documentclass[pdftex,ignorenonframetext, professionalfonts, hyperref={pdftex, unicode}]{beamer}
+% xetex compatible variant that support TTF fonts according to company rules
+\documentclass[ignorenonframetext, professionalfonts, hyperref={unicode}]{beamer}
 
 \usetheme{Epam}
 
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[russian]{babel}
+\usepackage{fontspec}
+\setsansfont{SourceSansPro-Regular}
+%\setbeamerfont{frametitle}{family=\fontspec{Oswald}}
+\setbeamerfont{frametitle}{family=\fontspec{Arial Black}}
+\setbeamerfont{block title}{family=\fontspec{Arial Black}}
+
+%\setmainfont{Times New Roman}
+\defaultfontfeatures{Mapping=tex-text}
+\defaultfontfeatures{Ligatures=TeX}
+
+%\setsansfont{Arial}
+%\setromanfont{Trebuchet MS}
+
 \usepackage{cmap}
+\usepackage{graphicx}
 
 \usepackage{textcomp}
 
@@ -15,8 +27,6 @@
 
 \usepackage{verbatim}
 \usepackage{import}
-
-%\usepackage{ucs}
 
 \usepackage{listings}
 \lstloadlanguages{bash}
@@ -60,7 +70,7 @@
 %\institution[EPAM]{EPAM}
 %\logo{\includegraphics[width=1cm]{logo.png}}
 
-\graphicspath{{../../slides/cmdline/clipart/}}
+\graphicspath{{../../slides/cmdline/clipart/}{../../slides/bash/clipart/}}
 
 \bibliographystyle{unsrt}
 \setbeamertemplate{bibliography item}{\insertbiblabel}

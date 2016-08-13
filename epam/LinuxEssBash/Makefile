@@ -21,11 +21,8 @@ LATEXML2OPENXML=java -jar latexml2openxml-0.0.1-SNAPSHOT-jar-with-dependencies.j
 	dvips -j0 -Ppdf -o $@ $<
 
 %.pdf: %.tex common.tex
-	pdflatex -interaction=nonstopmode $<
-	pdflatex -interaction=nonstopmode $<
-	pdflatex -interaction=nonstopmode $<
-	pdflatex -interaction=nonstopmode $<
-	pdflatex -interaction=nonstopmode $<
+	xelatex $<
+	xelatex $<
 
 %.xml: %.tex
 	$(LATEXML) $(LATEXML_PARAMS) --destination=$@ $< &> $@.log

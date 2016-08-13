@@ -1,15 +1,15 @@
 \begin{frame}[fragile]
-\frametitle{ Циклы for. Примеры.}
-  \begin{block}{Из аргументов.}
-    \begin{lstlisting}[language=sh,frame=single]
+\frametitle{ Цикл for. Примеры.}
+  \begin{block}{Aргументы командной строки.}
+    \begin{lstlisting}[language=bash,frame=single]
 for arg
  do echo $arg 
 done
     \end{lstlisting}
   \end{block}
   \begin{block}{Из переменной. Запись одной строкой.}
-    \begin{lstlisting}[language=sh,frame=single]
-for name in $users ; do echo $name ; done
+    \begin{lstlisting}[language=bash,frame=single]
+for name in "$users" ; do echo $name ; done
     \end{lstlisting}
   \end{block}
 \end{frame}
