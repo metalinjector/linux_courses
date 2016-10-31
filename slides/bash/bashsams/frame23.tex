@@ -1,23 +1,25 @@
 \begin{frame}[fragile]
-  \frametitle{Подстановочные символы путей (Wildcards)}
+  \frametitle{Подстановочные символы путей (globbing)}
 
-  \alert{Wildcards} - спецсимволы в параметрах команд, раскрываемые в путь и имя файла самим интерпретатором перед тем, как запустить команду на выполнение. \pause
+  \alert{Wildcard characters} - спецсимволы в параметрах команд, раскрываемые в путь и имя файла самим интерпретатором перед тем, как запустить команду на выполнение. \pause
 
 
   \begin{itemize}
     \item \alert{*} - любое количество любых символов
 \begin{lstlisting}[basicstyle=\normalsize]
-	echo /u*
-	ls /u*
+        echo *
+        ls /u*
 \end{lstlisting} \pause
     \item \alert{[]} - символ из перечисления\footnote{об интервалах - в разделе о регулярных выражениях}
 \begin{lstlisting}[basicstyle=\normalsize]
-	echo .[bp]*
+        echo .[bp]*
+        ls /sys/*/net/
 \end{lstlisting} \pause
     \item \alert{?} - любой одиночный символ
 \begin{lstlisting}[basicstyle=\normalsize]
-	echo ?i*
+        ~$ echo ?i*
 \end{lstlisting} 
   \end{itemize}
 
 \end{frame}
+

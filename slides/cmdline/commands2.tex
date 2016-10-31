@@ -19,37 +19,31 @@
 		\end{itemize}
 		\begin{verbatim}
 dd if=/dev/sda bs=1M count=1 | gzip -c > backup.gz
-		\end{verbatim}
+    \end{verbatim}
 	\end{block}
 
 \end{frame}
 
 \begin{frame}[fragile]{Архивация: примеры}
-
 	Создать сжатый архив:
 	\begin{verbatim}
 tar -czf archive.tar.gz *
-	\end{verbatim}
+        \end{verbatim}
 	\pause
 	Распаковать сжатый архив в директорию {\tt /tmp}:
 	\begin{verbatim}
-tar -C /tmp/ -xzf archive.tar.gz 
-	\end{verbatim}
-	\pause
-	Создать сжатый архив:
-	\begin{verbatim}
-tar -czf archive.tar.gz *
-	\end{verbatim}
+tar -C /tmp/ -xzf archive.tar.gz
+        \end{verbatim}
 	\pause
 	Создать копию текущей директории в директории {\tt /tmp/copy/}:
 	\begin{verbatim}
 tar -c * | tar -C /tmp/copy -x
 tar -cf - * | tar -C /tmp -xf -
-	\end{verbatim}
+        \end{verbatim}
 	\pause
 	Создать копию текущей директории на другом хосте:
 	\begin{verbatim}
 HostDest: netcat -l 2222 | gzip -dc | tar -C /tmp/copy/ -x
 HostSrc:  tar -c * | gzip -9 | netcat HostDest 2222
-	\end{verbatim}
+        \end{verbatim}
 \end{frame}

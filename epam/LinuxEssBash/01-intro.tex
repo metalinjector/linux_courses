@@ -24,47 +24,62 @@
 	[hideallsubsections]
 \end{frame}
 
-\section{О курсе}
-
-\mode<all>{\input{../../epam/slides/intro-devops}}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
 %%%%%%%%%% Content starts here %%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Дистрибутивы ОС Linux}
-\mode<all>{\input{../../slides/intro/linux-distro}}
+\section{О курсе}
 
-\section{Процесс загрузки ОС Linux}
-\subsection{Этапы загрузки}
+% add one slide with unix/linux history, age, culture, motivation why it is important to learn
+\mode<all>{\input{../../epam/slides/intro-devops}}
+
+\section{Архитектура Linux системы.}
+% activities ask about OS 
+% What does OS do? Why it is necessary? Is it possible to work without OS?
+
+% TODO images
+% Состав ОС Linux
+\mode<all>{\input{../../slides/intro/linux-distro/frame1}}
+\mode<all>{\input{../../slides/intro/linux-distro/frame1_1}}
+% Задачи ядра Linux
+%\mode<all>{\input{../../slides/intro/linux-kernel/frame1}}
+\subsection{Процесс загрузки ОС Linux}
 \mode<all>{\input{../../slides/intro/linux-boot}}
 
-\subsection{Ядро Linux}
-\mode<all>{\input{../../slides/intro/linux-kernel.tex}}
+\section{Дистрибутивы ОС Linux}
+% TODO ISO example
+% TODO setup methods
+\mode<all>{\input{../../slides/intro/linux-distro/frame2}}
+\mode<all>{\input{../../slides/intro/linux-distro/frame3}}
+\mode<all>{\input{../../slides/intro/linux-distro/frame4}}
+\mode<all>{\input{../../slides/intro/linux-distro/frame6}}
+% activity ISO list what info can you get from ISO names?
+\mode<all>{\input{../../slides/intro/linux-distro/frame5}}
 
-\subsection{Система инициализации.}
-\mode<all>{\input{../../slides/intro/init-process}}
 
+% activity login to system. putty, ssh, my IP address
 \section{Вход в систему.}
 \mode<all>{\input{../../slides/cmdline/login.tex}}
 \subsection{Беспарольный вход}
 \mode<all>{\input{../../slides/cmdline/ssh_keys.tex}}
 
+% activity question. ask about Examples of command line usage 
 \section{Интерфейс командной строки}
 \mode<all>{\input{../../slides/cmdline/clui_vs_gui.tex}}
 
 \section{Получение помощи}
 \mode<all>{\input{../../slides/cmdline/help.tex}}
 
+\section{Интерактивная работа в командной оболочке (shell)}
+\mode<all>{\input{../../slides/bash/hotkeys.tex}}
 
 \section{Навигация по файловой системе}
 \mode<all>{\input{../../slides/cmdline/fs-navigation-cmd.tex}}
 \mode<all>{\input{../../slides/fs/fs-structure.tex}}
-
-\section{Интерактивная работа в командной оболочке (shell)}
-\mode<all>{\input{../../slides/bash/hotkeys.tex}}
-
-
+% globbing
+% activity  ask how to copy files that start from letter a to /tmp dir?
+% add example with 1000 files
+\mode<all>{\input{../../slides/bash/bashsams/frame23}}
+\mode<all>{\input{../../slides/cmdline/commands2}}
 \end{document}
 \bye

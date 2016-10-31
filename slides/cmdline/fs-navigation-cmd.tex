@@ -39,13 +39,13 @@
       \end{itemize}
       \begin{block}{Упражнение. Заходим в /usr/bin/ и просматриваем список доступных команд.}
 	\begin{lstlisting}
-	pwd
-	cd /usr/bin/
-	pwd
-	ls
-	cd -	
-	pwd
-	\end{lstlisting}
+        pwd
+        cd /usr/bin/
+        pwd
+        ls
+        cd -
+        pwd
+\end{lstlisting}
       \end{block}
 \end{frame}
 
@@ -110,6 +110,24 @@ echo какой-то текст >file
   \end{enumerate}
 \end{frame}
 
+\begin{frame}[fragile]{Команды для работы с файлами}
+Any ideas what is purpose of this commands? 
+	\begin{itemize}
+		\begin{columns}
+		\column{0.2\textwidth}
+			\item cp
+			\item mv
+			\item rm
+			\item file
+		\column{0.2\textwidth}
+			\item touch
+			\item ln
+			\item mkdir
+			\item mknod
+			\item mkfifo
+		\end{columns}
+	\end{itemize}
+\end{frame}
 
 
 \begin{frame}[fragile]{Операции над каталогами (и файлами)}
@@ -129,28 +147,9 @@ echo какой-то текст >file
     \item \alert{rm} - удаление файлов\footnotemark[17]
 \begin{lstlisting}
 ~$ rm -rf dir1 /tmp/somedir
-~$ rm f*
+~$ cp /etc/passwd /tmp/passwd # copy file to file 
+~$ cp -r /etc/  /tmp/ # copy directory to directory
 \end{lstlisting} \pause
   \end{itemize}
 \footnotetext[8]{с ключом \alert{-r}) и каталогов}
-\end{frame}
-
-\begin{frame}[fragile]{Команды для работы с файлами}
-	\begin{itemize}
-		\begin{columns}
-		\column{0.2\textwidth}
-			\item touch
-			\item ln
-			\item mkdir
-			\item mknod
-			\item mkfifo
-
-		\column{0.2\textwidth}
-			\item cp
-			\item mv
-			\item rm
-			\item file
-			\item install
-		\end{columns}
-	\end{itemize}
 \end{frame}

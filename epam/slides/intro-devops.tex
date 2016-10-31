@@ -1,10 +1,12 @@
 \begin{frame}{Цель курса}
 	\begin{center}
-		\Huge
+		\large
 		Обеспечить быстрый старт в среде GNU/Linux для опытных пользователей
-	\end{center}
+	\end{center} 
     \pause
-    Курить маны, читать логи, находить ответы самостоятельно.
+         \center\includegraphics[scale=0.6]{linux_story} 
+
+    Система сложная, поэтому время потраченное на самостоятельно изучение системы исчисляется годами.
 \end{frame}
 
 \begin{frame}{Читает курс}
@@ -36,12 +38,55 @@
     \item Test Engineers, Test Automation Engineers
     \item Students
 \end{itemize}
-
-Если опыт работы с Linux/Unix меньше 1 года, то подойдет для систематизации знаний.
-
-Желательно чтобы был навык работы с системой виртуализации. Самостоятельная настройка сети.
-
+    \pause
+Требования к слушателям:
+\begin{itemize}
+    \item Опыт работы с Linux/Unix меньше 1 года или без опыта
+    \pause
+    \item Опыт работы с системой виртуализации
+    \pause
+    \item Знание сетевых технологий
+    \pause
+    \item Creative thinking and problem solving skills
+    \pause
+    \item \alert{Feedback is essential: answer to questions, do practical tasks, do homework, ask questions}
+\end{itemize}
 \end{frame}
+
+\begin{frame}{Проверим обратную связь}
+\begin{itemize}
+    \item Есть ли опыт работы с Linux? Если есть то сколько?
+    \pause
+    \item Ваши ожидания. Зачем пришли на курс?
+    \pause
+    \item Установили дистрибутив? Какой?
+    \item Если не установили. Почему?
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Возраст Unix.}
+ Посчитаем возраст системы Unix.
+\begin{lstlisting}
+    $ date --help | grep '%s'
+    $ date +%s # show current date in seconds 
+    $ echo $(( $(date +%s)/(60*60*24*365))) # show years
+\end{lstlisting} 
+\pause
+Unix systems are characterized by a \alert{modular design} or ``Unix philosophy"
+		\begin{columns}
+		\column{0.7\textwidth}
+\begin{itemize}
+    \item simple tools that each perform a limited, well-defined function
+    \item shell scripting and command language to combine the tools to perform complex workflows
+    \item unified filesystem
+\end{itemize}
+		\column{0.3\textwidth}
+            \includegraphics[width=4cm]{40years}
+		\end{columns}
+% За это время сложилась культура и философия разработки, которая оказала влияние на интерфейсы взаимодействия, например названия устройств и команд.
+% Разнообразие подходов при решении задач. Среда дружественная для программиста и опытного технического пользователя.
+\end{frame}
+
 
 %\begin{frame}{Состав курса}
 %	\begin{itemize}
