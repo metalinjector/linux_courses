@@ -1,7 +1,7 @@
 \begin{frame}[fragile]{Владельцы файла. Внутреннее представление}
   \begin{itemize}
     \item \alert{Владелец-пользователь} и \alert{владелец-группа} файла определяются по идентификаторам \alert{UID}\footnote{UID - User IDentifier} и \alert{GID}\footnote{GID - Group IDentifier}, а не по именам. 
-\lstinputlisting{samples/ls-nl} \pause
+\lstinputlisting{../../slides/cmdline/samples/ls-nl} \pause
     \item Зарегистрированные пользователи и группы определены в файлах \alert{/etc/passwd} и \alert{/etc/group} \newline
     Следствие: могут существовать файлы, принадлежащие не зарегистрированным в системе пользователям и группам. \pause
     \item Новые файлы создаются с владельцем-пользователем, запустившим команду создания и его первичной группой, как владельцем группой. \pause
