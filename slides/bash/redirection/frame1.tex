@@ -2,10 +2,10 @@
 	\frametitle{stdin, stdout, stderr}
      C каждым процессом связаны потоки ввода-вывода - файловые дeскрипторы stdin, stdout, stderr.
     \begin{block}{Пример. Номера файловых дeскрипторов и устройств. }
-                    \begin{lstlisting}
+\begin{lstlisting}
 echo /dev/std*
 echo /dev/std* | xargs -t -n 1 readlink
 lsof -ap $BASHPID -d 0,1,2
-                    \end{lstlisting}
+\end{lstlisting}
     \end{block}
 \end{frame}
