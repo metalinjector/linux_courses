@@ -3,25 +3,25 @@
 
 	\begin{itemize}
 		\item {\tt set -v} -- вывод на экран исполняемой строки
-			\begin{lstlisting}[language=sh]
+			\begin{lstlisting}[language=sh,frame=single]
 set -v
 echo $HOME
-			\end{lstlisting}
+\end{lstlisting}
 
 		\item {\tt set -x} -- вывод на экран исполняемой строки с автоматической подстановкой значений переменных
-\begin{lstlisting}[language=sh]
+\begin{lstlisting}[language=sh,frame=single]
 set -x
 echo $HOME
 \end{lstlisting}
 
 		\item {\tt set -n} -- проверка синтаксиса скрипта
-\begin{lstlisting}[language=sh]
+\begin{lstlisting}[language=sh,frame=single]
 bash -n test.sh
 \end{lstlisting} 
 
-
+		\framebreak
 		\item {\tt set -f} -- отключение генерации имен файлов с использованием метасимволов (globbing)
-\begin{lstlisting}[language=sh]
+\begin{lstlisting}[language=sh,frame=single]
 echo ~/.*
 set -f
 echo ~/.*
@@ -29,7 +29,7 @@ echo ~/.*
 		\framebreak
 		\item {\tt set -e} -- остановка выполнения скрипта, если какая-либо команда 
 		возвращяет errorstatus не равный 0
-			\begin{lstlisting}[language=sh]
+\begin{lstlisting}[language=sh,frame=single]
 #!/bin/bash
 
 set -e
@@ -37,6 +37,6 @@ false || true
 echo Working
 false
 echo Still working
-			\end{lstlisting} 
+\end{lstlisting} 
 	\end{itemize}
 \end{frame}

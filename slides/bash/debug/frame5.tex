@@ -2,13 +2,13 @@
 	\frametitle{Сообщения об ошибках}
 
 	\begin{block}{Пример.}
-		\begin{lstlisting}[language=bash]
+		\begin{lstlisting}[language=bash,frame=single]
 check.sh: line 4: [-f: command not found 
 
 check.sh: line 4: [: missing ]' 
 
-./check.sh 
-regular file detected 
+./check.sh  # incorrect code logic. No arguments.
+regular file detected
 
 ./check.sh: line 5: [: my: binary operator expected 
 
@@ -17,8 +17,7 @@ regular file detected
 bash: test: too many arguments
 
 ./check.sh: line 50: unexpected EOF while looking for matching `"'  
-
-		\end{lstlisting}
+\end{lstlisting}
 	\end{block}
 
 \end{frame}

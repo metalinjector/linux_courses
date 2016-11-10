@@ -6,7 +6,7 @@
 	а отключение -- ''+''.
 
 	\begin{block}{Примеры включения режима отладки.}
-		\begin{lstlisting}[language=sh]
+		\begin{lstlisting}[language=sh,frame=single]
 bash -x ./script.sh # опция командной строки
 
 #!/bin/bash -x # внутри скрипта опцией
@@ -21,6 +21,6 @@ set -x  # включаем отладку на часть кода
 [..relevant code..]  
 set +x # выключаем отладку
 [..irrelevant code..]
-		\end{lstlisting}
+\end{lstlisting}
 	\end{block}
 \end{frame}
