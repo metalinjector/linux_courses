@@ -1,28 +1,39 @@
-
 \begin{frame}{Файловая система.}
   \begin{itemize}
     \item В UNIX (и Linux) файлы организованы в виде \emph{единой древовидной структуры} (дерева), называемой \alert{файловой системой}.
-    \item \alert{Каждый файл имеет имя}, определяющее его расположение в дереве FS.
+    \item Каждый файл имеет \alert{имя}, определяющее его расположение в дереве FS.
     \item Корнем дерева является \alert{корневой каталог} (root directory), имеющий имя \alert{"/"}.
-  \end{itemize} \pause
-
-  \begin{itemize}
-    \item \alert{полный путь} начинается с \alert{/}(корневого каталога), каталоги разделяются также \alert{/}. \newline
-      Пример: /home/user/.ssh/authorized\_key
-    \item \alert{относительный путь} - от текущего каталога \newline
-      Примеры: ../user10/.bashrc; ./script; ls script
   \end{itemize}
+
+\includegraphics[height=4cm]{unix_tree} 
 
 \end{frame}
 
 \begin{frame}[fragile]{Имя файла.}
-        Допустимые символы в имени файла:
+
+        Особенности именования:
                 \begin{itemize}
                     \item регистр имеет значение \alert{fileA} и \alert{Filea} - два разных имени
+                    \item один файл может иметь \alert{несколько} имен (hardlink) 
                     \item \alert{/} разделяет директории
-                    \item \alert{-} \textbackslash <Space> специальные символы 
-                    \item \alert{.file} - скрытый файл
+                    \item \alert{- \textbackslash <Space>} специальные символы 
+                    \item \alert{.}file - скрытый файл
+                    \item максимальная длина имени \alert{255} символов
                 \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Directory.}
+      \begin{block}{Directory.}
+Directory is a file system cataloging structure which contains references to other computer files, and possibly other directories
+      \end{block}
+ Для каждой запущенной программы в системе определена \alert{текущая директория} (working directory or current working directory) 
+  \begin{itemize}
+    \item \alert{относительный путь} - от текущей директории \newline
+      Примеры: ../user10/.bashrc; ./script; ls script
+    \item \alert{полный путь} начинается с \alert{/}(корневой директории), директории разделяются символом \alert{/}. \newline
+      Пример: /home/user/.ssh/authorized\_key
+  \end{itemize}
 
       \begin{block}{Примеры. Cпециальные имена.}
         \alert{./} - текущая директория
@@ -30,8 +41,7 @@
       \end{block}
 \end{frame}
 
-\begin{frame}[fragile]{Навигация по файловой системе}
- Для каждой запущенной программы (в том числе и shell) в системе определен \alert{текущий каталог}. 
+\begin{frame}[fragile]{Перемещение по файловой системе}
       \begin{itemize}
 		  \item {\tt pwd} -- имя текущей директории (help pwd)
 		  \item {\tt ls} -- список файлов в директории. По умолчанию в текущей (man ls)
@@ -49,25 +59,25 @@
       \end{block}
 \end{frame}
 
-\begin{frame}[fragile]{Просмотр типов файлов}
-      \begin{block}{Упражнение. Символьное обозначение типа файла.}
-Первая буква вывода команды ls -l обозначает тип файла. 
-Tip. Команды file позволяет определить тип файла. Ключ -d для работы с
-директорией. 
-
-/dev/zero
-
-/dev/sda 
-
-.. 
-
-/bin/sh 
-
-/dev/log
-
-/dev/stdout
-      \end{block}
-\end{frame}
+%\begin{frame}[fragile]{Просмотр типов файлов}
+%      \begin{block}{Упражнение. Символьное обозначение типа файла.}
+%Первая буква вывода команды ls -l обозначает тип файла. 
+%Tip. Команды file позволяет определить тип файла. Ключ -d для работы с
+%директорией. 
+%
+%/dev/zero
+%
+%/dev/sda 
+%
+%.. 
+%
+%/bin/sh 
+%
+%/dev/log
+%
+%/dev/stdout
+%      \end{block}
+%\end{frame}
 
 \begin{frame}{Типы файлов в Unix}
   Для пользователя:

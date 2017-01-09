@@ -1,37 +1,37 @@
-\begin{frame}{Цель курса}
-	\begin{center}
-		\large
-		Обеспечить быстрый старт в среде GNU/Linux для опытных пользователей
-	\end{center} 
-    \pause
-         \center\includegraphics[scale=0.6]{linux_story} 
+\begin{frame}{About myself.}
 
-    Система сложная, поэтому время потраченное на самостоятельно изучение системы исчисляется годами.
-\end{frame}
-
-\begin{frame}{Читает курс}
-
-    \large Vikentsi Lapa 
+    \large Vikentsi Lapa - Senior Software Test Automation Engineer
     \begin{columns}
         \column{0.6\textwidth}
             \begin{itemize}
-                \item Senior Software Test Automation Engineer
-                \item Work with Linux about 8 years in such areas as
+                \item Hands on experience with Linux about 8 years in such areas as
                 \begin{itemize}
                     \item High Perfomance Computing
                     \item Cluster file systems: GPFS, Lustre 
                 \end{itemize}
-                \item MLUG (Minsk Linux User Group Activist)
-                \item LVEE conference participant 
+                \item MLUG (Minsk Linux User Group Activist) and LVEE conference participant 
             \end{itemize}
         \column{0.3\textwidth}
             \center\includegraphics[width=3cm]{myphoto}
     \end{columns}
 \end{frame}
 
+\begin{frame}{Cложность изучения системы.}
+         \center\includegraphics[scale=0.6]{linux_story} 
+    \break
+\pause
+Сложности: множество вариантов, обилие информации, терминология, новые интерфейсы, ошибки.
+\pause
+	\begin{center}
+		\large
+		Обеспечить быстрый старт в среде GNU/Linux для опытных пользователей. Понизить порог вхождения. Задать направление. 
+	\end{center} 
+\end{frame}
+
+
 \begin{frame}{Аудитория}
 
-Для кого предназначен этот курс:
+Кому полезен этот курс:
 \begin{itemize}
     \item IT Engineers, DevOps Engineers
     \item Junior Software Engineers/Software Engineers
@@ -39,14 +39,12 @@
     \item Students
 \end{itemize}
     \pause
-Требования к слушателям:
+Что требуется от вас:
 \begin{itemize}
     \item Опыт работы с Linux/Unix меньше 1 года или без опыта
     \pause
     \item Опыт работы с системой виртуализации
-    \pause
     \item Знание сетевых технологий
-    \pause
     \item Creative thinking and problem solving skills
     \pause
     \item \alert{Feedback is essential: answer to questions, do practical tasks, do homework, ask questions}
@@ -55,17 +53,19 @@
 
 \begin{frame}{Проверим обратную связь}
 \begin{itemize}
-    \item Есть ли опыт работы с Linux? Если есть то сколько?
-    \pause
-    \item Ваши ожидания. Зачем пришли на курс?
-    \pause
+    % this one moved to email trainee introduction
+    %\item Есть ли опыт работы с Linux? Если есть то сколько?
+    %\pause
+    %\item Ваши ожидания. Зачем пришли на курс?
+    %\pause
     \item Установили дистрибутив? Какой?
-    \item Если не установили. Почему?
+    \item Если не установили напишите причину.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Возраст Unix.}
- Посчитаем возраст системы Unix.
+\begin{frame}[fragile]{Оценка возраста системы Unix.}
+Ваша версия.
+ \pause
 \begin{lstlisting}
     $ date --help | grep '%s'
     $ date +%s # show current date in seconds 
