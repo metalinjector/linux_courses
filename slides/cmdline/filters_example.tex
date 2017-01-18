@@ -1,0 +1,13 @@
+\begin{frame}[fragile]{Пример использования фильтров.}
+  \begin{block}{Cчитаем участников тренинга используя текстовые фильтры.}
+\begin{lstlisting}
+cat /tmp/chat # посмотреть содержимое
+cat /tmp/chat | grep AM # строки со временем AM
+cat /tmp/chat | grep -e AM -e PM # строки со временем AM и PM
+grep -e AM -e PM /tmp/chat | sort # сортируем
+grep -e AM -e PM /tmp/chat | sort | cut -f 1,2 -d ' ' # оставить имя фамилия
+grep -e AM -e PM /tmp/chat | sort | cut -f 1,2 -d ' ' | uniq # удалить дубликаты
+grep -e AM -e PM /tmp/chat | sort | cut -f 1,2 -d ' ' | uniq | wc -l # считаем строки 
+\end{lstlisting}
+  \end{block} 
+\end{frame}

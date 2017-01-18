@@ -1,6 +1,6 @@
-\begin{frame}[fragile]{Поиск файлов}
-    \textbf{find} ищет файлы в заданной директории и производит над ним заданную операцию.
-	\begin{block}{Параметры поиска}
+\begin{frame}[fragile]{Поиск файлов командой find}
+    \alert{find} ищет файлы в заданной директории и производит над ним заданную операцию.
+	\begin{block}{Часто используемые параметры поиска}
 		\begin{itemize}
 			\item {\tt -name}, {\tt -iname} -- имя файлового объекта, включая метасимволы 
 			\item {\tt -type} -- тип файлового объекта
@@ -10,6 +10,9 @@
 			\item {\tt ...} -- другие опции man find 
 		\end{itemize}
 	\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Файлы найдены}
 	\begin{block}{Действия над результом поиска}
 		\begin{itemize}
 			\item {\tt -print} -- вывод на stdout (по умолчанию)
@@ -21,15 +24,16 @@
 	\end{block}
 \end{frame}
 
-\begin{frame}[fragile]{Поиск файлов}
-	\begin{block}{Примеры}
+\begin{frame}[fragile]{Примеры использования команды find}
+            В текущей директории найти все файлы *.o и вывести на экран 
             \begin{verbatim} find . -name '*.o' -print \end{verbatim}
             \begin{verbatim} find -name '*.o' \end{verbatim}
+            Поск по типу и владельцу файла.
             \begin{verbatim} find -type d -user altlinux \end{verbatim}
+            Составная команда, множество условий
             \begin{verbatim} find /root \( -name '*.pyc' -o -name '*.py' \) \
 -type f -user root -size +300k -size -1024k \
 -exec ls -l \{\} \; \end{verbatim}
-	\end{block}
  Дополнительно:
  Позволяет преодолеть лимит на кол-во аргументов в командной строке. 
  Например, когда в директории много файлов и тогда возникают ошибки
@@ -56,17 +60,14 @@ xargs [options] command [command options]
 
 \begin{frame}[fragile]{xargs}
 	\begin{block}{Примеры}
-
 		\begin{verbatim}
 file /bin/*  | grep shell | cut -f 1 -d ':' | xargs wc -l 
 # calculate number of strings in all shell scripts
                 \end{verbatim}
-
 		\begin{verbatim}
 find /etc -type f -size -100k | \
  xargs tar -czf /tmp/archive-100k.tar.gz
                 \end{verbatim}
-
 		\begin{verbatim}
 find /etc -type f | xargs -I {} echo "Найден {} файл"
                 \end{verbatim}
