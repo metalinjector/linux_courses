@@ -1,9 +1,9 @@
 addons:
   apt:
     packages:
-    - latex-beamer
-    - texlive-latex-recommended
-    - texlive-latex-extra 
-    - texlive-fonts-recommended
-:script
+      - latex-beamer
+      - texlive-latex-recommended
+      - texlive-latex-extra 
+      - texlive-fonts-recommended
+script:
     - pwd
