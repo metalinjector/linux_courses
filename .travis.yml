@@ -6,5 +6,6 @@ addons:
       - texlive-latex-recommended
       - texlive-latex-extra 
       - texlive-fonts-recommended
+      - lmodern
 script:
     - make -C epam/LinuxEssBash/ 01-intro.pdf
