@@ -6,4 +6,4 @@ addons:
       - texlive-latex-extra 
       - texlive-fonts-recommended
 script:
-    - pwd
+    - make -C epam/LinuxEssBash/ 01-intro.pdf
