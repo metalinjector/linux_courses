@@ -1,22 +1,22 @@
 \begin{frame}{Перенаправления в файл}
 
 \begin{itemize}
-  \item Перенаправление stdout FD=1
+  \item Перенаправление \alert{stdout FD=1}
     \begin{itemize}
       \item С созданием нового файла
 
-        {\tt command > file}\\
+        {\tt command > file} или {\tt command 1> file}\\
 		Например {\tt cat file1 file2 > file3}
       \item С дополнением существующего
 
 		  {\tt command >\phantom{}>  file}
     \end{itemize}
     \pause
-  \item Перенаправления stdin FD=0
+  \item Перенаправления  \alert{stdin FD=0}
 
-    {\tt command < file}
+    {\tt command < file} или  {\tt command <\&0 file}
     \pause
-  \item Перенаправления stderr FD=2
+  \item Перенаправления \alert{stderr FD=2}
 
     {\tt command1 2>\&1 | command2}
 

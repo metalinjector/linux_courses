@@ -13,8 +13,8 @@
     \end{center}
   }
   \begin{itemize}
-    \item <1-> Каждое приложение открывает 3 стандартных файловых дескриптора stdin (fd 0), stdout(fd 1), stderr (fd 2)
-    \item <2-> Приложения могут работать как фильтр из STDIN в STDOUT, можно объединять несколько приложений в конвейер
+    \item <1-> Каждое приложение открывает 3 стандартных файловых дескриптора (file descriptor) \alert{stdin (fd 0)}, \alert{stdout(fd 1)}, \alert{stderr (fd 2) }
+    \item <2-> Приложения могут работать как фильтр из \alert{STDIN} в \alert{STDOUT}, можно объединять несколько приложений в конвейер
     \item <2-> Синтаксис {\tt <app1> | <app2>}
   \end{itemize}
 \end{frame}
