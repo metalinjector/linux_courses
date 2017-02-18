@@ -7,5 +7,6 @@ addons:
       - texlive-latex-extra 
       - texlive-fonts-recommended
       - lmodern
+      - fonts-dejavu-core
 script:
     - make -C epam/LinuxEssBash/ 01-intro.pdf
