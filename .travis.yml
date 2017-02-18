@@ -1,3 +1,6 @@
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y fonts-dejavu-core
 addons:
   apt:
     packages:
@@ -7,6 +10,5 @@ addons:
       - texlive-latex-extra 
       - texlive-fonts-recommended
       - lmodern
-      - fonts-dejavu-core
 script:
     - make -C epam/LinuxEssBash/ 01-intro.pdf
