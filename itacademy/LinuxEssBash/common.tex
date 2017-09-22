@@ -1,0 +1,99 @@
+% xetex compatible variant that support TTF fonts according to company rules
+\documentclass[ignorenonframetext, professionalfonts, hyperref={unicode}]{beamer}
+
+\usetheme{itac}
+
+\usepackage{fontspec}
+\setsansfont{DejaVuSans}
+% uncomment if you have this fonts installed
+%\setsansfont{SourceSansPro-Regular}
+%\setbeamerfont{frametitle}{family=\fontspec{Oswald}}
+%\setbeamerfont{block title}{family=\fontspec{Oswald}}
+
+
+\defaultfontfeatures{Mapping=tex-text}
+\defaultfontfeatures{Ligatures=TeX}
+
+
+\usepackage{textpos}
+\usepackage{cmap}
+\usepackage{graphicx}
+
+\usepackage{textcomp}
+
+\usepackage{beamerthemesplit}
+
+\usepackage{ulem}
+
+\usepackage{verbatim}
+\usepackage{import}
+
+
+% placing logo in right upper corner
+\addtobeamertemplate{frametitle}{}{%
+\begin{textblock*}{100mm}(.89\textwidth,-1.2cm)
+ \includegraphics[height=2.0cm]{logo_it_academy.png}
+\end{textblock*}}
+
+\usepackage{listings}
+\lstloadlanguages{bash}
+
+\lstset{escapechar=`,
+	captionpos=b,
+	extendedchars=false,
+	language=sh,
+%	frame=single,
+	tabsize=2, 
+	columns=fullflexible, 
+%	basicstyle=\scriptsize,
+	keywordstyle=\color{blue}, 
+	commentstyle=\itshape\color{brown},
+%	identifierstyle=\ttfamily, 
+	stringstyle=\mdseries\color{green}, 
+	showstringspaces=false, 
+	numbers=left, 
+	numberstyle=\footnotesize, 
+	breaklines=true, 
+	inputencoding=utf8,
+	keepspaces=true,
+	morekeywords={u\_short, u\_char, u\_long, in\_addr}
+	}
+
+\definecolor{darkgreen}{cmyk}{0.7, 0, 1, 0.5}
+
+\lstdefinelanguage{diff}
+{
+    morekeywords={+, -},
+    sensitive=false,
+    morecomment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morecomment=[l][\color{darkgreen}]{+},
+    morecomment=[l][\color{red}]{-},
+    morestring=[b]",
+}
+
+%\author[Epam]{{\bf Epam}\\Low Level Programming Department}
+\author[it-academy.by]{Образовательный центр Парка высоких технологий}
+
+%\institution[EPAM]{EPAM}
+%\logo{\includegraphics[width=1cm]{logo.png}}
+
+\graphicspath{{../../slides/cmdline/clipart/}{../../slides/bash/clipart/}}
+
+\bibliographystyle{unsrt}
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+
+\AtBeginSection[]{%
+  \begin{frame}<beamer>
+    \frametitle{}
+    \tableofcontents[
+        sectionstyle=show/shaded, hideallsubsections ]
+  \end{frame}
+  \addtocounter{framenumber}{-1}% If you don't want them to affect the slide number
+}
+
+% \regex for regular expressions
+\newcommand{\regex}[1]{ %
+\expandafter{$\ulcorner{\color{blue}\texttt{#1}}\lrcorner$} %
+}
+
