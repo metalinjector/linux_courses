@@ -1,0 +1,13 @@
+\begin{frame}[fragile]
+        \frametitle{Apache server configuration}
+\begin{itemize}
+    \item 
+ServerRoot "/etc/apache2” 
+    \item Listen 80 \# порт
+    \item MaxClients 200  или MaxRequestWorkers 200 
+Максимальное количество одновременных запросов
+    \item DirectoryIndex index.html имя файла по умолчанию
+    \item Include conf.modules.d/*.conf Подключение конфигураций из внешних файлов:
+    \item IncludeOptional conf-enabled/*.conf
+\end{itemize}
+\end{frame}

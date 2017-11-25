@@ -34,14 +34,11 @@
             \begin{verbatim} find /root \( -name '*.pyc' -o -name '*.py' \) \
 -type f -user root -size +300k -size -1024k \
 -exec ls -l \{\} \; \end{verbatim}
- Дополнительно:
- Позволяет преодолеть лимит на кол-во аргументов в командной строке. 
- Например, когда в директории много файлов и тогда возникают ошибки
+ Дополнительно: позволяет преодолеть лимит на кол-во аргументов в командной строке. 
  \textquotedblleft Arguments too long.\textquotedblright 
 \end{frame}
 
 \begin{frame}[fragile]{xargs}
-	\begin{block}{xargs}
 			Утилита для создания и запуска команд из стандартного потока ввода:
 		\begin{verbatim}
 xargs [options] command [command options]
@@ -54,8 +51,8 @@ xargs [options] command [command options]
 			\item {\tt -P N} -- максимальное количество процессов
 		\end{itemize}
 
-	\end{block}
-Имя файла может содержать разделители: пробелы, tab, символ новой строки. В этом случае xargs воспримет имя как набор раздельных аргументов. Использовать -print0 в команде find для замены на ASCII NUL в имени файла.
+%Для работы с разделителями в имени файла: пробелы, tab, символ новой строки. 
+Использовать -print0 в команде find для замены на ASCII NUL в имени файла.
 \end{frame}
 
 \begin{frame}[fragile]{xargs}

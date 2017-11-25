@@ -1,0 +1,159 @@
+\input{common}
+%\title[bash]{Bourne again shell}
+\title{Введение в GNU/Linux}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Begin Document  %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frame}
+	\frametitle{BASH}
+	\titlepage
+	\vspace{-0.5cm}
+	\begin{center}
+	%\frontpagelogo
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\tableofcontents
+%	[hideallsubsections]
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+%%%%%%%%%% Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Write and run shell script}
+\mode<all>{\input{../../slides/cmdline/automation}}
+\mode<all>{\input{../../slides/cmdline/shell-intro/frame1_shell_description}}
+\mode<all>{\input{../../slides/cmdline/shell-intro/frame2_task_shells_alternatives}}
+\mode<all>{\input{../../slides/bash/description}}
+\mode<all>{\input{../../slides/cmdline/shell-intro/frame6_cmd_types.tex}}
+\mode<all>{\input{../../slides/cmdline/shell-intro/frame5_task_cmd_types.tex}}
+\mode<all>{\input{../../slides/bash/bashsams/frame11}}
+\mode<all>{\input{../../slides/bash/bashsams/frame12}}
+
+\section{Manipulate the different I/O streams  with I/O Redirection}
+\mode<all>{\input{../../slides/bash/redirection/frame1.tex}}
+\mode<all>{\input{../../slides/cmdline/pipes}}
+\mode<all>{\input{../../slides/cmdline/io-redirection}}
+\mode<all>{\input{../../slides/cmdline/io-redirection-usecases}}
+%\mode<all>{\input{../../slides/bash/redirection/frame2.tex}}
+%\mode<all>{\input{../../slides/bash/redirection/frame3.tex}}
+%\mode<all>{\input{../../slides/bash/redirection/frame4.tex}}
+
+%\mode<all>{\input{../../slides/bash/runtime/frame3}}
+
+\section{Understand expansion}
+% bash macroprocessor
+\mode<all>{\input{../../slides/bash/expansion/01-about-expansion}}
+% brace expansion
+\mode<all>{\input{../../slides/bash/runtime/frame2}}
+% tilde expansion
+\mode<all>{\input{../../slides/bash/runtime/tildeexp}}
+% parameters expansion
+\mode<all>{\input{../../slides/bash/params}}
+% globbing
+\mode<all>{\input{../../slides/bash/runtime/frame4}}
+\mode<all>{\input{../../slides/bash/bashsams/frame23}}
+%command expansion
+\mode<all>{\input{../../slides/bash/runtime/frame7}}
+
+% spaces
+\mode<all>{\input{../../slides/bash/runtime/frame6}}
+%IFS
+\mode<all>{\input{../../slides/bash/bashsams/frame31}}
+
+% symbols escape
+\mode<all>{\input{../../slides/bash/runtime/frame5}}
+%comments
+\mode<all>{\input{../../slides/bash/runtime/frame1}}
+\mode<all>{\input{../../slides/bash/runtime/frame10}}
+%exit code
+\mode<all>{\input{../../slides/bash/runtime/frame8}}
+%\mode<all>{\input{../../slides/bash/bashsams/frame10}}
+
+%exec
+%\mode<all>{\input{../../slides/bash/runtime/frame9}}
+
+\section{Use variables in scripts}
+
+\mode<all>{\input{../../slides/bash/vars}}
+
+\section{Tests and conditions}
+%\mode<all>{\input{../../slides/bash/tests/frame1.tex}}
+%\mode<all>{\input{../../slides/bash/tests/frame2.tex}}
+% example && || chain
+\mode<all>{\input{../../slides/bash/tests/frame8_1.tex}}
+\mode<all>{\input{../../slides/bash/tests/frame8.tex}}
+\mode<all>{\input{../../slides/bash/tests/frame8_1_usage.tex}}
+\mode<all>{\input{../../slides/bash/tests/frame8_2_usage.tex}}
+% Команды сравнения.
+\mode<all>{\input{../../slides/bash/tests/frame3.tex}}
+
+\mode<all>{\input{../../slides/bash/tests/frame5.tex}}
+%\mode<all>{\input{../../slides/bash/tests/frame4.tex}}
+
+
+%% test and [[ comparison
+\mode<all>{\input{../../slides/bash/tests/frame9.tex}}
+\mode<all>{\input{../../slides/bash/tests/frame10.tex}}
+\mode<all>{\input{../../slides/bash/tests/frame11.tex}}
+
+\mode<all>{\input{../../slides/bash/branching/frame1.tex}}
+\mode<all>{\input{../../slides/bash/branching/frame2.tex}}
+%\mode<all>{\input{../../slides/bash/branching/frame3.tex}}
+\mode<all>{\input{../../slides/bash/branching/frame4.tex}}
+%\mode<all>{\input{../../slides/bash/branching/frame5.tex}}
+\mode<all>{\input{../../slides/bash/branching/frame6.tex}}
+
+\section{Repeat operations with loops.}
+\mode<all>{\input{../../slides/bash/loops/frame1.tex}}
+\mode<all>{\input{../../slides/bash/loops/frame2.tex}}
+\mode<all>{\input{../../slides/bash/loops/frame3.tex}}
+\mode<all>{\input{../../slides/bash/loops/frame4.tex}}
+\mode<all>{\input{../../slides/bash/loops/frame5.tex}}
+\mode<all>{\input{../../slides/bash/loops/frame6.tex}}
+\mode<all>{\input{../../slides/bash/loops/frame7.tex}}
+% while
+\mode<all>{\input{../../slides/bash/loops/frame8.tex}}
+\mode<all>{\input{../../slides/bash/loops/frame9.tex}}
+\mode<all>{\input{../../slides/bash/loops/frame10.tex}}
+\mode<all>{\input{../../slides/bash/loops/frame11.tex}}
+\mode<all>{\input{../../slides/bash/loops/frame11_1.tex}}
+\mode<all>{\input{../../slides/bash/loops/frame12.tex}}
+%\mode<all>{\input{../../slides/bash/loops/frame13.tex}}
+%
+\section{Group pieces of code with functions.}
+\mode<all>{\input{../../slides/bash/functions/frame1}}
+\mode<all>{\input{../../slides/bash/functions/frame2}}
+%\mode<all>{\input{../../slides/bash/functions/frame3}}
+% example
+\mode<all>{\input{../../slides/bash/functions/frame4}}
+\mode<all>{\input{../../slides/bash/functions/frame5}}
+\mode<all>{\input{../../slides/bash/functions/frame6}}
+%\mode<all>{\input{../../slides/bash/functions/frame7}}
+
+\section{Debugging scripts.}
+\mode<all>{\input{../../slides/bash/debug/frame1}}
+\mode<all>{\input{../../slides/bash/debug/frame2}}
+% debug variables
+\mode<all>{\input{../../slides/bash/debug/frame3}}
+\mode<all>{\input{../../slides/bash/debug/frame4}}
+% TODO 2 things in one. typical errors in conditions
+% directory script   filetype file
+% ./filetype 
+% ./filetype "file 1"
+%common conditional operator errors
+\mode<all>{\input{../../slides/bash/tests/frame6.tex}}
+%\mode<all>{\input{../../slides/bash/tests/frame7.tex}}
+\mode<all>{\input{../../slides/bash/debug/frame5}}
+
+
+\end{document}

@@ -3,6 +3,11 @@ TARGET += 02-administration.pdf
 TARGET += 03-bash_intro.pdf
 TARGET += 04-bash_programm.pdf
 TARGET += 01-linux-course.pdf
+TARGET += 02-linux-course.pdf
+TARGET += 03-linux-course.pdf
+TARGET += 04-linux-course.pdf
+TARGET += 05-linux-course.pdf
+TARGET += 06-linux-course.pdf
 
 LATEXML=latexml
 LATEXML_PARAMS=--inputencoding=utf8 --preload=beamer.cls --preload=t2aenc.def --nocomments

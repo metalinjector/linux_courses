@@ -1,0 +1,23 @@
+\begin{frame}[fragile]
+        \frametitle{CentOS Apache configuration}
+Server state:
+\begin{itemize}
+    \item systemctl stop httpd.service
+    \item systemctl start httpd.service
+    \item systemctl reload httpd
+    \item systemctl is-active httpd.service
+\end{itemize}
+
+Configuration test:
+\begin{itemize}
+    \item apachectl graceful
+    \item apachectl configtest
+    \item httpd –t 
+\end{itemize}
+Firewall configuration
+\begin{itemize}
+    \item setsebool -P httpd\_can\_network\_connect on
+    \item firewall-cmd --add-service=http
+\end{itemize}
+
+\end{frame}

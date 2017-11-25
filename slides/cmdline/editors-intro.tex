@@ -1,11 +1,8 @@
-\begin{frame}{Редакторы}
+\begin{frame}{Текстовые редакторы}
 	\begin{itemize}
 		\item Интерактивные
 			\begin{itemize}
 				\item vi
-					\begin{itemize}
-						\item Есть почти везде
-					\end{itemize}
 				\item vim
 				\item emacs
 			\end{itemize}
@@ -38,20 +35,18 @@
 	\tiny
 	\begin{block}{Команды}
 		\begin{itemize}
-		  \item {\tt a, i} -- добавить строку после (перед) текущей
-			  \begin{verbatim} who | sed -e 'a Text' \end{verbatim}
-		  \item {\tt c} -- удалить строку и заменить на текст
-			  \begin{verbatim} who | sed -e "/$USER/ c Юзверь" \end{verbatim}
 		  \item {\tt d} -- удалить строку
 			  \begin{verbatim} who | sed -e '2,4 d' \end{verbatim}
 			  \begin{verbatim} who | sed -e '/pts/ d' \end{verbatim}
 		  \item {\tt s} -- замена по регулярному выражению
-			  \begin{verbatim} who | sed -e "s/$USER/Юзверь/g" \end{verbatim}
+			  \begin{verbatim} who | sed -e "s/USER/user/g" \end{verbatim}
+		  \item {\tt a, i} -- добавить строку после (перед) текущей
+			  \begin{verbatim} who | sed -e 'a Text' \end{verbatim}
 		\end{itemize}
 	\end{block}
-	\pause
-	\begin{block}{Задача}
-		С помощью {\tt find} найти все вложенные директории в {\tt /etc} и 
-		''переделать'' их в windows-style
-	\end{block}
+%	\pause
+%	\begin{block}{Задача}
+%		С помощью {\tt find} найти все вложенные директории в {\tt /etc} и 
+%		''переделать'' их в windows-style
+%	\end{block}
 \end{frame}
