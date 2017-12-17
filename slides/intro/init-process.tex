@@ -131,7 +131,6 @@ init --help
 
 \begin{frame}{systemd: systemctl управление сервисами}
 		\begin{itemize}
-			\item {\tt systemctl status service\_name}
 			\item {\tt systemctl start service\_name}
 			\item {\tt systemctl stop service\_name}
 			\item {\tt systemctl is-active service\_name}
@@ -140,5 +139,16 @@ init --help
 			\item {\tt systemctl enable service\_name}
 			\item {\tt systemctl disable service\_name}
 			\item {\tt systemctl is-enabled service\_name}
+			\item {\tt systemctl cat service\_name}
+		\end{itemize}
+\end{frame}
+
+\begin{frame}{systemd: journalctl сообщения сервисов}
+		\begin{itemize}
+			\item {\tt systemctl status service\_name}
+			\item {\tt journalctl -k 		\# dmesg }
+			\item {\tt journalctl -u sshd  \# unit name }
+			\item {\tt journalctl -f  		\# follow }
+			\item {\tt journalctl -x  		\# add message explanations }
 		\end{itemize}
 \end{frame}
