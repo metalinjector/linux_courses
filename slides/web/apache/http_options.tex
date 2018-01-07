@@ -1,6 +1,11 @@
 \begin{frame}[fragile]
-        \frametitle{Options directive}
+        \frametitle{Configuration section <Directory> options}
 
  \lstinputlisting[language=bash]{../../slides/web/samples/dir_options.conf}
 
+\begin{itemize}
+	\item Indexes  - mod\_autoindex generates a listing of the directory contents
+	\item Includes - mod\_include enables Server Side Includes (SSI)
+	\item FollowSymLinks - the server will follow symbolic links in this directory
+\end{itemize}
 \end{frame}

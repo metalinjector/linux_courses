@@ -1,0 +1,18 @@
+\begin{frame}[fragile]{Group identifier}
+
+\begin{block}{Group ID (GID)}
+\alert{A group identifier} is a numeric value used to represent a specific group.
+Groups are collections of zero or more users.
+\end{block}
+
+\begin{block}{Default group}
+ Every user must be a member of at least one group, the \alert{primary group} which is identified by the numeric GID
+\end{block}
+
+Commands to determine group
+  \begin{itemize}
+    \item \verb|id, id username|
+    \item \verb|groups, groups username|
+  \end{itemize}
+Group configuration file:  \alert{/etc/group}
+\end{frame}

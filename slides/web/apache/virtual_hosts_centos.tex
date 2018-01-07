@@ -1,0 +1,14 @@
+\begin{frame}[fragile]
+    \frametitle{Virtual Host CentOS configuration}
+Конфигурационные файлы
+
+\verb|# mkdir /etc/httpd/sites| создать директорию для сайтов
+
+Активация настроек VirtualHost в файле httpd.conf
+\verb|IncludeOptional sites/*.conf| добавить в httpd.conf
+
+\verb|# apachectl configtest|
+
+\verb|# systemctl reload httpd|
+
+\end{frame}

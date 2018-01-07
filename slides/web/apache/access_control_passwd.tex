@@ -1,0 +1,12 @@
+\begin{frame}[fragile]
+        \frametitle{Apache password access control}
+
+Доступ по паролю к сайту
+ \lstinputlisting[language=bash]{../../slides/web/samples/dir_passwd.conf}
+Утилиты для создания пароля
+\verb|$ htpasswd -c /etc/apache2/users Ivan| create
+\verb|$ htpasswd -m /etc/apache2/users Ivan| modify
+\verb|$ a2enmod auth_basic # Ubuntu|
+\verb|$ a2enmod authn_core # Ubuntu|
+
+\end{frame}

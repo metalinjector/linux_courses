@@ -2,22 +2,22 @@
         \frametitle{CentOS Apache configuration}
 Server state:
 \begin{itemize}
-    \item systemctl stop httpd.service
-    \item systemctl start httpd.service
-    \item systemctl reload httpd
-    \item systemctl is-active httpd.service
+    \item \verb| systemctl stop httpd.service|
+    \item  \verb|systemctl start httpd.service|
+    \item  \verb|systemctl reload httpd|
+    \item  \verb|systemctl is-active httpd.service|
 \end{itemize}
 
 Configuration test:
 \begin{itemize}
-    \item apachectl graceful
-    \item apachectl configtest
-    \item httpd –t 
+    \item  \verb|apachectl graceful|
+    \item  \verb|apachectl configtest|
+    \item  \verb|httpd –t |
 \end{itemize}
 Firewall configuration
 \begin{itemize}
-    \item setsebool -P httpd\_can\_network\_connect on
-    \item firewall-cmd --add-service=http
+    \item  \verb|setsebool -P httpd\_can\_network\_connect on|
+    \item  \verb|firewall-cmd --add-service=http|
 \end{itemize}
 
 \end{frame}

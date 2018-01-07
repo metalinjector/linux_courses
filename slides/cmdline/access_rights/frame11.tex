@@ -1,0 +1,13 @@
+\begin{frame}[fragile]{Special modes}
+
+\begin{block}{SUID (set user ID), SGID (set group ID) }
+Установка битов SUID или SGID позволит пользователям запускать исполняемые файлы от имени владельца (или группы) запускаемого файла
+\end{block}
+\verb|chmod 4755 plu.txt| или \verb|chmod u+s plu.txt|
+
+\begin{block}{Sticky bit mode}
+Каталог с установленным sticky-битом означает, что удалить файл из этого каталога может только владелец файла 
+\end{block}
+\verb|chmod 1755 plu| или \verb|chmod +t plu|
+
+\end{frame}

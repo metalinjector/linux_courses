@@ -1,0 +1,18 @@
+\begin{frame}[fragile]
+    \frametitle{Virtual Host Ubuntu configuration Support}
+Конфигурационные файлы
+
+\verb|/etc/apache2/sites-available/*.conf|
+
+Активация настроек VirtualHost в файле myblog
+
+\verb|/etc/apache2/sites-available/myblog.conf|
+
+\verb|# a2ensite myblog| enable site
+
+\verb|# a2dissite myblog| disable site
+
+\verb|# apache2ctl configtest|
+
+\verb|# service apache2 reload|
+\end{frame}
