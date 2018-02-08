@@ -1,0 +1,25 @@
+pipeline
+{
+    agent
+    {
+        docker
+        {
+            image: "ubuntu:latest"
+        }
+    }
+    stages
+    {
+        stage("Build")
+        {
+            echo "Build files"
+        }
+        stage("Test")
+        {
+            echo "Test containers"
+        }
+        stage("Deploy")
+        {
+            echo "Copy artifacts"
+        }
+    }
+}

@@ -11,7 +11,7 @@ done
 \end{lstlisting}
 \end{block}
 
-\begin{block}{Пример. Перебираем аргументы. Вариант реализации.}
+\begin{block}{Пример. Перебираем аргументы.}
 \lstinputlisting[language=bash,frame=single]{../../slides/bash/samples/while_args.sh}
 \end{block}
 \end{frame}
@@ -27,16 +27,16 @@ done
 %\end{lstlisting}
 %\end{block}
 
-\begin{frame}[fragile]
-\frametitle{Пример. Бесконечный цикл.}
-\begin{block}{Выход из бесконечного цикла.}
-\begin{lstlisting}[language=bash,frame=single,name=random.sh]
-while :
-do
-  x=$RANDOM
-  echo $x
-  [[ $x -gt 1100 ]] && break
-done
-\end{lstlisting}
-\end{block}
-\end{frame}
+%\begin{frame}[fragile]
+%\frametitle{Пример. Бесконечный цикл.}
+%\begin{block}{Выход из бесконечного цикла.}
+%\begin{lstlisting}[language=bash,frame=single,name=random.sh]
+%while :
+%do
+%  x=$RANDOM
+%  echo $x
+%  [[ $x -gt 1100 ]] && break
+%done
+%\end{lstlisting}
+%\end{block}
+%\end{frame}
