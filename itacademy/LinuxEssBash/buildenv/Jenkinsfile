@@ -11,15 +11,24 @@ pipeline
     {
         stage("Build")
         {
-            echo "Build files"
+            steps 
+            {
+                echo "Build files"
+            }
         }
         stage("Test")
         {
-            echo "Test containers"
+            steps 
+            {
+                echo "Test containers"
+            }
         }
         stage("Deploy")
         {
-            echo "Copy artifacts"
+            steps
+            {
+                echo "Copy artifacts"
+            }
         }
     }
 }
