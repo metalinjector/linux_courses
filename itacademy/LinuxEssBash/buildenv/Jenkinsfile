@@ -4,7 +4,7 @@ pipeline
     {
         dockerfile
         {
-            dir itacademy/LinuxEssBash/buildenv
+            dir 'itacademy/LinuxEssBash/buildenv'
         }
     }
     stages
