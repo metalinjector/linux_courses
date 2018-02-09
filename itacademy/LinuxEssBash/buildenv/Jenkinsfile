@@ -2,9 +2,9 @@ pipeline
 {
     agent
     {
-        docker
+        dockerfile
         {
-            image 'ubuntu:latest'
+            dir itacademy/LinuxEssBash/buildenv
         }
     }
     stages
@@ -14,6 +14,7 @@ pipeline
             steps 
             {
                 echo "Build files"
+                sh "ls -R"
             }
         }
         stage("Test")
