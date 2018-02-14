@@ -13,12 +13,7 @@ pipeline
         {
             steps 
             {
-                dir './itacademy/LinuxEssBash/' {
-                    echo "Build files"
-                    sh "ls"
-                    sh "ls"
-                    echo pwd
-                }
+                sh "make --directory=itacademy/LinuxEssBash/"
             }
         }
         stage("Test")
