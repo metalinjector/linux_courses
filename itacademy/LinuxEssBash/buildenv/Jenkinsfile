@@ -14,7 +14,8 @@ pipeline
             steps 
             {
                 echo "Build files"
-                dir './linux_courses/itacademy/LinuxEssBash/'
+                sh "ls"
+                dir './itacademy/LinuxEssBash/'
                 sh "ls"
                 echo pwd
             }
