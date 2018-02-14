@@ -1,8 +1,4 @@
-TARGET = 01-intro.pdf
-TARGET += 02-administration.pdf
-TARGET += 03-bash_intro.pdf
-TARGET += 04-bash_programm.pdf
-TARGET += 01-linux-course.pdf
+TARGET = 01-linux-course.pdf
 TARGET += 02-linux-course.pdf
 TARGET += 03-linux-course.pdf
 TARGET += 04-linux-course.pdf
