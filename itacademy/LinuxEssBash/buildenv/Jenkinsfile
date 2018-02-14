@@ -20,14 +20,16 @@ pipeline
         {
             steps 
             {
-                echo "Test containers"
+                sh "ls itacademy/LinuxEssBash/"
             }
         }
         stage("Deploy")
         {
             steps
             {
-                echo "Copy artifacts"
+                echo "Copy artifacts to workspace"
+                // Archive the build output artifacts.
+                archiveArtifacts artifacts: 'itacademy/LinuxEssBash/*.pdf'
             }
         }
     }
