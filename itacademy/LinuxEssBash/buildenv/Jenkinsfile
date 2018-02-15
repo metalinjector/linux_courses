@@ -13,7 +13,7 @@ pipeline
         {
             steps 
             {
-                sh "make --directory=itacademy/LinuxEssBash/"
+                sh "cd itacademy/LinuxEssBash/; latexmk -pdfxe; cd -"
             }
         }
         stage("Test")
