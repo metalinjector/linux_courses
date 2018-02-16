@@ -52,6 +52,9 @@ clean:
 	@rm -f *.out
 	@rm -f *.toc
 	@rm -f *.nav
+	@rm -f *.xdv
+	@rm -f *.fls
+	@rm -f *.fdb_latexmk
 	@rm -f $(TARGET_PPTX)
 	@rm -f $(TARGET_XML)
 	@rm -f $(TARGET)
