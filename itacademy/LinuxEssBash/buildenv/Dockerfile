@@ -1,4 +1,4 @@
-FROM finalduty/archlinux:weekly
+FROM finalduty/archlinux:daily
 
 RUN pacman -Syu --noconfirm  texlive-bin \
         texlive-core \
