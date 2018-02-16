@@ -1,10 +1,8 @@
-FROM ubuntu:latest
+FROM finalduty/archlinux:weekly
 
-RUN apt-get update && \
-    apt-get --no-install-recommends -y install latex-beamer texlive-xetex \
-    texlive-latex-recommended \
-    texlive-latex-base \
-    texlive-generic-recommended texlive-latex-extra texlive-fonts-recommended \
-    lmodern latexmk make && \
-    apt-get clean 
-
+RUN pacman -Syu --noconfirm  texlive-bin \
+        texlive-core \
+        texlive-langcyrillic \
+        texlive-latexextra \
+        texlive-pictures ;\
+    pacman -Scc --noconfirm
