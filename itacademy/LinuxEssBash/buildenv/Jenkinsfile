@@ -14,7 +14,7 @@ pipeline
             steps 
             {
                 sh "make --directory=itacademy/LinuxEssBash/"
-                sh "cd itacademy/LinuxEssBash/; latexmk -pdfxe ; cd -"
+                sh "cd itacademy/LinuxEssBash/; latexmk -CA; latexmk -pdfxe ; cd -"
             }
         }
         stage("Test")
