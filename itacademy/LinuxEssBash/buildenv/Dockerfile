@@ -4,5 +4,5 @@ RUN pacman -Syu --noconfirm  texlive-bin \
         texlive-core \
         texlive-langcyrillic \
         texlive-latexextra \
-        texlive-pictures ;\
+        texlive-pictures ttf-dejavu ;\
     pacman -Scc --noconfirm

@@ -13,7 +13,7 @@ pipeline
         {
             steps 
             {
-                sh "cd itacademy/LinuxEssBash/; latexmk -xelatex; cd -"
+                sh "cd itacademy/LinuxEssBash/; latexmk -pdfxe ; cd -"
             }
         }
         stage("Test")
