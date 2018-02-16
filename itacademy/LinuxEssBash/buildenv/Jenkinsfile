@@ -13,7 +13,7 @@ pipeline
         {
             steps 
             {
-                sh "make --directory=itacademy/LinuxEssBash/"
+                sh "make --directory=itacademy/LinuxEssBash/ clean"
                 sh "cd itacademy/LinuxEssBash/; latexmk -CA; latexmk -pdfxe ; cd -"
             }
         }
