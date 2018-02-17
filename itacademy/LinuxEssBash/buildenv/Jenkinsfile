@@ -13,6 +13,7 @@ pipeline
         {
             steps 
             {
+                 git branch: 'xetex/', changelog: false, poll: false, url: 'https://github.com/nixuser/linux_courses.git'
                 sh "make --directory=itacademy/LinuxEssBash/ clean"
                 sh "cd itacademy/LinuxEssBash/; latexmk -CA; latexmk -pdfxe ./*linux-course.tex; cd -"
             }
