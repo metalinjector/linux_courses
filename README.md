@@ -36,7 +36,7 @@ _Disclaimer_: поскольку некоторые материалы либо 
 
 Для запуска Jenkins используется контейнер https://hub.docker.com/r/jenkinsci/blueocean/ и шаги по установке https://jenkins.io/doc/book/installing/.
 
-[[https://github.com/nixuser/linux_courses/tree/xetex/pipeline_config.png|alt=pipeline_configuration]]
+![alt text](https://github.com/nixuser/linux_courses/blob/xetex/pipeline_config.png)
 
 ~~~
  docker run --rm -u root -p 8080:8080 -v jenkins-data:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -v "$HOME":/home jenkinsci/blueocean
