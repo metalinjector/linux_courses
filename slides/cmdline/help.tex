@@ -13,37 +13,32 @@ Before You Ask
 \end{frame}
 
 
-\begin{frame}[fragile]{Источники получения помощи}
-    Встроенные в систему:
+\begin{frame}[fragile]{Встроенная документация}
 \begin{itemize}
     \item \textbf{man} - помощь по внешним командам
     \pause
-    \item \textbf{help} - встроенная помощь по внутренним командам bash (также man bash)
-    \pause
     \item \textbf{info} - расширенная помощь по некоторым командам (texinfo format)
+    \pause
     \item \textbf{/usr/share/doc/} - файлы документации поставляемые вместе с приложением
     \item \textbf{-h, --help option} - встроенная в приложение справка
+    \item \textbf{help} - встроенная помощь по внутренним командам bash (также man bash)
 \end{itemize}
 \end{frame}
-
 \begin{frame}[fragile]{Источники получения помощи}
      \begin{block}{Упражнение. Выполнить команды.}
         \begin{lstlisting}
-            help;  help help
-            man -h ; info --help
-            man -k intro or apropos intro
-            man -f intro or whatis intro
-            man 3 intro ; man 1 intro
-            man -wa intro
+man time
+man -f time or whatis time
+man -k time or apropos time
+man 7 time; man 1 time; man -wa time
+find /usr/share/doc
+whatis  -l -w '*'
         \end{lstlisting}
     \end{block}
 \end{frame}
-
 \begin{frame}[fragile]{Основное о man}
 		\begin{itemize}
 			\item Прочитайте {\tt man man} !
-			\item apropos, аналог {\tt man -k <word>}
-                        \item whatis, аналог {\tt man -f <word>} 
 			\item Разделы (sections)
 				\begin{itemize}
 					\item[1] Основная секция(юзерские программы)

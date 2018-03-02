@@ -37,27 +37,28 @@
 \end{textblock*}}
 
 \usepackage{listings}
-\lstloadlanguages{bash}
+\lstloadlanguages{bash,sh}
 
 \lstset{escapechar=`,
 	captionpos=b,
 	extendedchars=false,
-	language=sh,
+	language=bash,
 %	frame=single,
 	tabsize=2, 
-	columns=fullflexible, 
+%	columns=fullflexible, 
 %	basicstyle=\scriptsize,
 	keywordstyle=\color{blue}, 
 	commentstyle=\itshape\color{brown},
-%	identifierstyle=\ttfamily, 
+	identifierstyle=\ttfamily, 
 	stringstyle=\mdseries\color{green}, 
 	showstringspaces=false, 
 	numbers=left, 
 	numberstyle=\footnotesize, 
 	breaklines=true, 
 	inputencoding=utf8,
-	keepspaces=true,
-	morekeywords={u\_short, u\_char, u\_long, in\_addr}
+%	keepspaces=true,
+	morekeywords={u\_short,u\_char,u\_long,in\_addr,man,find,date,grep,%
+    time,info,whatis,apropos}
 	}
 
 \definecolor{darkgreen}{cmyk}{0.7, 0, 1, 0.5}
