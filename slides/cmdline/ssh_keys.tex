@@ -50,12 +50,17 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{SSH. Автоматизация входа}
-  \begin{center}
-    \begin{tabular}{ l r }
-      \Large{Linux: .ssh/config} & \Large{Windows: PuTTY session} \\
-      \lstinputlisting[basicstyle=\tiny]{../../sam-solutions/samples/ssh-config} & \fbox{\includegraphics[height=4.3cm]{putty-config-screenshot}} \\
-    \end{tabular}
-
-  \end{center}
+\begin{columns}
+    \begin{column}{0.5\textwidth}
+      {\Large Linux: .ssh/config}
+      \lstinputlisting[basicstyle=\tiny]{../../sam-solutions/samples/ssh-config} 
+    \end{column}
+    \begin{column}{0.5\textwidth}  %%<--- here
+   {\Large Windows: PuTTY session}
+        \begin{figure}
+        \centering
+            \includegraphics[scale=0.35]{putty-config-screenshot} 
+        \end{figure}
+    \end{column}
+\end{columns}
 \end{frame}
