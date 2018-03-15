@@ -26,16 +26,6 @@ Directory is a file system cataloging structure which contains references to oth
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Примеры использования имен.}
-        /proc/cmdline
-
-        /boot/grub/grub.cfg
-
-        /home/user/.ssh/authorized\_key
-        \alert{./} - текущая директория
-        \alert{../} - предыдущая директория
-        \alert{../../} - две предыдущих директории
-\end{frame}
 
 \begin{frame}{Абсолютное имя файла в дереве файловой системы.}
 \includegraphics[height=8cm]{filesystem} 
@@ -60,6 +50,18 @@ pwd
 \end{frame}
 
 
+\begin{frame}{Примеры использования имен.}
+        /proc/cmdline
+
+        /boot/grub/grub.cfg
+
+        /home/user/.ssh/authorized\_key \newline 
+        \alert{./} - текущая директория \newline 
+        \alert{../} - предыдущая директория \newline 
+        \alert{../../} - две предыдущих директории \newline
+        Команды для работы с именем файла: \newline
+        {\tt basename, dirname, realpath, readlink -f }
+\end{frame}
 %\begin{frame}[fragile]{Просмотр типов файлов}
 %      \begin{block}{Упражнение. Символьное обозначение типа файла.}
 %Первая буква вывода команды ls -l обозначает тип файла. 

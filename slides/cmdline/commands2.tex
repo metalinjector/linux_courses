@@ -40,10 +40,10 @@ tar -C /tmp/ -xzf archive.tar.gz
 tar -c * | tar -C /tmp/copy -x
 tar -cf - * | tar -C /tmp -xf -
         \end{verbatim}
-	\pause
-	Создать копию текущей директории на другом хосте:
-	\begin{verbatim}
-HostDest: netcat -l 2222 | gzip -dc | tar -C /tmp/copy/ -x
-HostSrc:  tar -c * | gzip -9 | netcat HostDest 2222
-        \end{verbatim}
+	%\pause
+	%Создать копию текущей директории на другом хосте:
+	%\begin{verbatim}
+%HostDest: netcat -l 2222 | gzip -dc | tar -C /tmp/copy/ -x
+%HostSrc:  tar -c * | gzip -9 | netcat HostDest 2222
+%        \end{verbatim}
 \end{frame}
