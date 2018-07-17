@@ -1,0 +1,114 @@
+\begin{frame}{Configure network interface}
+Minimal settings are:
+  \begin{itemize}
+    \item IP address 
+    \item Netmask 
+	\item Gateway
+    \item DNS server (optional)
+  \end{itemize}
+Why do you need static configuration? \\ 
+Dynamic host configuration protocol (DHCP). DHCP server can be built-in:
+  \begin{itemize}
+	\item Server
+    \item Modem 
+    \item Hypervisor 
+  \end{itemize}
+	or run DHCP as standalone service
+\end{frame}
+
+\begin{frame}{Network configuration via commands}
+\lstinputlisting[language=bash]{../../slides/networking/samples/example_network_configuration.txt}
+\end{frame}
+
+\begin{frame}[fragile]{Ubuntu network configuration files}
+
+Configuration file: {\tt /etc/network/interfaces }
+
+\begin{block}{Dynamic IP Address Assignment}
+    \begin{lstlisting}
+auto eth0
+iface eth0 inet dhcp
+    \end{lstlisting}
+\end{block}
+
+\begin{block}{Static IP Address Assignment}
+    \begin{lstlisting}
+    auto eth0
+    iface eth0 inet static
+    address 10.0.0.100
+    netmask 255.255.255.0
+    gateway 10.0.0.1
+    \end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}{Network configuration files}
+  \begin{itemize}
+    \item {\tt /etc/sysconfig/network}
+    \item Расположение зависит от дистрибутива:
+        \begin{itemize}
+            \item RH-like: {\tt /etc/sysconfig/network-scripts}\\
+                {\tt /etc/sysconfig/network-scripts/ifcfg-eth0}
+            \item ALTLinux: {\tt /etc/net/ifaces}
+            \item Debian: {\tt /etc/network/interfaces}
+            \item Gentoo: {\tt /etc/conf.d/net}
+        \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{CentOS network configuration files}
+Configuration file: {\tt /etc/sysconfig/network-scripts/ifcfg-<interface-name> }
+
+\begin{block}{Dynamic IP Address Assignment}
+    \begin{lstlisting}
+DEVICE=eth0
+BOOTPROTO=dhcp
+ONBOOT=yes
+    \end{lstlisting}
+\end{block}
+
+\begin{block}{Static IP Address Assignment}
+    \begin{lstlisting}
+DEVICE=eth0
+BOOTPROTO=static
+ONBOOT=yes
+NETMASK=255.255.255.0
+IPADDR=10.0.1.27
+    \end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Apply configuration settings}
+    \begin{lstlisting}
+    ifdown eth0
+    ifup eth0
+    \end{lstlisting}
+    CentOS manage network configuration
+    \begin{lstlisting}
+    systemctl status network.service
+    systemctl restart network.service
+    \end{lstlisting}
+    Ubuntu manage network configuration
+    \begin{lstlisting}
+    systemctl status networking.service
+    systemctl restart networking.service
+    \end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]{Host name resolution}
+\begin{block}{ {\tt /etc/resolv.conf}}
+        \begin{lstlisting}
+        domain it-academy.by
+        search it-academy.by
+        nameserver 217.23.115.244
+        nameserver 192.168.37.1
+        \end{lstlisting}
+    \end{block}
+\begin{block}{ {\tt /etc/hosts} }
+        \begin{lstlisting}
+        127.0.0.1 localhost
+        127.0.1.1 zabbix
+        \end{lstlisting}
+\end{block}
+\end{frame}

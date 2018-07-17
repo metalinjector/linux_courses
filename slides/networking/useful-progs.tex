@@ -2,10 +2,10 @@
   \begin{tabular}{ | c | c | }
     \hline
     TCP/IP Layer & Utility \\ \hline 
-    Data link & arp / ip ne / ip link / ip addr \\ \hline
+    Data link & ping / ip ne / ip link / ip addr \\ \hline
     Network & ping / mtr / traceroute \\ \hline
-    Transport & netstat / ss \\ \hline
-    Application & telnet / netcat / nc /  \\ \hline
+    Transport &  ss -nlp / ss \\ \hline
+    Application & telnet / netcat / nc / nmap  \\ \hline
     Application DNS & host / dig / nslookup  \\ \hline
   \end{tabular}
     \\
@@ -17,12 +17,24 @@
 
 \end{frame}
 
+\begin{frame}{Полезные утилиты: практика}
+		\begin{block}{ss}
+			Узнать:
+			\begin{itemize}
+				\item список используемых сокетов
+				\item серверных сокетов
+				\item имена/pid серверов
+				\item узнать номера портов
+			\end{itemize}
+		\end{block}
+\end{frame}
+
 
 %\begin{frame}{Полезные утилиты: практика}
 %
 %	\begin{columns}
 %		\column{0.5\textwidth}
-%		\begin{block}{netstat}
+%		\begin{block}{ss}
 %
 %			Узнать:
 %			\begin{itemize}

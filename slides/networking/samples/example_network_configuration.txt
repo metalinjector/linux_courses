@@ -1,0 +1,10 @@
+# Show network interfaces
+ip link show
+# Deactivate interface 
+ip link set <iface> up
+# Activate interface 
+ip link set <iface> down
+# Assign address and default route
+ip addr add 192.168.1.17/23 dev eth0
+ip route add default via 192.168.1.254
+ip addr ; ip route
