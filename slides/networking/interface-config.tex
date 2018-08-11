@@ -33,11 +33,11 @@ iface eth0 inet dhcp
 
 \begin{block}{Static IP Address Assignment}
     \begin{lstlisting}
-    auto eth0
-    iface eth0 inet static
-    address 10.0.0.100
-    netmask 255.255.255.0
-    gateway 10.0.0.1
+auto eth0
+iface eth0 inet static
+address 10.0.0.100
+netmask 255.255.255.0
+gateway 10.0.0.1
     \end{lstlisting}
 \end{block}
 \end{frame}
@@ -80,18 +80,18 @@ IPADDR=10.0.1.27
 
 \begin{frame}[fragile]{Apply configuration settings}
     \begin{lstlisting}
-    ifdown eth0
-    ifup eth0
+ifdown eth0
+ifup eth0
     \end{lstlisting}
     CentOS manage network configuration
     \begin{lstlisting}
-    systemctl status network.service
-    systemctl restart network.service
+systemctl status network.service
+systemctl restart network.service
     \end{lstlisting}
     Ubuntu manage network configuration
     \begin{lstlisting}
-    systemctl status networking.service
-    systemctl restart networking.service
+systemctl status networking.service
+systemctl restart networking.service
     \end{lstlisting}
 \end{frame}
 
@@ -99,16 +99,16 @@ IPADDR=10.0.1.27
 \begin{frame}[fragile]{Host name resolution}
 \begin{block}{ {\tt /etc/resolv.conf}}
         \begin{lstlisting}
-        domain it-academy.by
-        search it-academy.by
-        nameserver 217.23.115.244
-        nameserver 192.168.37.1
+domain it-academy.by
+search it-academy.by
+nameserver 217.23.115.244
+nameserver 192.168.37.1
         \end{lstlisting}
     \end{block}
 \begin{block}{ {\tt /etc/hosts} }
         \begin{lstlisting}
-        127.0.0.1 localhost
-        127.0.1.1 zabbix
+127.0.0.1 localhost
+127.0.1.1 zabbix
         \end{lstlisting}
 \end{block}
 \end{frame}
