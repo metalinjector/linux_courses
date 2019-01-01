@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+
+  slides:
+    build:
+      context: ./
+      dockerfile: ./itacademy/LinuxEssBash/buildenv/Dockerfile
+    volumes:
+      - type: bind
+        source: ./
+        target: /slides/

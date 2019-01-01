@@ -36,12 +36,13 @@
 	\begin{block}{Команды}
 		\begin{itemize}
 		  \item {\tt d} -- удалить строку
+			  \begin{verbatim} who | sed -e '10 d' \end{verbatim}
 			  \begin{verbatim} who | sed -e '2,4 d' \end{verbatim}
 			  \begin{verbatim} who | sed -e '/pts/ d' \end{verbatim}
 		  \item {\tt s} -- замена по регулярному выражению
 			  \begin{verbatim} who | sed -e "s/USER/user/g" \end{verbatim}
-		  \item {\tt a, i} -- добавить строку после (перед) текущей
-			  \begin{verbatim} who | sed -e 'a Text' \end{verbatim}
+%		  \item {\tt a, i} -- добавить строку после (перед) текущей
+%			  \begin{verbatim} who | sed -e 'a Text' \end{verbatim}
 		\end{itemize}
 	\end{block}
 %	\pause
@@ -49,4 +50,10 @@
 %		С помощью {\tt find} найти все вложенные директории в {\tt /etc} и 
 %		''переделать'' их в windows-style
 %	\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{awk}
+    \begin{lstlisting}
+cat /etc/passwd | awk -F : '{print $3,$4}'
+      \end{lstlisting}
 \end{frame}

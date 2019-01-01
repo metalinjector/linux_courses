@@ -29,7 +29,14 @@ _Disclaimer_: поскольку некоторые материалы либо 
 * sam-solutions/ -- введение в Linux для QA (SaM-Solutions)
 * promwad/ -- курс "Программирование встраиваемых систем" (Promwad)
 
-Сборка
+Сборка в Docker окружении
+-------------
+~~~
+ docker-compose run slides
+~~~
+
+
+Сборка в Jenkins окружении
 -------------
 
 Шаги по сборке курса для itacademy. Работает только в ветке xetex, поэтому нужно настроить Jenkins забирать Jenkinsfile из ветки xetex, который расположен itacademy/LinuxEssBash/buildenv/
