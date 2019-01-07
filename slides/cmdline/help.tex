@@ -19,39 +19,76 @@ Before You Ask
     \pause
     \item \textbf{info} - расширенная помощь по некоторым командам (texinfo format)
     \pause
-    \item \textbf{/usr/share/doc/} - файлы документации поставляемые вместе с приложением
+    \item \textbf{find /usr/share/doc/} - файлы документации поставляемые вместе с приложением
     \item \textbf{-h, --help option} - встроенная в приложение справка
     \item \textbf{help} - встроенная помощь по внутренним командам bash (также man bash)
 \end{itemize}
 \end{frame}
-\begin{frame}[fragile]{Источники получения помощи}
-     \begin{block}{Упражнение. Выполнить команды.}
+
+\begin{frame}[fragile]{Основное о man}
+      \textbf{man \textless command\_name\textgreater }
+
+	\begin{block}{Example: show uptime manual page}
+		{\tt man uptime}
+	\end{block}
+
+		\begin{itemize}
+			\item Прочитайте {\tt man man} !
+		\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]{man page navigation}
+		\begin{itemize}
+			\item \textbf{up, down} - scroll one line
+			\item \textbf{q} - exit
+			\item \textbf{/pattern} - search pattern
+			\item \textbf{n} - next text pattern
+			\item \textbf{N} - repeat search in back direction
+			\item \textbf{h} - help
+		\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Page structure}
+		\begin{itemize}
+			\item NAME
+			\item SYNOPSIS
+			\item DESCRIPTION
+			\item EXAMPLES
+			\item SEE ALSO
+		\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Разделы помощи}
+	\begin{itemize}
+		\item[1] Основная секция(юзерские программы)
+		\item[2] Syscalls
+		\item[3] С library
+		\item[5] Конфигурационные файлы
+		\item[8] Системные службы
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{More than one section of the manual}
+	name(section)  \\ 
+	\textbf{man(1)} and \textbf{man(7)}, or \textbf{exit(2)} and \textbf{exit(3)} \\
+     \begin{block}{Example: show manual in section 5 and 1}
         \begin{lstlisting}
-man time
-man -f time or whatis time
-man -k time or apropos time
-man 7 time; man 1 time; man -wa time
-find /usr/share/doc
-whatis  -l -w '*'
-yum install man-pages # for CentOS
+man -f passwd #or whatis passwd 
+man 5 passwd; man 1 passwd; man -wa passwd
         \end{lstlisting}
     \end{block}
 \end{frame}
-\begin{frame}[fragile]{Основное о man}
-		\begin{itemize}
-			\item Прочитайте {\tt man man} !
-			\item Разделы (sections)
-				\begin{itemize}
-					\item[1] Основная секция(юзерские программы)
-					\item[2] Syscalls
-					\item[3] С library
-					\item[5] Конфигурационные файлы
-					\item[8] Системные службы
-				\end{itemize}
-		\end{itemize}
-	  \textbf{Замечание}
-	  Обычно внутри страницы работает поиск с помощью '/'
-	
+
+\begin{frame}[fragile]{Поиск по страницам помощи}
+     \begin{block}{Упражнение. Поиск страниц с ключевым словом.}
+        \begin{lstlisting}
+man -f passwd #or whatis passwd 
+man -k passwd #or apropos passwd 
+whatis  -l -w '*'
+man -s 3 -Kw passwd
+        \end{lstlisting}
+    \end{block}
 \end{frame}
 
 
