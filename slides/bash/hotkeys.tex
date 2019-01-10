@@ -1,41 +1,61 @@
-\begin{frame}{Ускоряем ввод}
+\begin{frame}{Делаем жизнь в консоли приятной}
   \begin{itemize}
-    \item \textbf{Tab} -- дополнение команды, пути, аргументов
-      \pause
-    \item История команд \alert{{\tt history}}
-      \begin{itemize}
-        \item Клавиши курсора, \alert{Ctrl-P}, \alert{Ctrl-N} -- навигация по истории
-        \item \alert{Ctrl-R} -- поиск в истории по фрагменту
-        \item \alert{Alt-.}  -- последний аргумент предыдущей команды
-      \end{itemize}
-      \pause
-    \item Редактирование командной строки по словам
-      \begin{itemize}
-        \item \alert{Ctrl-W}, \alert{Alt-Backspace} удалить слово, назад
-        \item \alert{Alt-D}, удалить слово под курсором 
-        \item \alert{Alt-F} слово вправо
-        \item \alert{Alt-B} слово влево
-      \end{itemize}
-      \pause
+	\item Меньше ошибок
+	\item Легче вспомнить 
+	\item Быстрее набрать и отредактировать
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Ускоряем ввод}
+\begin{frame}{Автодополненение}
+  Клавиша \textbf{Tab} 
   \begin{itemize}
-    \item Перемещение по строке
+	\item напоминалка имени команды и аргументов;
+	\item файловый менеджер;
+	\item ускоритель ввода.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{История команд}
+  Просмотреть историю \alert{{\tt history}}
+  \begin{itemize}
+	\item ближняя
+	      \begin{itemize}
+		\item Клавиши курсора, \alert{Ctrl-P}, \alert{Ctrl-N} -- навигация по истории
+	      \end{itemize}
+	\item дальняя 
+	      \begin{itemize}
+		\item \alert{\$ !10}  -- по номеру команды
+		\item \alert{Ctrl-R} -- поиск в истории по фрагменту
+	      \end{itemize}
+	\item часть команды 
+	      \begin{itemize}
+		\item \alert{Alt-.}  -- последний аргумент предыдущей команды
+	      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Работаем с блоками текста}
+    Удаление
       \begin{itemize}
+        \item \alert{Ctrl-W}, \alert{Alt-Backspace} удалить слово, назад
+        \item \alert{Alt-D}, удалить слово под курсором 
+      \end{itemize}
+    Перемещение
+      \begin{itemize}
+        \item \alert{Alt-F} слово вправо
+        \item \alert{Alt-B} слово влево
         \item \alert{Ctrl-A} перейти в начало 
         \item \alert{Ctrl-E} перейти в конец
       \end{itemize}
-      \pause
-    \item Управление терминалом
+\end{frame}
+
+\begin{frame}{Управление терминалом}
       \begin{itemize}
         \item Ctrl-S -- заморозка терминала
         \item Ctrl-Q -- разморозка терминала
         \item \alert{Shift-PgUp}, \alert{Shift-PgDown} -- прокрутка терминала
         \item \alert{Ctrl-L} -- очистка терминала
       \end{itemize}
-  \end{itemize}
 \end{frame}
 
 
