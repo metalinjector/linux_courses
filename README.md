@@ -31,8 +31,20 @@ _Disclaimer_: поскольку некоторые материалы либо 
 
 Сборка в Docker окружении
 -------------
+Все файлы
 ~~~
+ docker-compose build
  docker-compose run slides
+~~~
+
+Результат в директории: 
+~~~
+ls itacademy/LinuxEssBash/*pdf
+~~~
+
+Чтобы собрать только один файл 01-linux-course.tex
+~~~
+docker-compose run slides itacademy/LinuxEssBash/01-linux-course.tex
 ~~~
 
 

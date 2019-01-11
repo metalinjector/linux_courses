@@ -8,4 +8,4 @@ RUN pacman -Syu --noconfirm make \
         texlive-bin \
         texlive-pictures ttf-dejavu
 WORKDIR /slides
-ENTRYPOINT ./build/build.sh
+ENTRYPOINT ["./build/build.sh"]
