@@ -24,13 +24,26 @@
 
 \end{frame}
 
-\begin{frame}[fragile]
-  \frametitle{Входим удалённо. SSH. Secure Shell.}
+SSH is typically used to log into a remote machine and execute commands, but it also supports tunneling, forwarding TCP ports and X11 connections; it can transfer files using the associated SSH file transfer (SFTP) or secure copy (SCP) protocols.[2] SSH uses the client-server model.
 
-    Протокол удалённой работы по сети для Linux.
+\begin{frame}[fragile]
+	\frametitle{Secure Shell (SSH)}
+	Used for:
+      \begin{itemize}
+        \item execute commands 
+        \item copy files (SFTP, SCP)
+        \item forwarding TCP ports and X11 connections
+        \item tunneling
+      \end{itemize}
+	SSH uses the client-server model
+
+	The standard TCP port 22 
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Входим удалённо.}
 
     Много реализаций клиентов и серверов.
-    \pause
 
     \emph{Как может выглядеть:}
     \newline
@@ -49,6 +62,23 @@
     Port: 22 default or any \par
 \end{block}
     Full path: root@192.168.10.10:22
+\end{frame}
+
+\begin{frame}
+  \frametitle{Конфигурация клиента}
+\begin{columns}
+    \begin{column}{0.5\textwidth}
+      {\Large Linux: .ssh/config}
+      \lstinputlisting[basicstyle=\tiny]{../../sam-solutions/samples/ssh-config} 
+    \end{column}
+    \begin{column}{0.5\textwidth}  %%<--- here
+   {\Large Windows: PuTTY session}
+        \begin{figure}
+        \centering
+            \includegraphics[scale=0.35]{putty-config-screenshot} 
+        \end{figure}
+    \end{column}
+\end{columns}
 \end{frame}
 
 \begin{frame}
