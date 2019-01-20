@@ -33,12 +33,6 @@ tar -czf archive.tar.gz *
 	\begin{verbatim}
 tar -C /tmp/ -xzf archive.tar.gz
         \end{verbatim}
-	\pause
-	Создать копию текущей директории в директории {\tt /tmp/copy/}:
-	\begin{verbatim}
-tar -c * | tar -C /tmp/copy -x
-tar -cf - * | tar -C /tmp -xf -
-        \end{verbatim}
 	%\pause
 	%Создать копию текущей директории на другом хосте:
 	%\begin{verbatim}

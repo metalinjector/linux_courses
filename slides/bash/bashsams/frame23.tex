@@ -1,28 +1,50 @@
 \begin{frame}[fragile]
-  \frametitle{Подстановочные символы путей (globbing)}
+	\frametitle{File and directory patterns}
+	man 7 glob
+	\begin{block}{Globbing}
+		is the operation that expands a \textit{wildcard pattern} into the \textit{list of pathnames} matching the pattern.  
+	\end{block}
     \begin{columns}
         \column{0.7\textwidth}
-  \alert{Wildcard characters} - спецсимволы в параметрах команд, раскрываемые в путь и имя файла интерпретатором перед тем, как запустить команду на выполнение. 
-
+  \begin{itemize}
+    \item \alert{?} matches any single character.
+    \item \alert{*} matches any string, including the empty string.
+    \item \alert{[ ]} matches a single character
+  \end{itemize}
         \column{0.3\textwidth}
             \center\includegraphics[scale=0.2]{jocker_wild_card}
     \end{columns} 
-  \begin{itemize}
-    \item \alert{*} - любое количество любых символов
-\begin{lstlisting}[basicstyle=\normalsize]
-        echo *
-        ls /u*
-        ls /sys/*/net/
-\end{lstlisting} \pause
-    \item \alert{[]} - символ из перечисления\footnote{об интервалах - в разделе о регулярных выражениях}
-\begin{lstlisting}[basicstyle=\normalsize]
-        echo .[bp]*
-\end{lstlisting} \pause
-    \item \alert{?} - любой одиночный символ
-\begin{lstlisting}[basicstyle=\normalsize]
-        echo ?i*
-\end{lstlisting} 
-  \end{itemize}
+\end{frame}
 
+\begin{frame}[fragile]
+	\frametitle{File and directory patterns. Examples.}
+    \alert{*} - любое количество любых символов
+\begin{lstlisting}[basicstyle=\normalsize]
+echo *  #  list current directory
+ls /usr/share/doc/*/README #  match multiple directories
+# Any string at the beginning, middle or end
+ls /usr/share/doc/*/RE*
+ls /usr/share/doc/*/*ME*
+ls /usr/share/doc/*/*.tar.gz
+\end{lstlisting} 
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{File and directory patterns. Examples.}
+  \alert{[]} - символ из перечисления
+\begin{lstlisting}[basicstyle=\normalsize]
+ls /bin/[abcdefg][abcdefg]
+ls /bin/[a-g][a-g]
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{File and directory patterns. Examples.}
+    \alert{?} - любой одиночный символ
+\begin{lstlisting}[basicstyle=\normalsize]
+ls /bin/???
+ls -1 /usr/share/doc/*/README.??.gz
+ls /*bin/?[ea]? # all patterns combination
+\end{lstlisting} 
 \end{frame}
 
