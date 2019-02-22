@@ -1,27 +1,20 @@
-\begin{frame}{Файловая система.}
-\includegraphics[height=4cm]{hw_hdd.jpg} 
-\includegraphics[height=4cm]{hw_usb_stick.jpg} 
-\end{frame}
 
 \begin{frame}{Древовидная структура хранения файлов.}
 \includegraphics[height=4cm]{unix_tree} 
   \begin{itemize}
-    \item В UNIX (и Linux) файлы организованы в виде \emph{единой древовидной структуры} (дерева), называемой \alert{файловой системой}.
-    \item Корнем дерева является \alert{корневой каталог} (root directory), имеющий имя \alert{"/"}.
     \item Каждый файл имеет \alert{имя}, определяющее его расположение в дереве FS.
+    \item \alert{Директория} объект в файловой системе позволяющий группировать файлы и другие директории.
   \end{itemize}
 \end{frame}
 
-
-
-\begin{frame}[fragile]{Хранение файлов группами.}
-      \begin{block}{Directory.}
-Directory is a file system cataloging structure which contains references to other computer \alert{files}, and possibly other \alert{directories}
-      \end{block}
+\begin{frame}[fragile]{Относительный и полный путь к файлу.}
  Для каждой запущенной программы в системе определена \alert{текущая директория} (working directory or current working directory) 
   \begin{itemize}
     \item \alert{относительный путь} - от текущей директории \newline
       Примеры: ../user10/.bashrc; ./script; ls script
+        \alert{./} - текущая директория \newline 
+        \alert{../} - предыдущая директория \newline 
+        \alert{../../} - две предыдущих директории 
     \item \alert{полный путь} начинается с \alert{/}(корневой директории), директории разделяются символом \alert{/}. \newline
   \end{itemize}
 \end{frame}
@@ -29,6 +22,24 @@ Directory is a file system cataloging structure which contains references to oth
 
 \begin{frame}{Абсолютное имя файла в дереве файловой системы.}
 \includegraphics[height=8cm]{filesystem} 
+\end{frame}
+
+\begin{frame}{Примеры использования имен.}
+        /proc/cmdline
+
+        /boot/grub/grub.cfg
+
+        /home/user/.ssh/authorized\_key \newline 
+\end{frame}
+
+\begin{frame}[fragile]{Команды для работы с именем файла}
+      \begin{itemize}
+		  \item {\tt basename }
+		  \item {\tt dirname }
+		  \item {\tt realpath} 
+		  \item {\tt readlink -f }
+      \end{itemize}
+        /home/user/.ssh/authorized\_key
 \end{frame}
 
 \begin{frame}[fragile]{Перемещение по файловой системе}
@@ -50,18 +61,6 @@ pwd
 \end{frame}
 
 
-\begin{frame}{Примеры использования имен.}
-        /proc/cmdline
-
-        /boot/grub/grub.cfg
-
-        /home/user/.ssh/authorized\_key \newline 
-        \alert{./} - текущая директория \newline 
-        \alert{../} - предыдущая директория \newline 
-        \alert{../../} - две предыдущих директории \newline
-        Команды для работы с именем файла: \newline
-        {\tt basename, dirname, realpath, readlink -f }
-\end{frame}
 %\begin{frame}[fragile]{Просмотр типов файлов}
 %      \begin{block}{Упражнение. Символьное обозначение типа файла.}
 %Первая буква вывода команды ls -l обозначает тип файла. 
