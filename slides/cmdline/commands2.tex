@@ -1,5 +1,26 @@
-\begin{frame}[fragile]{Архивация}
-	\begin{block}{Архивация: tar}
+\begin{frame}[fragile]{Сжатие одного файла}
+
+	\begin{block}{Команды: gzip, bzip, xz}
+		\begin{itemize}
+			\item {\tt -[1-9]} -- изменить уровень сжатия
+			\item {\tt -d} -- распаковать
+			\item {\tt -c} -- вывод на консоль
+		\end{itemize}
+	\end{block}
+
+	\begin{block}{Примеры: эффективность сжатия}
+		\begin{verbatim}
+dd if=/dev/sda of=./big_file.01 bs=1M count=10
+cp ./big_file.01 ./big_file.02
+gzip ./big_file.01 ; xz ./big_file.02
+du -h ./big_file.*
+dd if=/dev/sda bs=1M count=1 | gzip -c > backup.gz
+    \end{verbatim}
+	\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Архивация файлов}
+	\begin{block}{Команда: tar}
 		\begin{itemize}
 			\item {\tt -c} -- создать архив
 			\item {\tt -x} -- извлечь из архива
@@ -7,31 +28,29 @@
 					\item {\tt -C} -- перейти в директорию
 				\end{itemize}
 			\item {\tt -f} -- запись в файл
+			\item {\tt -x -j -J} -- сжатие gzip, bzip, xz
 		\end{itemize}
 	\end{block}
-
-	\begin{block}{Сжатие: gzip, bzip, xz}
-		\begin{itemize}
-			\item {\tt -[1-9]} -- изменить уровень сжатия
-			\item {\tt -d} -- распаковать
-			\item {\tt -c} -- вывод на консоль
-		\end{itemize}
-		\begin{verbatim}
-dd if=/dev/sda bs=1M count=1 | gzip -c > backup.gz
-    \end{verbatim}
-	\end{block}
-
+	Создать архив:
+	\begin{verbatim}
+tar -czf /tmp/etc.tar /etc/
+        \end{verbatim}
 \end{frame}
 
 \begin{frame}[fragile]{Архивация: примеры}
 	Создать сжатый архив:
 	\begin{verbatim}
-tar -czf archive.tar.gz *
+tar -czf archive.tar.gz ./*
         \end{verbatim}
 	\pause
 	Распаковать сжатый архив в директорию {\tt /tmp}:
 	\begin{verbatim}
 tar -C /tmp/ -xzf archive.tar.gz
+        \end{verbatim}
+	\pause
+	Просмотреть список файлов в архиве:
+	\begin{verbatim}
+tar -tzf archive.tar.gz
         \end{verbatim}
 	%\pause
 	%Создать копию текущей директории на другом хосте:

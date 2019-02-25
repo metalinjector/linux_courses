@@ -1,0 +1,45 @@
+\input{./common.tex}
+
+\title{Введение в GNU/Linux}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Begin Document  %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frame}
+	\frametitle{}
+	\titlepage
+	\vspace{-0.5cm}
+	\begin{center}
+	%\frontpagelogo
+	\end{center}
+\end{frame}
+
+
+\begin{frame}
+	\tableofcontents
+	[hideallsubsections]
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+%%%%%%%%%% Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Работа с файлами в файловой системе.}
+\mode<all>{\input{../../slides/bash/bashsams/frame23}}
+\section{Просмотр редактирование текстовых файлов.}
+\subsection{Просматриваем текстовые файлы}
+\mode<all>{\input{../../slides/cmdline/text_file_view.tex}}
+\subsection{Редактируем текстовые файлы}
+\mode<all>{\input{../../slides/cmdline/editor_vim.tex}}
+\section{Архивация.}
+\mode<all>{\input{../../slides/cmdline/commands2}}
+\section{Вход в систему.}
+\subsection{Беспарольный вход.}
+\mode<all>{\input{../../slides/cmdline/ssh_keys.tex}}
+\section{Интерактивная работа в командной оболочке (shell)}
+\mode<all>{\input{../../slides/bash/hotkeys.tex}}
+\end{document}
+\bye
