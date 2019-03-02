@@ -10,56 +10,12 @@
 \end{frame}
 
 
-%\begin{frame}{Просмотр обычных файлов}
-%  \begin{itemize}
-%    \item Просмотр текста:
-%      \begin{itemize} 
-%        \item \alert{cat} - вывести на stdout\footnote{Для двоичных файлов: чревато порчей настроек терминала} \pause
-%        \item \alert{more} - вывести, разбив на страницы
-%        \item \alert{less}\footnote{может отсутствововать в стандартной поставке} - \alert{more} на стероидах, с прокруткой, поиском
-%      \end{itemize} \pause
-%    \item Просмотр двоичных данных:
-%      \begin{itemize} 
-%        \item \alert{od} - дамп файла в не-текстовых форматах
-%\lstinputlisting[frame=single,basicstyle=\tiny]{../../sam-solutions/samples/od}
-%        \item \alert{strings} - извлечь текстовые строки из двоичных файлов
-%      \end{itemize}
-%  \end{itemize}
-%
-%\end{frame}
-%
-
-%\begin{frame}{Редакторы}
-%
-%  \begin{itemize}
-%    \item  Любой редактор, с которым вы можете справится. \pause Но его может не быть в вашей системе\ldots \pause
-%    \item Редактор \alert{vi} присутствует как стандартный в любой Unix-подобной системе\footnote{В этом качестве он внесен в стандарт Single Unix Specification. Существует множество реализаций редакторов, совместимых c vi: vim, elvis, nvi, vi-mode в Emacs, Sublime Text 2, vi из busybox и т.д.} \pause
-%    \item Не обязательно редактировать локально: В \alert{mc}, \alert{vim}, \alert{emacs} есть возможность удалённого редактирования файлов\footnote{С получением и сохранением данных по протоколу FTP и SSH}.
-%  \end{itemize}
-%
-%\end{frame}
-%
-%\begin{frame}{vi и vim}
-%  Перед стартом:
-%
-%  \begin{enumerate}
-%    \item  Редактор vi изначально создавался как универсальный и переносимый\footnote{Обязан работать на любых типах терминалов и виртуальных консолей}. Все действия можно осуществить на алфавитно-цифровой части клавиатуры, без мыши. \pause
-%    \item \alert{Редактор командного стиля}\footnote{Командного стиля, а не меню-ориентированный}. Действия подачей прямых управляющих команд. \pause \newline
-%      3 основных режима: \sout{портить текст и противно бибикать}
-%      \begin{itemize}
-%        \item[-] \alert{Командный режим} (Normal mode) - по умолчанию при запуске.
-%        \item[-] \alert{Режим изменения текста} (Edit mode)
-%        \item[-] \alert{Режим построчного редактирования} (Ex mode) - операции над файлом целиком\footnote{сохранение, открытие файлов, выход, вставка файла в текущий и т.д.}.
-%      \end{itemize}
-%  \end{enumerate} \pause
-%  \alert{Упражнение}: проходим \alert{vimtutor}, встроенный в vim учебник\footnote{ export LANG='ru\_RU.UTF-8' - на русском языке }
-%\end{frame}
 
 \begin{frame}{Текстовый фильтр}
 
   Определение:\newline \alert{Текстовый фильтр} - программа, обрабатывающая и преобразующая текст. \newline
 
-  Примеры: \alert{sort}, \alert{uniq}, \alert{cut}, \alert{grep} \pause
+	Пример: {\tt man | tac | rev }
   \begin{itemize}
     \item Фильтр, запущенный без параметров - читает стандартный ввод.
     \item Параметры фильтра - интерпретируются как имена файлов
@@ -70,21 +26,6 @@
 
 \end{frame}
 
-\begin{frame}{Простые текстовые фильтры}
-
-  Соглашения о параметрах: \alert{'-'} как имя файла обозначает стандартный ввод.
-
-  \begin{itemize}
-    \item \alert{cat} и \alert{tac} - вывести файл целиком \pause
-    \item \alert{head} и \alert{tail} - вывести начало и конец файла \pause
-    \item \alert{sort} и \alert{uniq} - сортировка и убрать повторы в отсортированном \pause
-    \item \alert{paste} - объединить файлы построчно \pause
-    \item \alert{wc} - счётчик строк, слов и байт в тексте \pause
-    \item \alert{tee} - копирует стандартный ввод в файл и на экран
-    \item \alert{grep} - поиск по образцу \pause
-
-  \end{itemize}
-\end{frame}
 
 %\begin{frame}{Регулярные выражения}
 %

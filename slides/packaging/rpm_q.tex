@@ -1,0 +1,24 @@
+\begin{frame}{RPM -q: часто используемые опции опроса}
+
+	\begin{itemize}
+		\item {\tt pkgname} -- выбор пакета, установленного в системе
+		\item {\tt -a} -- все пакеты, установленные в системе
+		\item {\tt -p} -- использовать файл RPM
+	\end{itemize}
+
+
+	\begin{itemize}
+		\item {\tt -i} -- показать информацию пакета\\
+			{\tt rpm \alert{-q} \alert{-i} glibc }
+		\item {\tt -l} -- показать список файлов пакета \\
+			{\tt rpm \alert{-q -l} glibc }
+		\item {\tt -{}-whatprovides} -- \\
+			{\tt rpm \alert{-q --whatprovides} java}
+		\item {\tt -{}-whatrequires} -- \\
+			{\tt rpm \alert{-q --whatrequires} /bin/bash}
+		\item {\tt -{}-queryformat} -- формат вывода\\
+			{\tt rpm \alert{-q -{}-whatrequires} /bin/bash \alert{-{}-queryformat ''\%\{name\} ''} }
+
+	\end{itemize}
+
+\end{frame}
