@@ -1,5 +1,5 @@
 \begin{frame}[fragile]
-	\frametitle{локальные переменные}
+	\frametitle{Локальные переменные}
 
 	Переменные объявленные с префиксом {\tt local} видны только внутри объявленного блока.
 
@@ -18,10 +18,9 @@ f2(){
   VAR=test2
   echo Function ${FUNCNAME}: VAR=$VAR
 }
-		\end{lstlisting}
+\end{lstlisting}
 		\column{0.5\textwidth}	
-        \begin{lstlisting}[language=bash,frame=single]
-
+\begin{lstlisting}[language=bash,frame=single]
 echo Before f1: VAR=$VAR
 f1
 echo Before f2: VAR=$VAR
