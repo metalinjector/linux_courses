@@ -1,0 +1,26 @@
+\begin{frame}[fragile]{Команда cp. Примеры.}
+  \begin{block}{Копируем файлы.}
+	\begin{lstlisting}[language=bash]
+cp file new_file
+cp file /directory/
+cp file1 file2 /directory/
+\end{lstlisting}
+  \end{block}
+\end{frame}
+\begin{frame}[fragile]{Команда cp. Примеры.}
+  \begin{block}{Копируем директории.}
+	\begin{lstlisting}[language=bash]
+cp -R test_dir existing_dir/
+cp -R test_dir new_test_dir/
+\end{lstlisting}
+  \end{block}
+\end{frame}
+\begin{frame}[fragile]{Команда cp. MacOS/FreeBSD.}
+  \begin{block}{Копируем директории.}
+	\begin{lstlisting}[language=bash]
+cp -R test/ copy_with_slash/
+cp -R test copy_without_slash/
+cp -R test copy_without_slash_both_dirs
+\end{lstlisting}
+  \end{block}
+\end{frame}
