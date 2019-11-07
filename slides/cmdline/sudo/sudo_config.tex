@@ -1,0 +1,14 @@
+\begin{frame}[fragile]
+	\frametitle{sudo configuration}
+  \begin{itemize}
+    \item sudoers (flat ascii file) 
+    \item visudo  (insures correct syntax) 
+  \end{itemize} 
+
+  sudoers example
+	\begin{lstlisting}
+bob     ALL = /sbin/shutdown, /sbin/halt, !/sbin/reboot
+admin   ALL = (ALL) ALL
+        \end{lstlisting}
+
+\end{frame}

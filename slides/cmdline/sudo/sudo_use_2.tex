@@ -1,0 +1,14 @@
+\begin{frame}[fragile]
+	\frametitle{Using sudo}
+	\begin{lstlisting}
+sudo -l
+sudo -ll
+sudo -i
+sudo sh -c "cd /home ; du -s * | sort -rn > USAGE"
+        \end{lstlisting}
+  \begin{itemize}
+    	\item Can use NOPASSWD option for accounts used for batch processes
+	\item pipes/redirects slightly tricky
+  \end{itemize} 
+
+\end{frame}

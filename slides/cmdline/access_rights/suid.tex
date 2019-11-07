@@ -1,0 +1,14 @@
+\begin{frame}[fragile]
+	\frametitle{SUID bit}
+
+\begin{lstlisting}
+find /usr/bin/ -perm -u=s -type f
+\end{lstlisting}
+
+\begin{lstlisting}
+ls -l /usr/bin/su /usr/bin/sudo
+\end{lstlisting}
+\verb|-rwsr-xr-x  1 root  wheel  25488 May  4 10:03 /usr/bin/su|
+\verb|-r-s--x--x  1 root  wheel  370720 May  4 10:02 /usr/bin/sudo|
+
+\end{frame}
