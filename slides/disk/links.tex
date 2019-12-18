@@ -1,19 +1,21 @@
-\begin{frame}
+\begin{frame}[fragile]
 	\frametitle{Multiple filenames}
 			\begin{itemize}
 				\item make long filenames short
 				\item backward compatability
 				\item file name aliases easy to read
 			\end{itemize}
-			How to create?
 			\pause
+			Usage examples
+
+			\verb|find /etc -type l -exec ls -l {} \;|
 			\begin{itemize}
 				\item Hardlink
 				\item Softlink (Symlink)
 			\end{itemize}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
 	\frametitle{File links}
 	\includegraphics[height=0.4\textheight]{../../slides/cmdline/clipart/hardlink_softlink.jpg}
 	\begin{block}{Hardlink}
@@ -37,23 +39,24 @@
 
 	\begin{lstlisting}
 touch doc 
-ln doc file1
-ln -s doc file2
+ln doc hardlink_file
+ln -s doc softlink_file
 ls -l
-	\end{lstlisting}
+ls -li
+stat doc hardlink_file softlink_file
+\end{lstlisting}
 \end{frame}
 
 \begin{frame}[fragile]
 	\frametitle{Hardlink limitation}
 	\begin{lstlisting}
-stat
 ls /boot/vmlinuz*
-ln /boot/vmlinuz* ./kernel
+ln /boot/vmlinuz* ./kernel # <- error
 ln -s /boot/vmlinuz* ./kernel
-	\end{lstlisting}
+\end{lstlisting}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
 	\frametitle{Remove examples}
 	Remove symlink target 
 
@@ -63,5 +66,5 @@ ln -s /boot/vmlinuz* ./kernel
 
 	Remove hardlink
 
-	{\tt stat file1}
+	\verb|stat hardlink_file|
 \end{frame}
