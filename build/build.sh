@@ -11,7 +11,7 @@ latexmk -CA
 
 if [ -z "$file_to_render" ] 
 then 
-   latexmk -pdfxe ./*linux-course.tex
+   latexmk -pdfxe ./*linux-course*.tex
 else
    latexmk -pdfxe ./$(basename "$file_to_render")
 fi
