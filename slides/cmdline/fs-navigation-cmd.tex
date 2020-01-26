@@ -24,13 +24,13 @@
 \includegraphics[height=8cm]{filesystem} 
 \end{frame}
 
-\begin{frame}{Примеры использования имен.}
-        /proc/cmdline
-
-        /boot/grub/grub.cfg
-
-        /home/user/.ssh/authorized\_key \newline 
-\end{frame}
+%\begin{frame}{Примеры использования имен.}
+%        /proc/cmdline
+%
+%        /boot/grub/grub.cfg
+%
+%        /home/user/.ssh/authorized\_key \newline 
+%\end{frame}
 
 \begin{frame}[fragile]{Перемещение по файловой системе}
       \begin{itemize}
@@ -151,11 +151,11 @@ Any ideas what is purpose of this commands?
 ~$ mkdir dir1 /tmp/somedir
 ~$ mkdir -p dir/and/existant/parts/in/path
 \end{lstlisting} \pause
-    \item \alert{rmdir} - удалить (пустой) каталог
-\begin{lstlisting}
-~$ rmdir dir1 /tmp/somedir
-~$ rmdir -p deep/empty/dir/structure/
-\end{lstlisting} \pause
+%    \item \alert{rmdir} - удалить (пустой) каталог
+%\begin{lstlisting}
+%~$ rmdir dir1 /tmp/somedir
+%~$ rmdir -p deep/empty/dir/structure/
+%\end{lstlisting} \pause
     \item \alert{cp} - копирование файлов\footnotemark[8]
     \item \alert{mv} - перемещение и переименование файлов
     \item \alert{rm} - удаление файлов\footnotemark[17]
@@ -163,7 +163,7 @@ Any ideas what is purpose of this commands?
 ~$ rm -rf dir1 /tmp/somedir
 ~$ cp /etc/passwd /tmp/passwd # copy file to file 
 ~$ cp -r /etc/  /tmp/ # copy directory to directory
-\end{lstlisting} \pause
+\end{lstlisting}
   \end{itemize}
 \footnotetext[8]{с ключом \alert{-r}) и каталогов}
 \end{frame}
