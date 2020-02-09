@@ -1,28 +1,20 @@
 \begin{frame}[fragile]
 	\frametitle{Спецсимвол фигурная скобка}
-    Brace expansion  \alert{\{ \}} фигурные скобки
+    Brace expansion  \alert{\{ \}} фигурные скобки \\
+	Посмотреть на результат выполнения команд \\
 
-	\begin{block}{Фигурные скобки и склеивание с помощью ``,``}
-		\begin{itemize}
-			\item Посмотреть на результат выполнения команды \\
-\begin{lstlisting}[language=bash]
-echo game/{testing,staging,prod}/{docs,src,util,conf}
-\end{lstlisting}
-				{\tt echo \{A,B,C\}:\{1,2,3\}}
-				\pause
-			\item Посмотреть на результат выполнения команды 
-		\end{itemize}
-	\end{block}
+	\begin{itemize}
+			\item {\tt echo \{A,B,C\}} 
+			\item {\tt echo user\{1,2,3\}}
+			\item {\tt echo mkdir dir\{1..20\}}
+	\end{itemize}
 
-
-	\pause
-
-	\begin{block}{Фигурные скобки и перечисления с помощью ``..``}
-		\begin{itemize}
-			\item Посмотреть на результат выполнения команды \\
-				{\tt echo \{a..d\}:\{-10..10\}}
-		\end{itemize}
-	\end{block}
+%	\begin{block}{Фигурные скобки и перечисления с помощью ``..``}
+%		\begin{itemize}
+%			\item посмотреть на результат выполнения команды \\
+%				{\tt echo \{a..d\}:\{-10..10\}}
+%		\end{itemize}
+%	\end{block}
 
 \end{frame}
 

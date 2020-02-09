@@ -13,5 +13,6 @@ if [ -z "$file_to_render" ]
 then 
    latexmk -pdfxe ./*linux-course*.tex
 else
+   echo Rendering single file
    latexmk -pdfxe ./$(basename "$file_to_render")
 fi
