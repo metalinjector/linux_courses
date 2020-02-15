@@ -1,0 +1,24 @@
+Vagrant.configure(2) do |config|
+  config.vm.box = "centos/8"
+
+  config.vm.provider :virtualbox do |virtualbox, override|
+    virtualbox.memory = 1024
+    override.vm.box_download_checksum_type = "sha256"
+    override.vm.box_download_checksum = "88b225f61abda0c59db7d7b8dd980e3e45cd08ab8bac5ab2ae872dbb35bd80e4"
+    override.vm.box_url = "https://cloud.centos.org/centos/8/vagrant/x86_64/images/CentOS-8-Vagrant-8.1.1911-20200113.3.x86_64.vagrant-virtualbox.box"
+  end
+
+    config.vm.define "zabbix_server" do |server|
+    server.vm.host_name = 'zserver'
+    server.vm.network :private_network, ip: "10.0.0.10"
+    server.vm.network "forwarded_port", guest: 80, host: 8081
+    server.vm.provision "shell", path: "zabbix-server.sh"
+    end
+
+  config.vm.define "zabbix_agent" do |agent|
+    agent.vm.host_name = 'zagent'
+    agent.vm.network :private_network, ip: "10.0.0.11"
+    agent.vm.network "forwarded_port", guest: 80, host: 8082
+    agent.vm.provision "shell", path: "zabbix-agent.sh"
+  end
+end
