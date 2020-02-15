@@ -8,14 +8,16 @@
 \end{frame}
 
 \begin{frame}[fragile]{Относительный и полный путь к файлу.}
- Для каждой запущенной программы в системе определена \alert{текущая директория} (working directory or current working directory) 
+ Для каждой запущенной программы в системе определена \alert{текущая директория} 
+ (working directory or current working directory) 
   \begin{itemize}
     \item \alert{относительный путь} - от текущей директории \newline
       Примеры имен: ../user10/.bashrc; ./script; script \newline
         \alert{./} - текущая директория \newline 
         \alert{../} - предыдущая директория \newline 
         \alert{../../} - две предыдущих директории 
-    \item \alert{полный путь} начинается с \alert{/}(корневой директории), директории разделяются символом \alert{/}. \newline
+    \item \alert{полный путь} начинается с \alert{/}(корневой директории), 
+    \item директории разделяются символом \alert{/}. \newline
   \end{itemize}
 \end{frame}
 
@@ -34,7 +36,8 @@
 
 \begin{frame}[fragile]{Перемещение по файловой системе}
       \begin{itemize}
-		  \item {\tt pwd} -- имя текущей директории (help pwd)
+      \item {\tt pwd} -- имя текущей директории (help pwd)
+      \item {\tt realpath ./}
 		  \item {\tt ls} -- список файлов в директории. По умолчанию в текущей (man ls)
 		  \item {\tt cd} -- смена текущей директории (help cd)
       \end{itemize}
