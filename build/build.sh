@@ -1,18 +1,23 @@
 #!/bin/sh
 # this script is running to create slides 
+set -e
+set -x
 
-file_to_render=$1
+if [ "$1" ] 
+then 
+  slides_directory=$(dirname "$1" )
+  files_to_render=./$(basename "$1")
+  msg="Rendering single file ${files_to_render}"
+else
+  slides_directory="itacademy/LinuxEssBash/"
+  files_to_render="./*linux-course*.tex"
+  msg="Rendering all files in ${slides_directory}"
+fi
 
-dir_slides=itacademy/LinuxEssBash/
-
-make --directory=$dir_slides clean
-cd $dir_slides
+# clean files from previous builds
+make --directory=$slides_directory clean
+cd $slides_directory
 latexmk -CA
 
-if [ -z "$file_to_render" ] 
-then 
-   latexmk -pdfxe ./*linux-course*.tex
-else
-   echo Rendering single file
-   latexmk -pdfxe ./$(basename "$file_to_render")
-fi
+echo "$msg"
+latexmk -pdfxe $files_to_render
