@@ -14,3 +14,6 @@ deploy:
   file: ./itacademy/LinuxEssBash/*pdf
   on:
     repo: nixuser/linux_courses
+    branches:
+      only:
+        - master
