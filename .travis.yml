@@ -1,13 +1,7 @@
-addons:
-  apt:
-    packages:
-      - latex-beamer
-      - texlive-xetex
-      - texlive-latex-recommended
-      - texlive-generic-recommended
-      - texlive-latex-extra 
-      - texlive-fonts-recommended
-      - lmodern
+services:
+  - docker
+before_install:
+  - docker-compose build
+  - docker-compose run slides
 script:
-    - fc-list :lang=ru
-    - make -C epam/LinuxEssBash/ 01-intro.pdf
+  - find ./ -name '*pdf'
