@@ -6,10 +6,10 @@ before_install:
 script:
 - build/test.sh
 deploy:
+  skip_cleanup: true
   provider: releases
   api_key:
     secure: J57rCsVk+Ee3ywA3pBAtILjtVRgi2JKzOVu3Qq22ccsKkO0TFpWvgjaJsM0pxFnx8iMM6JIOuggMeA3Oz7dwk3DkjfPP1jx7nUzOaV5hyFABu1tyvW73CwOQ2SSw/EmzSKo/OodD5M2gely7huy4DZI1+ovcgPEi239StjpLAVeKDjGIKwdprZkmX6KX7CUdmskLY1vwLbYg9QFfEQ1LSoU2MaObcwX3/aTGTfCILkElpuxmYF45Z0EbpWju+MTrhnATNryVhC9UXfX5hhTRjnDrQGVtNjmUcryM73l5ReJutz7+KjszGjOEvH5iTZxyvMUfAsNwEnkx/DT+kRxHKi7TOo2I8tXAsdSDUDJCWcqOPgFQyjyl50ZbnKwfjgUR999tKFTzbPNhHI3jOHmuHWj1s7J6fNvBJ3l0QVXmlS3LAhF2QeW49hy/rOSYmXwiG2z2pxmKZHQGRw/9fs4qF6xOueJcV/PG9YJlAFSuaf958do0vsRiCU5WuzwQXxXYIzAakhI5aSH8i5TIS2VOlLe/i72UrR7AGF2Fi4vpeWTJ8gHhvgy5839KfqB5qAa880/U0Kejv/jgYY/eu2XENJ0769upjV8LirhlJEcsesWSh70Wge/e/s+66urBoUOYJE3k6yKSce2aNLz5JaHPweJyWUSysKsWTb5qOY80gLw=
-  file: 
   file_glob: true
   file: ./itacademy/LinuxEssBash/*pdf
   on:
