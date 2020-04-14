@@ -24,6 +24,7 @@ fi
 # clean files from previous builds
 make --directory=$slides_directory clean
 cd $slides_directory
+mktexlsr
 latexmk -CA
 
 echo "$msg"
