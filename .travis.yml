@@ -2,7 +2,7 @@ services:
 - docker
 before_install:
 - docker-compose build
-- docker-compose run slides ./itacademy/LinuxEssBashOnline/
+- docker-compose run slides
 script:
 - build/test.sh
 deploy:

@@ -4,7 +4,7 @@ set -e
 set -x
 
 # no arguments - compile all files in default directory
-slides_directory=${1:-itacademy/LinuxEssBash/}
+slides_directory=${1:-./itacademy/LinuxEssBashOnline/}
 
 # compile all files in directory
 if [ -d "$slides_directory" ]

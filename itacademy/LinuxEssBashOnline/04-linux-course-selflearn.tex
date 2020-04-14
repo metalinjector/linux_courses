@@ -1,0 +1,50 @@
+\input{common}
+
+\title{Введение в GNU/Linux}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Begin Document  %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frame}
+	\frametitle{}
+	\titlepage
+	\vspace{-0.5cm}
+	\begin{center}
+	%\frontpagelogo
+	\end{center}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+%%%%%%%%%% Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Delegate root privilegies}
+\mode<all>{\input{../../slides/cmdline/sudo/rootprivilegies.tex}}
+\subsection{sudo}
+\mode<all>{\input{../../slides/cmdline/sudo/frame2.tex}}
+\mode<all>{\input{../../slides/cmdline/sudo/sudo_config.tex}}
+\mode<all>{\input{../../slides/cmdline/sudo/sudo_use.tex}}
+\mode<all>{\input{../../slides/cmdline/sudo/sudo_use_2.tex}}
+\subsection{SUID bit}
+\mode<all>{\input{../../slides/cmdline/access_rights/suid.tex}}
+\mode<all>{\input{../../slides/cmdline/access_rights/frame11.tex}}
+\section{File permissions}
+\subsection{Umask}
+\mode<all>{\input{../../slides/cmdline/access_rights/frame12.tex}}
+\section{OS initialization system.}
+\mode<all>{\input{../../slides/intro/init-process}}
+
+%\section{User management}
+%\mode<all>{\input{../../slides/multiuser/account_files.tex}}
+%\mode<all>{\input{../../slides/multiuser/pam.tex}}
+
+\section{Configure network settings}
+\mode<all>{\input{../../slides/networking/interface-config.tex}}
+%\mode<all>{\input{../../slides/networking/interface-management}}
+
+\end{document}

@@ -1,0 +1,41 @@
+\input{./common.tex}
+
+\title{Введение в GNU/Linux}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Begin Document  %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frame}
+	\frametitle{}
+	\titlepage
+	\vspace{-0.5cm}
+	\begin{center}
+	%\frontpagelogo
+	\end{center}
+\end{frame}
+
+
+\begin{frame}
+	\tableofcontents
+	[hideallsubsections]
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+%%%%%%%%%% Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Работа с файлами в файловой системе.}
+\mode<all>{\input{../../slides/cmdline/fs-navigation-cmd.tex}}
+\section{Файловая система.}
+\mode<all>{\input{../../slides/fs/fs-structure.tex}}
+\section{Создание файловой системы.}
+\mode<all>{\input{../../slides/disk/disk-simple_management01.tex}}
+\section{Поиск файлов}
+\mode<all>{\input{../../slides/cmdline/fs_data_metadata}}
+\mode<all>{\input{../../slides/cmdline/commands3}}
+%\mode<all>{\input{../../slides/cmdline/xargs.tex}} % to video
+\end{document}
+\bye

@@ -1,0 +1,86 @@
+\input{common}
+
+\title{Введение в GNU/Linux}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Begin Document  %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frame}
+	\frametitle{}
+	\titlepage
+	\vspace{-0.5cm}
+	\begin{center}
+	%\frontpagelogo
+	\end{center}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+%%%%%%%%%% Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Процесс загрузки ОС Linux}
+\mode<all>{\input{../../slides/intro/linux-boot}}
+\subsection{Остановка системы}
+\mode<all>{\input{../../slides/intro/stoplinux.tex}}
+
+\section{Package management system}
+\mode<all>{\input{../../slides/packaging/example_rpm_install}}
+\mode<all>{\input{../../slides/packaging/intro2}}
+\mode<all>{\input{../../slides/packaging/repo}}
+\mode<all>{\input{../../slides/packaging/intro1}}
+\mode<all>{\input{../../slides/packaging/highlevelpkgmgr.tex}}
+% when to use low level package managers
+%\mode<all>{\input{../../slides/packaging/rpm_ieuv.tex}}
+%\mode<all>{\input{../../slides/packaging/rpm_q.tex}}
+%\mode<all>{\input{../../slides/packaging/example_rpm_install01}}
+
+\section{Multiuser UNIX}
+\subsection{User access}
+%\mode<all>{\import{../../slides/cmdline/}{access_rights.tex}}
+\mode<all>{\input{../../slides/cmdline/access_rights/frame1_0_1.tex}}
+\mode<all>{\input{../../slides/cmdline/access_rights/frame1_1_1.tex}}
+\mode<all>{\input{../../slides/cmdline/access_rights/frame1_1.tex}}
+\mode<all>{\input{../../slides/cmdline/access_rights/frame1_2.tex}}
+\mode<all>{\input{../../slides/cmdline/access_rights/frame3_1.tex}}
+\mode<all>{\input{../../slides/cmdline/access_rights/frame3_2.tex}}
+\mode<all>{\input{../../slides/cmdline/access_rights/frame1.tex}}
+\mode<all>{\input{../../slides/cmdline/access_rights/frame2.tex}}
+\mode<all>{\input{../../slides/cmdline/access_rights/frame3.tex}}
+\subsection{File permissions}
+\mode<all>{\input{../../slides/cmdline/access_rights/frame5.tex}}
+\mode<all>{\input{../../slides/cmdline/access_rights/frame6.tex}}
+\mode<all>{\input{../../slides/cmdline/access_rights/frame7.tex}}
+\mode<all>{\input{../../slides/cmdline/access_rights/frame8.tex}}
+\mode<all>{\input{../../slides/cmdline/access_rights/frame9.tex}}
+\mode<all>{\input{../../slides/cmdline/access_rights/frame10.tex}}
+\section{Processes management}
+\mode<all>{\import{../../slides/cmdline/}{processes.tex}}
+%\mode<all>{\input{../../slides/cmdline/processes/processes1.tex}}
+%\mode<all>{\input{../../slides/cmdline/processes/processes2.tex}}
+%\mode<all>{\input{../../slides/cmdline/processes/processes3.tex}}
+%\mode<all>{\input{../../slides/cmdline/processes/processes4.tex}}
+%\mode<all>{\input{../../slides/cmdline/processes/processes5.tex}}
+%\mode<all>{\input{../../slides/cmdline/processes/processes6.tex}}
+%\mode<all>{\input{../../slides/cmdline/processes/processes7.tex}}
+%\mode<all>{\input{../../slides/cmdline/processes/processes8.tex}}
+\subsection{OS initialization system.}
+\mode<all>{\input{../../slides/intro/init-process}}
+
+%\section{User management}
+%\mode<all>{\input{../../slides/multiuser/account_files.tex}}
+%\mode<all>{\input{../../slides/multiuser/pam.tex}}
+
+
+\section{Network diagnostic}
+\mode<all>{\input{../../slides/networking/useful-progs}}
+\subsection{Routing}
+\mode<all>{\input{../../slides/networking/routing}}
+\subsection{iptables}
+\mode<all>{\input{../../slides/networking/iptables}}
+
+\end{document}
