@@ -29,34 +29,26 @@ _Disclaimer_: поскольку некоторые материалы либо 
 * sam-solutions/ -- введение в Linux для QA (SaM-Solutions)
 * promwad/ -- курс "Программирование встраиваемых систем" (Promwad)
 
-Сборка в Docker окружении
+Сборка слайдов
 -------------
-Все файлы
+Необходим установленный Docker и docker-compose.
+
+Собираем образ.
 ~~~
  docker-compose build
- docker-compose run slides
 ~~~
-
-Результат в директории: 
+Собираем слайды в директории
 ~~~
+docker-compose run slides itacademy/LinuxEssBashOnline/
+ls itacademy/LinuxEssBashOnline/*pdf
+~~~
+Собираем слайды в директории по умолчанию itacademy/LinuxEssBash/
+~~~
+docker-compose run slides
 ls itacademy/LinuxEssBash/*pdf
 ~~~
-
-Чтобы собрать только один файл 01-linux-course.tex
+Собираем слайды для одного занятия
 ~~~
-docker-compose run slides itacademy/LinuxEssBash/01-linux-course.tex
-~~~
-
-
-Сборка в Jenkins окружении
--------------
-
-Шаги по сборке курса для itacademy. Работает только в ветке xetex, поэтому нужно настроить Jenkins забирать Jenkinsfile из ветки xetex, который расположен itacademy/LinuxEssBash/buildenv/
-
-Для запуска Jenkins используется контейнер https://hub.docker.com/r/jenkinsci/blueocean/ и шаги по установке https://jenkins.io/doc/book/installing/.
-
-![alt text](https://github.com/nixuser/linux_courses/blob/xetex/pipeline_config.png)
-
-~~~
- docker run --rm -u root -p 8080:8080 -v jenkins-data:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -v "$HOME":/home jenkinsci/blueocean
+docker-compose run slides itacademy/LinuxEssBashOnline/03-linux-course.tex
+ls itacademy/LinuxEssBash/03-linux-course.pdf
 ~~~

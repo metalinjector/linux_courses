@@ -1,6 +1,6 @@
 #!/bin/bash
 # simple test to check pdf file names 
-slides_dir=./itacademy/LinuxEssBash/
+slides_dir=./itacademy/LinuxEssBashOnline
 slides_list="
 01-linux-course.pdf
 02-linux-course.pdf

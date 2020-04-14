@@ -3,15 +3,22 @@
 set -e
 set -x
 
-if [ "$1" ] 
-then 
+# no arguments - compile all files in default directory
+slides_directory=${1:-itacademy/LinuxEssBash/}
+
+# compile all files in directory
+if [ -d "$slides_directory" ]
+  then
+  files_to_render="./*linux-course*.tex"
+  msg="Rendering all files in ${slides_directory}"
+fi
+
+# compile single file in directory
+if [ -f "$slides_directory" ]
+  then
   slides_directory=$(dirname "$1" )
   files_to_render=./$(basename "$1")
   msg="Rendering single file ${files_to_render}"
-else
-  slides_directory="itacademy/LinuxEssBash/"
-  files_to_render="./*linux-course*.tex"
-  msg="Rendering all files in ${slides_directory}"
 fi
 
 # clean files from previous builds
