@@ -1,6 +1,6 @@
 FROM archlinux/base 
 
-RUN pacman -Syu --noconfirm make \
+RUN pacman -Syu --noconfirm grep make \
         ttf-inconsolata adobe-source-sans-pro-fonts \
         texlive-core \
         texlive-langcyrillic \
