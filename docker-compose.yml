@@ -4,7 +4,7 @@ services:
   slides:
     build:
       context: ./
-      dockerfile: ./itacademy/LinuxEssBash/buildenv/Dockerfile
+      dockerfile: ./itacademy/LinuxEssBashOnline/buildenv/Dockerfile
     volumes:
       - type: bind
         source: ./
