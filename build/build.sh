@@ -24,6 +24,7 @@ fi
 # clean files from previous builds
 make --directory=$slides_directory clean
 cd $slides_directory
+texhash
 mktexlsr
 latexmk -CA
 
