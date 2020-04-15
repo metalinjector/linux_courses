@@ -23,9 +23,9 @@ fi
 
 # clean files from previous builds
 make --directory=$slides_directory clean
-cd $slides_directory
-texhash
+bash -x $(type -p texhash)
 mktexlsr
+cd $slides_directory
 latexmk -CA
 
 echo "$msg"
