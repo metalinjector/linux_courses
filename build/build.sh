@@ -23,8 +23,13 @@ fi
 
 # clean files from previous builds
 make --directory=$slides_directory clean
+texconfig conf
+echo '-----'
+cat /etc/texmf/ls-R
 bash -x $(type -p texhash)
-mktexlsr
+echo '-----'
+cat /etc/texmf/ls-R
+
 cd $slides_directory
 latexmk -CA
 
