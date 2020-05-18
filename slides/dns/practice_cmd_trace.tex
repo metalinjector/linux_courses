@@ -1,0 +1,12 @@
+\begin{frame}[fragile]
+    \frametitle{Выполняем полный поиск вручную}
+Определим DNS сервера домена ya.ru
+\begin{lstlisting}
+dig 
+dig   @d.root-servers.net ya.ru ns
+dig   @b.dns.ripn.net. ya.ru ns
+dig   @ns1.yandex.RU. ya.ru a
+
+dig +trace cheat.sh
+\end{lstlisting}
+\end{frame}

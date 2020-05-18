@@ -1,0 +1,21 @@
+\begin{frame}[fragile]
+    \frametitle{Практика найти значения}
+
+Выполнить команду
+\begin{verbatim}
+    dig xy.com SOA
+\end{verbatim}
+Найти AUTHORITY SECTION и в ней определить значения
+\begin{itemize}
+    \item Serial
+    \item Refresh 
+    \item Retry 
+    \item Expire 
+    \item Minimum TTL
+\end{itemize}
+Через время TTL выполнить команду и сравнить Query time:
+\begin{verbatim}
+dig xy.com
+\end{verbatim}
+
+\end{frame}
