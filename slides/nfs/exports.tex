@@ -1,0 +1,22 @@
+\begin{frame}[fragile]
+    \frametitle{Доступ к сети}
+
+Синтаксис /etc/exports:
+
+\begin{lstlisting}
+<full_path>  <network> (<options>)
+\end{lstlisting}
+
+Примеры поля <network>:
+    \begin{itemize}
+        \item 192.168.0.0/255.255.255.0
+        \item 192.168.0.0/24
+        \item 192.168.0.29
+        \item 192.168.0.*
+        \item 192.168.0.10?
+        \item *
+        \item *.domain.com
+    \end{itemize}
+    
+
+\end{frame}

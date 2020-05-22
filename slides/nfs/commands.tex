@@ -1,0 +1,22 @@
+\begin{frame}
+    \frametitle{Команды диагностики}
+\begin{itemize}
+    \item 
+    exportfs -a Экспортировать все каталоги
+    \item 
+    exportfs -v Показывать процесс экспорта
+    \item 
+    exportfs -u Отменить экспорт одного и более каталогов
+    \item showmount -a or mount 
+    Вывести список всех удаленных монтирований в формате: hostname:directory, где hostname - имя клиента, а directory - корень монтированной файловой системы
+    \item 
+    showmount -d Вывести список каталогов, смонтированных клиентами на удалении
+    \item 
+    showmount -e Вывести список экспортированных файловых систем
+    \item 
+    nfsstat
+    Статистика работы nfs сервера
+\end{itemize}
+     
+
+\end{frame}
