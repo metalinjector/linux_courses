@@ -32,8 +32,8 @@ jobs:
     - name: Test build
       run: build/test.sh
         
-    - name: Upload math result for job 
+    - name: Upload PDF files
       uses: actions/upload-artifact@v2
       with:
-        name: Upload presentation files
+        name: linuxcourseonline
         path: ./itacademy/LinuxEssBashOnline/*.pdf
