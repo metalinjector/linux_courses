@@ -1,8 +1,9 @@
 services:
   - docker
 script:
-  - docker-compose build
-  - docker-compose run slides
+  # disable builds because of issues on runners
+  # - docker-compose build
+  # - docker-compose run slides
   - build/test.sh
 deploy:
   skip_cleanup: true
