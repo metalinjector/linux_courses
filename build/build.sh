@@ -1,7 +1,6 @@
 #!/bin/sh
 # this script is running to create slides 
 set -e
-set -x
 
 # no arguments - compile all files in default directory
 slides_directory=${1:-./itacademy/LinuxEssBashOnline/}
@@ -21,14 +20,8 @@ if [ -f "$slides_directory" ]
   msg="Rendering single file ${files_to_render}"
 fi
 
-# clean files from previous builds
+# clean files from previous builds only for local build
 make --directory=$slides_directory clean
-texconfig conf
-echo '-----'
-cat /etc/texmf/ls-R
-bash -x $(type -p texhash)
-echo '-----'
-cat /etc/texmf/ls-R
 
 cd $slides_directory
 latexmk -CA
